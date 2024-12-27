@@ -5,7 +5,15 @@ body {
     background-color: #f8f9fa;
  
 }
+.headd{
+  margin-top: 5%;
+}
+#headd{
+  margin-top: 5%;
+}
 .navbar {
+  padding: 15px 0; /* Add vertical padding for better alignment */
+ 
     background-color: #343a40;
     transition: top 0.3s ease-in-out;
     z-index: 10; /* Higher than the hero section */
@@ -13,6 +21,31 @@ body {
 .navbar a {
     color: white;
 }
+.logo-img {
+  width: 50px; /* Adjust the size as needed */
+  height: 50px; /* Keep width and height equal for a perfect circle */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image doesn't get distorted */
+  margin-right: 10px; /* Optional: Adds some spacing between the logo and text, if any */
+}
+.navbar-nav .nav-link {
+  font-size: 18px; /* Increase font size */
+  font-weight: bold; /* Make text bold for better visibility */
+  color: white; /* Ensure good contrast against the dark background */
+  margin-left: 15px; /* Add spacing between links */
+  text-transform: uppercase; /* Optional: Make text uppercase for a clean look */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8c146; /* Highlight link color on hover */
+  transform: scale(1.1); /* Slightly enlarge link on hover for effect */
+}
+
+.navbar-brand img {
+  margin-right: 20px; /* Increase spacing between logo and the first link */
+}
+
 .hero {
     text-align: center;
     padding: 50px;
@@ -125,6 +158,12 @@ body {
 
    /* Responsive adjustments for smaller screens */
 @media (max-width: 600px) {
+  .headd{
+    margin-top: 18%;
+  }
+  #headd{
+    margin-top: 18%;
+  }
 .navbar {
   text-align: center;
     /* margin-bottom: 100%; */
