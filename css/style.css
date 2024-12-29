@@ -59,8 +59,43 @@ body {
 .footer {
   background-color: #343a40;
   color: white;
-  text-align: center;
-  padding: 10px 0;
+  padding: 20px 0;
+}
+.footer .social-icons {
+text-align: center;
+margin-bottom: 10px;
+}
+.footer .social-icons a {
+color: white;
+font-size: 24px;
+margin: 0 15px;
+transition: transform 0.3s;
+}
+.footer .social-icons a:hover {
+transform: scale(1.2);
+color: #007bff;
+}
+.footer .footer-text {
+text-align: center;
+margin-top: 10px;
+}
+.footer .social-icons a.youtube {
+color: #FF0000;
+}
+.footer .social-icons a.youtube:hover {
+color: #FF6347;
+}
+.footer .social-icons a.instagram {
+color: #E1306C;
+}
+.footer .social-icons a.instagram:hover {
+color: #FF69B4;
+}
+.footer .social-icons a.facebook {
+color: #3b5998;
+}
+.footer .social-icons a.facebook:hover {
+color: #4c70ba;
 }
 /* Product list container */
 .products {
