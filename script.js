@@ -32,3 +32,27 @@ window.addEventListener("scroll", function () {
                 status.style.backgroundColor = '#f44336';
             }
         });
+
+
+
+
+    // Get the current page's filename
+    var currentPage = window.location.pathname.split("/").pop();
+
+    // Add the 'active' class to the relevant nav link
+    switch (currentPage) {
+        case "products.html":
+            document.getElementById("products-link").classList.add("active", "glitch");
+            break;
+        case "about.html":
+            document.getElementById("about-link").classList.add("active", "glitch");
+            break;
+        case "payment.html":
+            document.getElementById("payment-link").classList.add("active", "glitch");
+            break;
+        case "index.html":
+            document.getElementById("index-link").classList.add("active", "glitch");
+            break;
+        default:
+            break;
+    }

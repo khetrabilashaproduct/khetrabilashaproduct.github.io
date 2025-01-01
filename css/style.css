@@ -32,7 +32,54 @@ body {
   border-radius: 50%; /* Makes the image circular */
   object-fit: cover; /* Ensures the image doesn't get distorted */
   margin-right: 10px; /* Optional: Adds some spacing between the logo and text, if any */
+  animation: logoAnimation 1s ease-in-out;
+  animation: rotateLogo 2s ease-in-out 1s; /* Adds a 0.5s delay */
 }
+
+
+/* Logo rotation animation */
+@keyframes rotateLogo {
+  0% {
+      transform: rotate(0deg);
+  }
+  50% {
+      transform: rotate(360deg);
+  }
+  100% {
+      transform: rotate(0deg);
+  }
+}
+
+@keyframes logoAnimation {
+  0% {
+      opacity: 0;
+      transform: scale(0.5);
+  }
+  50% {
+      opacity: 1;
+      transform: scale(1.2);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Continuous rotation animation */
+@keyframes continuousRotate {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.logo-img.rotating {
+  animation: continuousRotate 1s linear infinite;
+}
+
+
 .navbar-nav .nav-link {
   font-size: 18px; /* Increase font size */
   font-weight: bold; /* Make text bold for better visibility */
@@ -51,6 +98,114 @@ body {
   margin-right: 20px; /* Increase spacing between logo and the first link */
 }
 
+/* Navbar animation */
+#navbar {
+  position: sticky;
+  top: 0;
+  background-color: #343a40;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#navbar.scrolled {
+  background-color: #23272b;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar link animation */
+.navbar-nav .nav-link {
+  position: relative;
+  color: white;
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #f8c146;
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8c146;
+  transform: scale(1.1);
+}
+
+/* Dropdown menu enhancements */
+.navbar-nav .dropdown-menu {
+  background-color: #343a40;
+  border: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+}
+
+.navbar-nav .dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.navbar-nav .dropdown-item {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .dropdown-item:hover {
+  color: #f8c146;
+  background-color: transparent;
+}
+
+/* Glitch effect */
+@keyframes glitch {
+  0% {
+      transform: translateX(0);
+      text-shadow: 2px 0 red, -2px 0 blue, 0 2px green, 0 -2px yellow;
+  }
+  20% {
+      transform: translateX(-5px);
+      text-shadow: 1px 0 red, -1px 0 blue, 0 1px green, 0 -1px yellow;
+  }
+  40% {
+      transform: translateX(5px);
+      text-shadow: 3px 0 red, -3px 0 blue, 0 3px green, 0 -3px yellow;
+  }
+  60% {
+      transform: translateX(-3px);
+      text-shadow: 2px 0 red, -2px 0 blue, 0 2px green, 0 -2px yellow;
+  }
+  80% {
+      transform: translateX(3px);
+      text-shadow: 1px 0 red, -1px 0 blue, 0 1px green, 0 -1px yellow;
+  }
+  100% {
+      transform: translateX(0);
+      text-shadow: 2px 0 red, -2px 0 blue, 0 2px green, 0 -2px yellow;
+  }
+}
+
+.glitch {
+  animation: glitch 1s infinite;
+  font-weight: bold;
+  color: white; /* Default text color */
+}
+
+/* Optional: Highlight active link */
+.nav-link.active {
+  color: #ffd700;  /* Highlight color (yellow) */
+  font-weight: bold;
+}
 .hero {
     text-align: center;
     padding: 50px;

@@ -100,6 +100,8 @@
         margin-bottom: 10px;
     }
 
+  
+
     /* Make text readable on smaller screens */
     @media (max-width: 768px) {
         .section {
@@ -173,8 +175,9 @@
 </head>
 <body>
 
-     <!-- Navbar -->
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
     <div class="container">
         <a class="navbar-brand" href="/index.html">
             <img src="/images/logo.png" alt="Logo" class="logo-img">
@@ -184,14 +187,43 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="/products.html">Products</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="/payment.html">Payment</a></li>
+                <li class="nav-item"><a class="nav-link" id="products-link" href="/products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" id="about-link" href="/about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" id="payment-link" href="/payment.html">Payment</a></li>
             </ul>
         </div>
     </div>
-  </nav>
+</nav>
+
+
+
   <script>
+
+
+
+    // Get the current page's filename
+    var currentPage = window.location.pathname.split("/").pop();
+
+    // Add the 'active' class to the relevant nav link
+    switch (currentPage) {
+        case "products.html":
+            document.getElementById("products-link").classList.add("active", "glitch");
+            break;
+        case "about.html":
+            document.getElementById("about-link").classList.add("active", "glitch");
+            break;
+        case "payment.html":
+            document.getElementById("payment-link").classList.add("active", "glitch");
+            break;
+        case "index.html":
+            document.getElementById("index-link").classList.add("active", "glitch");
+            break;
+        default:
+            break;
+    }
+
+
+
     let lastScrollTop = 0; // Store the last scroll position
 
 // Get the navbar element
