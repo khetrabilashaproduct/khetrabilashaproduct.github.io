@@ -157,110 +157,52 @@ body {
 }
 
 /* Testimonials */
-.animated-reviews {
+.customer-reviews {
     background: rgb(210,255,253);
-    background: linear-gradient(to top, rgba(210,255,253,1) 3%, rgba(255,255,255,1) 87%, rgba(249,249,249,1) 100%);
-    padding: 50px 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.animated-reviews h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-.review-container {
-    position: relative;
-    height: 200px;
-}
-
-.walker {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    animation: walkAcross 10s linear infinite;
-    animation-delay: var(--delay); /* Custom delay for each walker */
-    visibility: hidden; /* Initially hidden until animation starts */
-}
-
-.walker img {
-    height: 150px;
-    margin-right: 15px;
-    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.3));
-    animation: walkCycle 0.5s steps(2) infinite;
-}
-
-.review {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 15px 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 250px;
-}
-
-.review p {
-    font-size: 1rem;
-    color: #333;
-    margin: 0;
-}
-
-.review span {
-    display: block;
-    font-weight: bold;
-    color: #555;
-    margin-top: 5px;
-}
-
-/* Animation */
-@keyframes walkAcross {
-    0% {
-        left: -250px;
-        visibility: visible;
-    }
-    100% {
-        left: 110%;
-    }
-}
-
-/* Add specific delays for each walker */
-#boy {
-    --delay: 0s;
-}
-
-#girl {
-    --delay: 5s; /* Starts after the boy passes */
-}
-@keyframes pushReview {
-    0% {
-        left: -300px;
-        visibility: visible;
-    }
-    25% {
-        left: 30%;
-    }
-    50% {
-        left: 60%;
-    }
-    75% {
-        left: 90%;
-    }
-    100% {
-        left: 110%;
-        visibility: hidden;
-    }
-}
-
-@keyframes walkCycle {
-    0% {
-        content: url('https://cdn.pixabay.com/photo/2013/07/12/15/36/push-150175_640.png');
-    }
-    100% {
-        content: url('https://cdn.pixabay.com/photo/2013/07/12/15/36/push-150175_640.png'); /* Replace with left-leg image */
-    }
-}
-
+    background: linear-gradient(to top, rgba(210,255,253,1) 3%, rgba(255,255,255,1) 87%, rgb(249, 249, 249) 100%);
+            /* width: 90%; */
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .carousel-container {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .review-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            position: absolute;
+            width: 100%;
+        }
+        .review {
+            width: 100%;
+            max-width: 400px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-in-out;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+        .review-right {
+            transform: translateY(50px);
+        }
+        .review.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .text-center {
+            margin-bottom: 50px;
+            font-size: 2rem;
+            color: #333;
+        }
 
 /* Hero Slider */
 .hero-slider {
@@ -396,6 +338,8 @@ body {
         font-size: 1rem;
     }
 }
+
+
 
 
 @media (max-width: 768px) {
@@ -587,55 +531,132 @@ body {
     </div>
 </section>
 
-<!-- Coustomer reviews -->
-<section class="animated-reviews">
+<section class="customer-reviews">
     <h2 class="text-center">What Our Customers Say</h2>
-    <div class="review-container">
-        <!-- Boy walking with review -->
-        <div class="walker" id="boy">
-            <img src="https://icons.veryicon.com/png/o/transport/3d-car/3d-truck.png" alt="Boy holding review" />
-            <div class="review">
-                <p>"Good store, all types of cement products available here."</p>
-                <span>- Samim Khan</span>
+    <div class="carousel-container">
+        <div class="review-wrapper">
+            <div class="review review-left">
+                <p>"Fantastic product, exceeded my expectations!"</p>
+                <span>- Santosh Mallik</span>
+            </div>
+            <div class="review review-right">
+                <p>"Great customer service and quick delivery."</p>
+                <span>- Jamil khan</span>
             </div>
         </div>
-        <!-- Girl walking with review -->
-        <div class="walker" id="girl">
-            <img src="https://icons.veryicon.com/png/o/transport/3d-car/3d-truck.png" alt="Girl holding review" />
-            <div class="review">
-                <p>"Fast delivery and amazing quality!"</p>
-                <span>- Jane Doe</span>
+        <div class="review-wrapper">
+            <div class="review review-left">
+                <p>"Quality is top-notch, will buy again."</p>
+                <span>- md Akhtar</span>
+            </div>
+            <div class="review review-right">
+                <p>"Absolutely love it! Worth every penny."</p>
+                <span>- Ankita Patra</span>
+            </div>
+        </div>
+        <div class="review-wrapper">
+            <div class="review review-left">
+                <p>"This is the best experience I've had!"</p>
+                <span>- Babuli Pradhan</span>
+            </div>
+            <div class="review review-right">
+                <p>"Highly recommend to everyone I know."</p>
+                <span>- Bhairathi Swain</span>
+            </div>
+        </div>
+        <div class="review-wrapper">
+            <div class="review review-left">
+                <p>"Customer service was outstanding."</p>
+                <span>- Akbar Khan</span>
+            </div>
+            <div class="review review-right">
+                <p>"Quick and easy, very satisfied."</p>
+                <span>- Liyakat uddin</span>
+            </div>
+        </div>
+        <div class="review-wrapper">
+            <div class="review review-left">
+                <p>"Exceeded all expectations, thank you!"</p>
+                <span>- Srimanta Behera</span>
+            </div>
+            <div class="review review-right">
+                <p>"Incredible quality and fast delivery."</p>
+                <span>- Ranjan Parimanik</span>
             </div>
         </div>
     </div>
 </section>
 
+<script>
+    let reviews = document.querySelectorAll('.review-wrapper');
+    let index = 0;
+
+    function showReviews() {
+        reviews.forEach((wrapper, i) => {
+            const leftReview = wrapper.querySelector('.review-left');
+            const rightReview = wrapper.querySelector('.review-right');
+            if (i === index) {
+                leftReview.classList.add('active');
+                rightReview.classList.add('active');
+                wrapper.style.position = 'relative';
+            } else {
+                leftReview.classList.remove('active');
+                rightReview.classList.remove('active');
+                wrapper.style.position = 'absolute';
+            }
+        });
+        index = (index + 1) % reviews.length;
+    }
+    showReviews();
+    setInterval(showReviews, 5000);
+</script>
+
+    
+
+ 
 
 
 
-   
-    <!-- Footer -->
-    <div class="footer">
-        <div class="social-icons">
-            <a href="https://facebook.com" target="_blank" class="facebook" aria-label="Facebook">
-                <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://instagram.com/khetrabilashaproducts" target="_blank" class="instagram" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://youtube.com" target="_blank" class="youtube" aria-label="YouTube">
-                <i class="fab fa-youtube"></i>
-            </a>
-        </div>
-        <div class="footer-text">
-            <p>&copy; <span id="year"></span> Khetra Bilasha Products | All Rights Reserved</p>
-        </div>
+
+ <!-- footer section-->
+<div class="footer">
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" class="facebook" aria-label="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://instagram.com/khetrabilashaproducts" target="_blank" class="instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@khetrabilashaproducts" target="_blank" class="youtube" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+       
+        <a href="tel:+919337405868" class="call" aria-label="Call Us">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://wa.me/9337405868" target="_blank" class="whatsapp" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:khetrabilashaproducts@gmail.com" class="gmail" aria-label="Gmail">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://maps.app.goo.gl/bV7rW5q5XtFoVGY99" class="maps" target="_blank" aria-label="Google Maps">
+            <i class="fas fa-map-marker-alt"></i>
+        </a>
+        
     </div>
+     
+    <div class="footer-text">
+        <p>&copy; <span id="year"></span> Khetra Bilasha Products | All Rights Reserved</p>
+    </div>
+</div>
+
 
     <script src="/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> -->
      <script>
+   
         // nvabar show on up scroll
 let lastScrollTop = 0;
 const navbar = document.getElementById("navbar");
@@ -652,31 +673,6 @@ window.addEventListener("scroll", function () {
     }
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
 });
-
-// cosutomer reviews
-const reviews = [
-    { text: "Good store, all types of cement products available here.", name: "Samim Khan" },
-    { text: "Fast delivery and amazing quality!", name: "Jane Doe" },
-    { text: "Very good things are made here.", name: "EDIT BOY SOUMYA" },
-];
-
-function updateReview(walkerId, reviewIndex) {
-    const walker = document.getElementById(walkerId);
-    const review = reviews[reviewIndex % reviews.length];
-    walker.querySelector('.review p').textContent = `"${review.text}"`;
-    walker.querySelector('.review span').textContent = `- ${review.name}`;
-}
-
-let currentReviewIndex = 0;
-setInterval(() => {
-    updateReview('boy', currentReviewIndex);
-    setTimeout(() => {
-        updateReview('girl', currentReviewIndex + 1);
-    }, 5000); // Starts the girl's review update after 5 seconds
-    currentReviewIndex = (currentReviewIndex + 2) % reviews.length;
-}, 10000);
-
-
 
      </script>
     
