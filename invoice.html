@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice | Khetra Bilasha Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <!-- date  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- pdf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    
+    <!-- QR -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <style>
+
+body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f7fb;
+            margin: 0;
+        }
+
+        .container {
+            min-height: 95vh; /* Minimum height for the container */
+            background-color: #ffffff; /* Soft white */
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .watermark {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.15; /* Increased opacity for better visibility */
+            font-size: 100px;
+            color: #007bff;
+            font-weight: bold;
+            pointer-events: none;
+            z-index: 9999; /* Make sure it stays on top */
+        }
+        .col-md-8{
+            margin-left: 38%;
+            justify-content: right;
+            width: 28%;
+        }
+
+        .totals input {
+            text-align: right;
+        }
+            #productTable input[placeholder="Product Name"] {
+            width: 100%;
+            flex-grow: 2; /* Make the Product Name input box larger */
+        }
+
+        #productTable input {
+            flex-grow: 1; /* Other inputs remain standard size */
+        }
+
+        textarea {
+            overflow: hidden;
+            resize: none; /* Prevent manual resize */
+        }
+
+        .search-container {
+            margin-top: 1%;
+            display: flex;
+            justify-content: center;
+            /* margin: 30px 0; */
+        }
+
+        #searchBox {
+            width: 80%;
+            transition: all 0.3s ease-in-out;
+        }
+
+
+        #dateLabel {
+    font-size: 16px;
+    color: #333;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  #calendarButton {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  #calendarButton:hover {
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+    background-color: #f1f1f1; /* Change background on hover */
+  }
+
+  #calendarButton i {
+    transition: color 0.3s ease;
+  }
+
+  #calendarButton:hover i {
+    color: #3498db; /* Change icon color on hover */
+  }
+
+  #dateLabel:hover {
+    transform: scale(1.1); /* Slightly enlarge the text on hover */
+    color: #3498db; /* Change text color on hover */
+  }
+
+        /* Initial container setup */
+/* Style for logo container */
+#logo-container {
+    margin-right: 20px; /* Space on the right of the logo */
+    margin-top: -2%;
+}
+
+#company-logo {
+    width: 60px; /* Small size for the logo */
+    height: 60px; /* Same height to create a circle */
+    border-radius: 50%; /* Circular logo */
+    object-fit: cover; /* Ensure it fills the circle */
+}
+
+/* Style for the company name */
+h1 {
+    font-size: 28px; /* Larger font size for the company name */
+    font-weight: bold; /* Make the company name bold */
+    margin: 0;
+}
+
+/* Header flex layout adjustments */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Styles for the section under the header */
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-top: 10px; */
+}
+
+.text-end {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+    flex-grow: 1; /* Ensure this section takes up available space */
+}
+
+#invoiceNumber {
+    font-weight: bold; /* Make invoice number stand out */
+}
+
+a {
+    text-decoration: none;
+}
+i.fa {
+    color: rgb(10, 54, 110);
+}
+
+
+/* Animation to move the logo in a circular path */
+
+        @media print {
+                .btn,
+                th.action-column,
+                td.action-column {
+                display: none;
+            }
+            .watermark {
+                opacity: 0.07; /* Increase opacity slightly for better visibility in print */
+                font-size: 150px; /* Optionally increase size for better print visibility */
+                pointer-events: none; /* Ensure the watermark doesn't interfere with page interactions */
+            }
+
+            #searchBox,
+        #searchResults,
+        .btn {
+            display: none !important;
+        }
+        }
+
+        .form-row {
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: right;
+            gap: 2px;
+            margin-left: 50%;
+        }
+
+        .form-row .form-label {
+            white-space: nowrap;
+        }
+    
+
+/* sign */
+
+
+
+        @media screen and (max-width: 480px) {
+            .container{
+                 min-height: 95vh; /* Minimum height for the container */
+            }
+            .col-md-8{
+            margin-left: 0;
+            justify-content: right;
+            width: 100%;
+        }
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="search-container">
+        <input type="text" id="searchBox" class="form-control ms-2" placeholder="Enter phone number">
+        <button class="btn btn-primary ms-2" onclick="searchInvoiceByPhone()">Search</button>
+    </div>
+
+    <script>
+        // List of JSON files to search through
+        const jsonFiles = ['invoice.json', 'invoice2.json', 'invoice3.json']; //data avilable onlie on github
+        let invoices = [];
+    
+        // Fetch and combine data from multiple JSON files
+        async function fetchInvoices() {
+            invoices = [];  // Reset the invoices array
+            try {
+                const fetchPromises = jsonFiles.map(async (file) => {
+                    const response = await fetch(file);
+                    const data = await response.json();
+                    invoices = invoices.concat(data);  // Merge arrays
+                });
+                await Promise.all(fetchPromises);  // Wait for all fetches to complete
+            } catch (error) {
+                console.error('Failed to fetch invoices:', error);
+            }
+        }
+    
+        // Search by phone number
+        async function searchInvoiceByPhone() {
+            if (!invoices.length) await fetchInvoices();
+    
+            const query = document.getElementById('searchBox').value.toLowerCase();
+            const invoice = invoices.find(inv => inv.phoneNumber.toLowerCase() === query);
+    
+            if (invoice) {
+                document.getElementById('customerName').value = invoice.buyerName;
+                document.getElementById('phoneNumber').value = invoice.phoneNumber;
+                document.getElementById('totalAmount').value = invoice.totalAmount.toFixed(2);
+                document.getElementById('dateLabel').innerText = invoice.date;
+                document.getElementById('paymentStatus').value = invoice.paymentStatus.replace(/\\n/g, '\n');
+                
+                const productRows = document.getElementById('productRows');
+                productRows.innerHTML = '';
+                invoice.products.forEach(product => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${product.productName}</td>
+                        <td>${product.price}</td>
+                        <td>${product.quantity}</td>
+                        <td>${product.total}</td>
+                    `;
+                    productRows.appendChild(row);
+                });
+    
+                alert('Invoice Loaded');
+            } else {
+                alert('Invoice not found!');
+            }
+        }
+    
+        // Trigger fetch when the page loads
+        document.addEventListener('DOMContentLoaded', fetchInvoices);
+    </script>
+    
+
+    <div id="invoiceContent">
+            <div class="container position-relative">
+                
+                <header class="d-flex justify-content-between align-items-start mb-4">
+                    <!-- Left side: Logo -->
+                    <div id="logo-container" class="d-flex align-items-center">
+                        <img id="company-logo" src="logo.png" alt="Company Logo">
+                    </div>
+                    
+                    <!-- Center: Company Name -->
+                    <div class="text-center flex-grow-1">
+                        <h1 class="text-primary">Khetra Bilasha Products</h1>
+                       
+                    </div>
+                    
+                    <!-- Right side: Invoice Number -->
+                    <div class="text-end">
+                        <p>
+                            <span id="dateLabel" class="me-2"></span>
+                            <button id="calendarButton" class="btn btn-light btn-sm">
+                                <i class="bi bi-calendar3"></i>
+                            </button>
+                        </p>
+                        
+                    </div>
+                </header>
+                
+                <!-- Under the header: Date, Contact, Website, Owner Name -->
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <p><strong><i class="fa fa-user-circle animate__animated animate__rubberBand"></i> Owner:</strong> Sukanta Behera</p>
+                        <p><strong>   <i class="fa fa-phone animate__animated animate__rubberBand"></i> Contact:</strong> 9337405868</p>
+                        <p><strong><i class="fa fa-globe animate__animated animate__rubberBand"></i>
+                            Website:</strong> <a href="https://khetrabilashaproduct.github.io/" target="_blank">khetrabilashaproduct.github.io</a></p>
+                    </div>
+                    <div class="text-end">
+                    
+                        <div class="form-row mb-3">
+                            <label for="customerName" class="form-label"><i class="fa fa-shopping-cart animate__animated animate__rubberBand"></i>
+
+                                Buyer Name:</label>
+                            <input type="text" id="customerName" class="form-control" placeholder="Enter buyer name" required>
+                            <label for="phoneNumber" class="form-label"><i class="fa fa-mobile-alt animate__animated animate__rubberBand"></i> Phone Number:</label>
+                            <input type="tel" id="phoneNumber" class="form-control" placeholder="Enter phone number" required>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <form id="invoiceForm">
+                    
+
+                    <table class="table table-bordered" id="productTable">
+                        <thead>
+                            <tr>
+                                <th><i class="fa fa-cube"></i> Product Name</th>
+                                <th><i class="fa fa-rupee-sign"></i> Price</th>
+                                <th><i class="fa fa-cubes"></i> Quantity</th>
+                                <th><i class="fa fa-calculator"></i> Total</th>
+                                <th class="action-column">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productRows">
+                            <tr>
+                                <td>
+                                    <div class="input-group">
+                                        <!-- Text input for product name -->
+                                        <input type="text" class="form-control" placeholder="Product Name" id="productName" required>
+                                        <!-- Dropdown button inside the input box on the right -->
+                                        <button class="btn btn-secondary dropdown-toggle-btn" type="button" id="dropdownButton" onclick="toggleDropdown()">
+                                            <span id="dropdownIcon">^</span>
+                                        </button>
+                                        <!-- Dropdown menu -->
+                                        <ul class="dropdown-menu" id="productDropdown">
+                                            <li><a class="dropdown-item" href="#">Product 1</a></li>
+                                            <li><a class="dropdown-item" href="#">Product 2</a></li>
+                                            <li><a class="dropdown-item" href="#">Product 3</a></li>
+                                            <li><a class="dropdown-item" href="#">Product 4</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td><input type="number" class="form-control" placeholder="Price" oninput="calculateRowTotal(this)" required></td>
+                                <td><input type="number" class="form-control" placeholder="Quantity" oninput="calculateRowTotal(this)" required></td>
+                                <td><input type="number" class="form-control" placeholder="Total" readonly></td>
+                                <td class="action-column"><button type="button" class="btn btn-danger btn-sm" onclick="deleteRow(this)"><i class="fa fa-trash animate__animated animate__rubberBand"></i> Delete</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <!-- Add CSS for the dropdown and animation -->
+                    <style>
+                        .input-group {
+                            position: relative;
+                        }
+                    
+                        .input-group .form-control {
+                            padding-right: 30px; /* Space for the dropdown button */
+                        }
+                    
+                        .dropdown-menu {
+                            display: none;
+                            position: absolute;
+                            top: 100%;
+                            left: 0;
+                            width: 100%;
+                            animation: dropdownFadeIn 0.3s ease-in-out;
+                            background-color: white;
+                            border: 1px solid #ccc;
+                            z-index: 1000;
+                        }
+                    
+                        .dropdown-menu.show {
+                            display: block;
+                        }
+                    
+                        @keyframes dropdownFadeIn {
+                            from {
+                                opacity: 0;
+                                transform: translateY(-10px);
+                            }
+                            to {
+                                opacity: 1;
+                                transform: translateY(0);
+                            }
+                        }
+                    
+                        /* Rotate the icon when dropdown is active */
+                        .rotate {
+                            transform: rotate(180deg);
+                            transition: transform 0.3s ease;
+                        }
+                    
+                        .dropdown-item {
+                            cursor: pointer;
+                        }
+                    
+                        /* Style for the dropdown button inside the input box */
+                        .input-group .btn {
+                            position: absolute;
+                            top: 50%;
+                            right: 5px;
+                            transform: translateY(-50%);
+                            border: none;
+                            background: none;
+                        }
+                    </style>
+                    
+                    <!-- JavaScript to handle dropdown and animation -->
+                    <script>
+                        // Toggle dropdown visibility and rotate icon
+                        function toggleDropdown() {
+                            const dropdown = document.getElementById('productDropdown');
+                            const icon = document.getElementById('dropdownIcon');
+                    
+                            // Toggle dropdown visibility
+                            dropdown.classList.toggle('show');
+                    
+                            // Rotate the icon based on dropdown state
+                            if (dropdown.classList.contains('show')) {
+                                icon.classList.add('rotate');
+                                icon.textContent = 'v';
+                            } else {
+                                icon.classList.remove('rotate');
+                                icon.textContent = '^';
+                            }
+                        }
+                    
+                        // Close the dropdown when clicking outside
+                        window.addEventListener('click', function(event) {
+                            const dropdown = document.getElementById('productDropdown');
+                            const button = document.getElementById('dropdownButton');
+                            const inputField = document.getElementById('productName');
+                            const icon = document.getElementById('dropdownIcon');
+                    
+                            if (!dropdown.contains(event.target) && event.target !== button && event.target !== inputField) {
+                                dropdown.classList.remove('show');
+                                icon.classList.remove('rotate');
+                                icon.textContent = '^'; // Reset icon
+                            }
+                        });
+                    
+                        // Handle product selection from dropdown
+                        document.querySelectorAll('.dropdown-item').forEach(function(item) {
+                            item.addEventListener('click', function() {
+                                const productNameInput = document.getElementById('productName');
+                                productNameInput.value = item.textContent; // Set product name in input
+                                document.getElementById('productDropdown').classList.remove('show');
+                                
+                                // Reset the icon
+                                const icon = document.getElementById('dropdownIcon');
+                                icon.classList.remove('rotate');
+                                icon.textContent = '^';
+                            });
+                        });
+                    </script>
+                    
+                    <button type="button" class="btn btn-primary mb-3" onclick="addRow()"><i class="fa fa-plus animate__animated animate__rubberBand"></i>
+                        Add Row</button>
+
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-4">
+                            <label for="qrCode" class="form-label">.</label>
+                            <canvas id="qrCanvas" class="border"></canvas>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label for="totalAmount" class="form-label">Total Amount:</label>
+                                    <input type="number" id="totalAmount" class="form-control" readonly >
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="paymentStatus" class="form-label">Payment Status: </span></label>
+                                    <textarea id="paymentStatus" rows="2" class="form-control" placeholder="Paid/On Hold/Half Paid" oninput="resizeTextarea(this)" required></textarea>
+                                </div>
+                            </div>
+                            
+                           
+                                
+                            
+                        </div>
+                    </div>
+                    
+
+                    <div class="row mb-3">
+                        <div class="col-md-6 text-center">
+                            <p><strong>Seller Signature</strong></p>
+                            <hr style="border-top: 1px solid #000; width: 80%; margin: 0 auto; padding: 0px;">
+                            <!-- <img src="path_to_signature_image.png" alt="Seller Signature" style="max-width: 200px; border-top: 0px solid #000; padding: 20px;"> -->
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <p><strong>Buyer Signature</strong></p>
+                            <hr style="border-top: 1px solid #000; width: 80%; margin: 0 auto; padding: 20px;">
+                        </div>
+                        
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2">
+                        <button type="button" class="btn btn-success" onclick="generateQRCode()">Generate  <i class="bi bi-qr-code animate__animated animate__flip"></i> QR</button>
+                        <button type="button" class="btn btn-success" onclick="printInvoice()"> <i class="bi bi-printer animate__animated animate__rubberBand"></i>Print</button>
+                        <!-- <button class="btn btn-success" onclick="generatePDF()">Share via WhatsApp</button> -->
+                        <button type="button" class="btn btn-primary" onclick="saveInvoice()"><i class="bi bi-save animate__animated animate__pulse animate__infinite"></i></button>
+                        <button type="button" class="btn btn-secondary" onclick="clearForm()"> <i class="bi bi-eraser animate__animated animate__rubberBand"></i> Clear</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+
+    <script>
+        // Set the default date to today
+    const defaultDate = new Date().toLocaleDateString('en-GB');
+    document.getElementById('dateLabel').innerText = defaultDate;
+
+    // Initialize Flatpickr
+    const dateLabel = document.getElementById('dateLabel');
+    const calendarButton = document.getElementById('calendarButton');
+    
+    flatpickr(calendarButton, {
+        dateFormat: "d/m/Y", // Format: dd/mm/yyyy
+        defaultDate: new Date(), // Default to today
+        inline: false, // Show calendar on click only
+        onChange: function(selectedDates, dateStr) {
+            dateLabel.innerText = dateStr; // Update dateLabel with the selected date
+        }
+    });
+        function resizeTextarea(textarea) {
+        textarea.style.height = 'auto'; // Reset the height to auto
+        textarea.style.height = `${textarea.scrollHeight}px`; // Set the height to the scrollHeight
+    }
+        function addRow() {
+            const table = document.getElementById('productRows');
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td><input type="text" class="form-control" placeholder="Product Name" required></td>
+                <td><input type="number" class="form-control" placeholder="Price" oninput="calculateRowTotal(this)" required></td>
+                <td><input type="number" class="form-control" placeholder="Quantity" oninput="calculateRowTotal(this)" required></td>
+                <td><input type="number" class="form-control" placeholder="Total" readonly></td>
+                <td class="action-column"><button type="button" class="btn btn-danger btn-sm" onclick="deleteRow(this)">Delete</button></td>
+            `;
+            table.appendChild(row);
+        }
+
+        function deleteRow(button) {
+            button.closest('tr').remove();
+            calculateTotalAmount();
+        }
+
+        function calculateRowTotal(input) {
+            const row = input.closest('tr');
+            const price = parseFloat(row.querySelector('input[placeholder="Price"]').value) || 0;
+            const quantity = parseFloat(row.querySelector('input[placeholder="Quantity"]').value) || 0;
+            row.querySelector('input[placeholder="Total"]').value = (price * quantity).toFixed(2);
+            calculateTotalAmount();
+        }
+
+        function calculateTotalAmount() {
+            let total = 0;
+            document.querySelectorAll('input[placeholder="Total"]').forEach(input => {
+                total += parseFloat(input.value) || 0;
+            });
+            document.getElementById('totalAmount').value = total.toFixed(2);
+        }
+
+        
+
+        function generateQRCode() {
+    const buyerName = document.getElementById('customerName').value || "Unknown Buyer";
+    const phoneNumber = document.getElementById('phoneNumber').value || "Unknown Phone";
+    const totalAmount = document.getElementById('totalAmount').value || "0.00";
+    const factoryName = "Khetra Bilasha Products";
+    const sellerName = "Sukanta Behera";
+
+
+    const qrContent = `Company: ${factoryName}\nBuyer: ${buyerName}\nPhone: ${phoneNumber}\nTotal: ₹${totalAmount}\nSeller: ${sellerName}`;
+
+    
+    const qr = new QRious({
+        element: document.getElementById('qrCanvas'),
+        value: qrContent,
+        size: 200, // Adjust size as needed
+        background: 'white',
+        foreground: 'black',
+    });
+}
+
+
+function printInvoice() {
+    const buyerName = document.getElementById('customerName').value || "Invoice";
+    const dateLabel = document.getElementById('dateLabel').innerText || "Date";
+    document.title = `Invoice - ${buyerName} (${dateLabel})`; // Temporarily set the document title
+    window.print(); // Trigger print dialog
+}
+
+function saveInvoice() {
+    // Collect data from the form
+    const invoiceData = {
+        buyerName: document.getElementById('customerName').value,
+        phoneNumber: document.getElementById('phoneNumber').value,
+        date: document.getElementById('dateLabel').innerText,
+        totalAmount: parseFloat(document.getElementById('totalAmount').value),
+        paymentStatus: document.getElementById('paymentStatus').value,
+        products: []
+    };
+
+    // Collect product data
+    document.querySelectorAll('#productTable tbody tr').forEach(row => {
+        const productName = row.querySelector('input[placeholder="Product Name"]').value;
+        const price = parseFloat(row.querySelector('input[placeholder="Price"]').value) || 0;
+        const quantity = parseInt(row.querySelector('input[placeholder="Quantity"]').value) || 0;
+        const total = parseFloat(row.querySelector('input[placeholder="Total"]').value) || 0;
+
+        invoiceData.products.push({
+            productName,
+            price,
+            quantity,
+            total
+        });
+    });
+
+    // Convert to JSON
+    const jsonContent = JSON.stringify(invoiceData, null, 4);
+
+    // Create a Blob and generate a download link
+    const blob = new Blob([jsonContent], { type: 'application/json' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'invoice.json'; // Filename for the downloaded file
+    link.click(); // Trigger the download
+}
+    
+function clearForm() {
+        // Clear text inputs
+        document.getElementById('customerName').value = '';
+        document.getElementById('phoneNumber').value = '';
+        document.getElementById('paymentStatus').value = '';
+        document.getElementById('totalAmount').value = '';
+
+        // Reset date label to default date
+        const defaultDate = new Date().toLocaleDateString('en-GB');
+        document.getElementById('dateLabel').innerText = defaultDate;
+
+        // Reset the product table to one row
+        const productRows = document.getElementById('productRows');
+        productRows.innerHTML = `
+            <tr>
+                <td><input type="text" class="form-control" placeholder="Product Name" required></td>
+                <td><input type="number" class="form-control" placeholder="Price" oninput="calculateRowTotal(this)" required></td>
+                <td><input type="number" class="form-control" placeholder="Quantity" oninput="calculateRowTotal(this)" required></td>
+                <td><input type="number" class="form-control" placeholder="Total" readonly></td>
+                <td class="action-column"><button type="button" class="btn btn-danger btn-sm" onclick="deleteRow(this)">Delete</button></td>
+            </tr>
+        `;
+
+        // Clear QR code canvas
+        const qrCanvas = document.getElementById('qrCanvas');
+        const qrContext = qrCanvas.getContext('2d');
+        qrContext.clearRect(0, 0, qrCanvas.width, qrCanvas.height);
+    }
+
+</script>
+</body>
+
+</html>
