@@ -17,6 +17,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     
     <!-- QR -->
+    <script src="https://cdn.rawgit.com/neocotic/qrious/4.0.0/dist/QRious.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
@@ -351,7 +354,7 @@ i.fa {
                     <table class="table table-bordered" id="productTable">
                         <thead>
                             <tr>
-                                <th><i class="fa fa-cube"></i> Product Name</th>
+                                <th><i class="fa fa-cube"></i> Product / Service </th>
                                 <th><i class="fa fa-rupee-sign"></i> Price</th>
                                 <th><i class="fa fa-cubes"></i> Quantity</th>
                                 <th><i class="fa fa-calculator"></i> Total</th>
@@ -621,8 +624,7 @@ i.fa {
             document.getElementById('totalAmount').value = total.toFixed(2);
         }
 
-        
-
+    
         function generateQRCode() {
     const buyerName = document.getElementById('customerName').value || "Unknown Buyer";
     const phoneNumber = document.getElementById('phoneNumber').value || "Unknown Phone";
@@ -630,10 +632,19 @@ i.fa {
     const factoryName = "Khetra Bilasha Products";
     const sellerName = "Sukanta Behera";
 
+    // Concatenate all details into a single string
+    const detailsString = `Company: ${factoryName}\nBuyer: ${buyerName}\nPhone: ${phoneNumber}\nTotal: ₹${totalAmount}\nSeller: ${sellerName}`;
 
-    const qrContent = `Company: ${factoryName}\nBuyer: ${buyerName}\nPhone: ${phoneNumber}\nTotal: ₹${totalAmount}\nSeller: ${sellerName}`;
+    // Convert the string to a UTF-8 encoded byte array
+    const encryptionKey = "sri";
 
+    // Convert the byte array to base64
+    const encodedDetails = CryptoJS.AES.encrypt(detailsString, encryptionKey).toString();
+
+    // Construct the QR content with both the human-readable details and base64 encoded string
+    const qrContent = `Details:\nCompany: ${factoryName}\nBuyer: ${buyerName}\nPhone: ${phoneNumber}\nTotal: ₹${totalAmount}\nSeller: ${sellerName}\nSignature:\n${encodedDetails}`;
     
+    // Generate the QR code
     const qr = new QRious({
         element: document.getElementById('qrCanvas'),
         value: qrContent,
@@ -642,6 +653,7 @@ i.fa {
         foreground: 'black',
     });
 }
+
 
 
 function printInvoice() {

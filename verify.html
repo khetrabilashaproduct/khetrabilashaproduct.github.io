@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification with Progress Bar</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            overflow: hidden;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        input, button {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            font-weight: bold;
+            background-color: #32de84;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #17B169;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            background: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 20px 0;
+            height: 20px;
+            display: none;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #007bff, #00d4ff);
+            width: 0;
+            transition: width 0.1s ease-out;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            word-wrap: break-word;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .output.success {
+            border-color: #28a745;
+            background: #d4edda;
+            color: #155724;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .output.error {
+            border-color: #dc3545;
+            background: #f8d7da;
+            color: #721c24;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Verify Digital Signature</h2>
+    <input type="text" id="encryptedData" placeholder="Enter Digital Signature Key">
+    <input type="password" id="decryptionKey" placeholder="Enter Decryption Key">
+    <button onclick="startVerification()">Verify</button>
+
+    <div class="progress-bar-container" id="progressBarContainer">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="output" id="decryptedOutput"></div>
+</div>
+
+<script>
+    function startVerification() {
+        const progressBarContainer = document.getElementById("progressBarContainer");
+        const progressBar = document.getElementById("progressBar");
+        const outputDiv = document.getElementById("decryptedOutput");
+
+        // Reset output and progress bar
+        outputDiv.className = 'output';
+        outputDiv.textContent = '';
+        progressBar.style.width = '0%';
+        progressBarContainer.style.display = 'block';
+
+        // Simulate progress
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 10; // Increment by 10%
+            progressBar.style.width = `${progress}%`;
+
+            if (progress >= 100) {
+                clearInterval(interval);
+                verifyDecryption();
+            }
+        }, 200); // Adjust timing for total duration (200ms per step for 2 seconds)
+    }
+
+    function verifyDecryption() {
+        const encryptedData = document.getElementById('encryptedData').value;
+        const decryptionKey = document.getElementById('decryptionKey').value;
+        const outputDiv = document.getElementById('decryptedOutput');
+
+        try {
+            // Decrypt the encrypted string
+            const bytes = CryptoJS.AES.decrypt(encryptedData, decryptionKey);
+            const originalText = bytes.toString(CryptoJS.enc.Utf8);
+
+            if (originalText) {
+                // Ensure each detail is on its own line
+                const formattedText = originalText
+                    .split('\n') // Split lines
+                    .map(line => `<div>${line}</div>`) // Wrap each line in a div for better styling
+                    .join('');
+                outputDiv.innerHTML = formattedText;
+                outputDiv.classList.add('success');
+            } else {
+                outputDiv.textContent = "Invalid decryption key or corrupted data.";
+                outputDiv.classList.add('error');
+            }
+        } catch (e) {
+            outputDiv.textContent = "Decryption failed!";
+            outputDiv.classList.add('error');
+        }
+    }
+</script>
+
+</body>
+</html>
