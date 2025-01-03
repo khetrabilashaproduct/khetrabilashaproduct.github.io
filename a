@@ -1,0 +1,48 @@
+// <!-- JavaScript to handle dropdown and animation -->
+
+    // Toggle dropdown visibility and rotate icon
+    function toggleDropdown() {
+        const dropdown = document.getElementById('productDropdown');
+        const icon = document.getElementById('dropdownIcon');
+
+        // Toggle dropdown visibility
+        dropdown.classList.toggle('show');
+
+        // Rotate the icon based on dropdown state
+        if (dropdown.classList.contains('show')) {
+            icon.classList.add('rotate');
+            icon.textContent = 'v';
+        } else {
+            icon.classList.remove('rotate');
+            icon.textContent = '^';
+        }
+    }
+
+    // Close the dropdown when clicking outside
+    window.addEventListener('click', function(event) {
+        const dropdown = document.getElementById('productDropdown');
+        const button = document.getElementById('dropdownButton');
+        const inputField = document.getElementById('productName');
+        const icon = document.getElementById('dropdownIcon');
+
+        if (!dropdown.contains(event.target) && event.target !== button && event.target !== inputField) {
+            dropdown.classList.remove('show');
+            icon.classList.remove('rotate');
+            icon.textContent = '^'; // Reset icon
+        }
+    });
+
+    // Handle product selection from dropdown
+    document.querySelectorAll('.dropdown-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            const productNameInput = document.getElementById('productName');
+            productNameInput.value = item.textContent; // Set product name in input
+            document.getElementById('productDropdown').classList.remove('show');
+            
+            // Reset the icon
+            const icon = document.getElementById('dropdownIcon');
+            icon.classList.remove('rotate');
+            icon.textContent = '^';
+        });
+    });
+              
