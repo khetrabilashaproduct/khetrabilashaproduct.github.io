@@ -120,6 +120,66 @@ body {
     color: #3498db; /* Change text color on hover */
   }
 
+/* #############################  drop down menu*/
+
+.input-group {
+    position: relative;
+}
+
+.input-group .form-control {
+    padding-right: 30px; /* Space for the dropdown button */
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    animation: dropdownFadeIn 0.3s ease-in-out;
+    background-color: rgb(253, 248, 248);
+    border: 1px solid #ebebeb;
+    z-index: 1000;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Rotate the icon when dropdown is active */
+.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.dropdown-item {
+    cursor: pointer;
+
+}
+
+/* Style for the dropdown button inside the input box */
+.input-group .btn {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    border: none;
+    background: black;
+}
+
+
+
   /* ############## footer */
 /* Footer styles */
 .footer {
@@ -413,111 +473,9 @@ i.fa {
                     </table>
                     
                     <!-- Add CSS for the dropdown and animation -->
-                    <style>
-                        .input-group {
-                            position: relative;
-                        }
                     
-                        .input-group .form-control {
-                            padding-right: 30px; /* Space for the dropdown button */
-                        }
                     
-                        .dropdown-menu {
-                            display: none;
-                            position: absolute;
-                            top: 100%;
-                            left: 0;
-                            width: 100%;
-                            animation: dropdownFadeIn 0.3s ease-in-out;
-                            background-color: white;
-                            border: 1px solid #ccc;
-                            z-index: 1000;
-                        }
-                    
-                        .dropdown-menu.show {
-                            display: block;
-                        }
-                    
-                        @keyframes dropdownFadeIn {
-                            from {
-                                opacity: 0;
-                                transform: translateY(-10px);
-                            }
-                            to {
-                                opacity: 1;
-                                transform: translateY(0);
-                            }
-                        }
-                    
-                        /* Rotate the icon when dropdown is active */
-                        .rotate {
-                            transform: rotate(180deg);
-                            transition: transform 0.3s ease;
-                        }
-                    
-                        .dropdown-item {
-                            cursor: pointer;
-                        }
-                    
-                        /* Style for the dropdown button inside the input box */
-                        .input-group .btn {
-                            position: absolute;
-                            top: 50%;
-                            right: 5px;
-                            transform: translateY(-50%);
-                            border: none;
-                            background: none;
-                        }
-                    </style>
-                    
-                    <!-- JavaScript to handle dropdown and animation -->
-                    <script>
-                        // Toggle dropdown visibility and rotate icon
-                        function toggleDropdown() {
-                            const dropdown = document.getElementById('productDropdown');
-                            const icon = document.getElementById('dropdownIcon');
-                    
-                            // Toggle dropdown visibility
-                            dropdown.classList.toggle('show');
-                    
-                            // Rotate the icon based on dropdown state
-                            if (dropdown.classList.contains('show')) {
-                                icon.classList.add('rotate');
-                                icon.textContent = 'v';
-                            } else {
-                                icon.classList.remove('rotate');
-                                icon.textContent = '^';
-                            }
-                        }
-                    
-                        // Close the dropdown when clicking outside
-                        window.addEventListener('click', function(event) {
-                            const dropdown = document.getElementById('productDropdown');
-                            const button = document.getElementById('dropdownButton');
-                            const inputField = document.getElementById('productName');
-                            const icon = document.getElementById('dropdownIcon');
-                    
-                            if (!dropdown.contains(event.target) && event.target !== button && event.target !== inputField) {
-                                dropdown.classList.remove('show');
-                                icon.classList.remove('rotate');
-                                icon.textContent = '^'; // Reset icon
-                            }
-                        });
-                    
-                        // Handle product selection from dropdown
-                        document.querySelectorAll('.dropdown-item').forEach(function(item) {
-                            item.addEventListener('click', function() {
-                                const productNameInput = document.getElementById('productName');
-                                productNameInput.value = item.textContent; // Set product name in input
-                                document.getElementById('productDropdown').classList.remove('show');
-                                
-                                // Reset the icon
-                                const icon = document.getElementById('dropdownIcon');
-                                icon.classList.remove('rotate');
-                                icon.textContent = '^';
-                            });
-                        });
-                    </script>
+                   
                     
                     <button type="button" class="btn btn-primary mb-3" onclick="addRow()"><i class="fa fa-plus animate__animated animate__rubberBand"></i>
                         Add Row</button>
@@ -558,7 +516,9 @@ i.fa {
                             <p><strong>Buyer Signature</strong></p>
                             <hr style="border-top: 1px solid #000; width: 80%; margin: 0 auto; padding: 20px;">
                         </div>
-                        
+                        <!-- <div class="footer">
+                            <div style="color: red;" class="namaste-icon">🙏</div>
+                        </div> -->
                     </div>
 
                     <div class="d-flex justify-content-end gap-2">
@@ -568,26 +528,65 @@ i.fa {
                         <button type="button" class="btn btn-primary" onclick="saveInvoice()"><i class="bi bi-save animate__animated animate__pulse animate__infinite"></i></button>
                         <button type="button" class="btn btn-secondary" onclick="clearForm()"> <i class="bi bi-eraser animate__animated animate__rubberBand"></i> Clear</button>
                     </div>
-                </form>
-
-
-                <div class="footer">
-                    <div style="color: red;" class="namaste-icon">🙏</div>
-                </div>
+                    
+                </form>      
                 
-            </div>
-
-
-
-            
-        
+            </div>        
     </div>
 
 
-
-    
-
     <script>
+
+// <!-- JavaScript to handle dropdown and animation -->
+
+    // Toggle dropdown visibility and rotate icon
+    function toggleDropdown() {
+        const dropdown = document.getElementById('productDropdown');
+        const icon = document.getElementById('dropdownIcon');
+
+        // Toggle dropdown visibility
+        dropdown.classList.toggle('show');
+
+        // Rotate the icon based on dropdown state
+        if (dropdown.classList.contains('show')) {
+            icon.classList.add('rotate');
+            icon.textContent = 'v';
+        } else {
+            icon.classList.remove('rotate');
+            icon.textContent = '^';
+        }
+    }
+
+    // Close the dropdown when clicking outside
+    window.addEventListener('click', function(event) {
+        const dropdown = document.getElementById('productDropdown');
+        const button = document.getElementById('dropdownButton');
+        const inputField = document.getElementById('productName');
+        const icon = document.getElementById('dropdownIcon');
+
+        if (!dropdown.contains(event.target) && event.target !== button && event.target !== inputField) {
+            dropdown.classList.remove('show');
+            icon.classList.remove('rotate');
+            icon.textContent = '^'; // Reset icon
+        }
+    });
+
+    // Handle product selection from dropdown
+    document.querySelectorAll('.dropdown-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            const productNameInput = document.getElementById('productName');
+            productNameInput.value = item.textContent; // Set product name in input
+            document.getElementById('productDropdown').classList.remove('show');
+            
+            // Reset the icon
+            const icon = document.getElementById('dropdownIcon');
+            icon.classList.remove('rotate');
+            icon.textContent = '^';
+        });
+    });
+              
+
+
         // Set the default date to today
     const defaultDate = new Date().toLocaleDateString('en-GB');
     document.getElementById('dateLabel').innerText = defaultDate;
@@ -612,14 +611,32 @@ i.fa {
             const table = document.getElementById('productRows');
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td><input type="text" class="form-control" placeholder="Product Name" required></td>
+                <td><div class="input-group">
+                                        <!-- Text input for product name -->
+                                        <input type="text" class="form-control" placeholder="Product Name" id="productName" required>
+                                        <!-- Dropdown button inside the input box on the right -->
+                                        <button class="btn btn-secondary dropdown-toggle-btn" type="button" id="dropdownButton" onclick="toggleDropdown()">
+                                            <span id="dropdownIcon">^</span>
+                                        </button>
+                                        <!-- Dropdown menu -->
+                                        <ul class="dropdown-menu" id="productDropdown">
+                                            <li><a class="dropdown-item" href="#">Product 1</a></li>
+                                            <li><a class="dropdown-item" href="#">Product 2</a></li>
+                                            <li><a class="dropdown-item" href="#">Product 3</a></li>
+                                            <li><a class="dropdown-item" href="#">Product 4</a></li>
+                                        </ul>
+                                    </div></td>
+                                    
                 <td><input type="number" class="form-control" placeholder="Price" oninput="calculateRowTotal(this)" required></td>
                 <td><input type="number" class="form-control" placeholder="Quantity" oninput="calculateRowTotal(this)" required></td>
                 <td><input type="number" class="form-control" placeholder="Total" readonly></td>
                 <td class="action-column"><button type="button" class="btn btn-danger btn-sm" onclick="deleteRow(this)">Delete</button></td>
             `;
             table.appendChild(row);
+            
         }
+
+        
 
         function deleteRow(button) {
             button.closest('tr').remove();
@@ -642,7 +659,7 @@ i.fa {
             document.getElementById('totalAmount').value = total.toFixed(2);
         }
 
-        
+
 
         function generateQRCode() {
     const buyerName = document.getElementById('customerName').value || "Unknown Buyer";
