@@ -1,105 +1,131 @@
+
 [
     {
-        "id": 1,
-        "buyerName": "John Doe",
-        "phoneNumber": "1234567890",
-        "date": "01/01/2025",
-        "paymentStatus": "Paid \n sdfsgg",
-        "totalAmount": 450.00,
-        "products": [
-            {
-                "productName": "Cement",
-                "price": 150,
-                "quantity": 2,
-                "total": 300
-            },
-            {
-                "productName": "Sand",
-                "price": 50,
-                "quantity": 3,
-                "total": 150
-            }
-        ]
+      "id": 1,
+      "buyerName": "John Doe",
+      "phoneNumber": "1234567890",
+      "date": "01/01/2025",
+      "paymentStatus": "Paid \n sdfsgg",
+      "totalAmount": 450,
+      "products": [
+        {
+          "productName": "Cement",
+          "price": 150,
+          "quantity": 2,
+          "total": 300
+        },
+        {
+          "productName": "Sand",
+          "price": 50,
+          "quantity": 3,
+          "total": 150
+        }
+      ]
     },
     {
-        "id": 2,
-        "buyerName": "Jane Smith",
-        "phoneNumber": "9876543210",
-        "date": "02/01/2025",
-        "paymentStatus": "On Hold",
-        "totalAmount": 1200.00,
-        "products": [
-            {
-                "productName": "Bricks",
-                "price": 6,
-                "quantity": 200,
-                "total": 1200
-            }
-        ]
+      "id": 2,
+      "buyerName": "Jane Smith",
+      "phoneNumber": "9876543210",
+      "date": "02/01/2025",
+      "paymentStatus": "On Hold",
+      "totalAmount": 1200,
+      "products": [
+        {
+          "productName": "Bricks",
+          "price": 6,
+          "quantity": 200,
+          "total": 1200
+        }
+      ]
     },
     {
-        "id": 3,
-        "buyerName": "Alice Johnson",
-        "phoneNumber": "1122334455",
-        "date": "03/01/2025",
-        "paymentStatus": "Paid",
-        "totalAmount": 800.00,
-        "products": [
-            {
-                "productName": "Gravel",
-                "price": 40,
-                "quantity": 10,
-                "total": 400
-            },
-            {
-                "productName": "Cement",
-                "price": 100,
-                "quantity": 4,
-                "total": 400
-            }
-        ]
+      "id": 3,
+      "buyerName": "Alice Johnson",
+      "phoneNumber": "1122334455",
+      "date": "03/01/2025",
+      "paymentStatus": "Paid",
+      "totalAmount": 800,
+      "products": [
+        {
+          "productName": "Gravel",
+          "price": 40,
+          "quantity": 10,
+          "total": 400
+        },
+        {
+          "productName": "Cement",
+          "price": 100,
+          "quantity": 4,
+          "total": 400
+        }
+      ]
     },
-
-    {   "id": 4,
-        "buyerName": "Srimanta Behera",
-        "phoneNumber": "7735854058",
-        "date": "03/01/2025",
-        "totalAmount": 4880,
-        "paymentStatus": "Paid",
-        "products": [
-            {
-                "productName": "Nanda 3.6 ft",
-                "price": 300,
-                "quantity": 5,
-                "total": 1500
-            },
-            {
-                "productName": "duara bandha ",
-                "price": 800,
-                "quantity": 3,
-                "total": 2400
-            },
-            {
-                "productName": "Skylight 12/18",
-                "price": 8,
-                "quantity": 60,
-                "total": 480
-            },
-            {
-                "productName": "chuli",
-                "price": 150,
-                "quantity": 2,
-                "total": 300
-            },
-            {
-                "productName": "skylight 12/12",
-                "price": 4,
-                "quantity": 50,
-                "total": 200
-            }
-        ]
-}
-
+    {
+      "id": 4,
+      "buyerName": "Srimanta Behera",
+      "phoneNumber": "7735854058",
+      "date": "03/01/2025",
+      "totalAmount": 4880,
+      "paymentStatus": "Paid",
+      "products": [
+        {
+          "productName": "Nanda 3.6 ft",
+          "price": 300,
+          "quantity": 5,
+          "total": 1500
+        },
+        {
+          "productName": "duara bandha ",
+          "price": 800,
+          "quantity": 3,
+          "total": 2400
+        },
+        {
+          "productName": "Skylight 12/18",
+          "price": 8,
+          "quantity": 60,
+          "total": 480
+        },
+        {
+          "productName": "chuli",
+          "price": 150,
+          "quantity": 2,
+          "total": 300
+        },
+        {
+          "productName": "skylight 12/12",
+          "price": 4,
+          "quantity": 50,
+          "total": 200
+        }
+      ]
+    },
+    { "id": 5,
+      "buyerName": "Monronjon Babu",
+      "phoneNumber": "9777126928",
+      "date": "03/01/2025",
+      "totalAmount": 46400,
+      "paymentStatus": "2000 -Advance \n8000 -13.12.24\n4000 -14.12.24\n8000 -19.12.24\n11,200 -31.12.24 \n10200 - 03.01.25 (gpay)\n200 - 03.01.25 (cash)\n",
+      "products": [
+          {
+              "productName": "Nanda 5.ft ",
+              "price": 800,
+              "quantity": 28,
+              "total": 22400
+          },
+          {
+              "productName": "Plate 5.ft`",
+              "price": 1000,
+              "quantity": 4,
+              "total": 4000
+          },
+          {
+              "productName": "Tanki Kholiba",
+              "price": 5000,
+              "quantity": 4,
+              "total": 20000
+          }
+      ]
+  }
     
 ]
-
