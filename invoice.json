@@ -148,6 +148,46 @@
             "total": 200
         }
     ]
+},
+{
+  "id": "U2FsdGVkX196Q4kPUo48CFpYzJIoaINXrshu5EmCDRj362+aXAzl0BDozR7Y88k5a1ZXwr3+mFcOF8J3jaNa+3eZWNMkpmfqEfRwkAmkUEB5Fcfk/qVdHnpOkRD7F4HC6CSkRizPPY0kxskDvAMRLeHs9DPRFDDaKSJEZgicQ0o=",
+  "buyerName": "Subrata Sahoo",
+  "phoneNumber": "6371668612",
+  "date": "04/01/2025",
+  "totalAmount": 19475,
+  "paymentStatus": "Paid",
+  "products": [
+      {
+          "productName": "Duara Bandha",
+          "price": 750,
+          "quantity": 5,
+          "total": 3750
+      },
+      {
+          "productName": "Jharaka 3.6/4.0 ft (steel)",
+          "price": 1615,
+          "quantity": 6,
+          "total": 9690
+      },
+      {
+          "productName": "Jharaka 3.5/4.0 ft (steel)",
+          "price": 1615,
+          "quantity": 1,
+          "total": 1615
+      },
+      {
+          "productName": "Jharaka 4/4 ft (steel)",
+          "price": 2050,
+          "quantity": 2,
+          "total": 4100
+      },
+      {
+          "productName": "Skylight 2/2 ",
+          "price": 160,
+          "quantity": 2,
+          "total": 320
+      }
+  ]
 }
     
 ]
