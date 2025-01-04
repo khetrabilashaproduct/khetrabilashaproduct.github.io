@@ -155,7 +155,7 @@
   "phoneNumber": "6371668612",
   "date": "04/01/2025",
   "totalAmount": 19475,
-  "paymentStatus": "Paid",
+  "paymentStatus": "Paid -10,000 (cash) \nOn-hold-9475",
   "products": [
       {
           "productName": "Duara Bandha",
