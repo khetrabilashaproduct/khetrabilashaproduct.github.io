@@ -25,7 +25,9 @@
             padding: 0;
             background-color: #f9f9f9;
         }
-
+        a{
+    text-decoration: none;
+}
         #our-products-text {
             text-align: center;
             font-size: 2rem;
@@ -107,6 +109,7 @@
             transform: translateX(50px);
         }
         
+        
 
         @keyframes imageSlideIn {
             from {
@@ -130,8 +133,26 @@
             }
         }
 
-        
+        .product-description .full-description {
+  display: block;
+}
+.read-more {
+    visibility: hidden;
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
         @media screen and (max-width: 768px) {
+            a{
+    text-decoration: none;
+}
+            .read-more {
+                visibility:visible;
+                color: blue;
+                cursor: pointer;
+                text-decoration: underline;
+                }
             #our-products-text {
             text-align: center;
             font-size: 2rem;
@@ -155,9 +176,28 @@
             .product-description {
                 max-width: 100%;
             }
+            .product-description .full-description {
+    display: none;
+  }
+  .product-description .short-description {
+    display: block;
+  }
+  .read-more {
+    display: inline;
+  }
+
         }
 
         @media screen and (max-width: 480px) {
+            a{
+    text-decoration: none;
+}
+            .read-more {
+                visibility:visible;
+                color: blue;
+                cursor: pointer;
+                text-decoration: underline;
+                }
             #our-products-text {
             text-align: center;
             font-size: 2rem;
@@ -178,6 +218,17 @@
             .product-description p {
                 font-size: 14px;
             }
+
+            .product-description .full-description {
+    display: none;
+  }
+  .product-description .short-description {
+    display: block;
+  }
+  .read-more {
+    display: inline;
+  }
+
         }
     </style>
     
@@ -225,20 +276,29 @@
         <!-- Product 2 -->
         <div class="product">
            <a href="/Products/pvc.html"> <img src="/images/pvc_bathroom_door.png" alt="Product 2"></a>
+            
             <div class="product-description">
-                <h2 class="pname">PVC Bathroom-Doors</h2>
-                <p>1. <b>Moisture-resistant:</b>
-                   Ability to withstand humid bathroom environments without warping or damage. <br>
-                    2. <b>Low maintenance:</b>
-                   Easy-to-clean surface compared to wood doors. <br>
+                <h2>PVC Bathroom-Doors</h2>
+                <p class="short-description">
+                   
+                  <!-- Short description content here -->
+                  1. <b>Moisture-resistant:</b>
+                  Ability to withstand humid bathroom environments without warping or damage. <br>
+                  2. <b>Low maintenance:</b>
+                  Easy-to-clean surface compared to wood doors. <br>
+                   
+                </p>
+                <p class="full-description">
+                   
                     3. <b>Customizable design</b>:
                     Variety of styles, colors, and finishes available.<br>
                     4. <b>Durability:</b>
                     long-lasting quality of PVC doors, water-resistant. <br>
                     5. <b>Cost-effective:</b>
                     We Provide Quality door in Low cost with fittng included.
-                    </p>
-            </div>
+                </p>
+                <a href="javascript:void(0);" class="read-more">Read More...</a>
+              </div>
         </div>
 
         <!-- Product 3 -->
@@ -246,23 +306,34 @@
             <a href="/Products/nanda.html"><img src="/images/nanda/4.png" alt="Product 3"></a>
             <div class="product-description">
                 <h2 class="pname">Cement Ring</h2>
+                <p class="short-description">
                 <p>Cement rings are durable, versatile, and essential for construction projects such as wells, septic tanks, and drainage systems. <br>
-                <b>High-strength:</b> Engineered to handle heavy loads and resist cracking. <br>
+                <b>High-strength:</b> Engineered to handle heavy loads and resist cracking. <br>   </p>
+                <p class="full-description">
                 <b>Long-lasting:</b> Built for durability in harsh weather conditions. <br>
                 <b>Customizable:</b> Available in various sizes to suit specific project needs.</p>
+                <a href="javascript:void(0);" class="read-more">Read More...</a>
             </div>
         </div>
 
          <!-- Product 4 -->
          <div class="product">
             <a href="/Products/jharaka.html"><img src="/images/jharaka.png" alt="Product 4"></a>
+            
             <div class="product-description">
-                <h2 class="pname">Window Frame</h2>
-                <p>Our cement window frames combine functionality with design aesthetics. <br>
-                <strong>Weather-resistant:</strong>  Immune to rust, termites, and moisture damage. <br>
-                <strong>Low maintenance:</strong>  Retains its appearance with minimal upkeep. <br>
-                <strong>Custom design options: </strong> Tailored sizes and designs to fit your architectural style.</p>
-            </div>
+                <h2 >Window Frame</h2>
+                <p class="short-description">
+                  <!-- Short description content here -->
+                  Our cement window frames combine functionality with design aesthetics. <br>
+                  <strong>Weather-resistant:</strong>  Immune to rust, termites, and moisture damage. <br>
+                </p>
+                <p class="full-description">
+                    <strong>Low maintenance:</strong>  Retains its appearance with minimal upkeep. <br>
+                    <strong>Custom design options: </strong> Tailored sizes and designs to fit your architectural style.</p>
+                </p>
+                <a href="javascript:void(0);" class="read-more">Read More...</a>
+              </div>
+              
         </div>
 
         <!-- Product 5 -->
@@ -270,12 +341,16 @@
             <a href="Products/duarabandha.html"> <img src="/images/duarabandha.png" alt="Product 5"></a>
             <div class="product-description">
                 <h2 class="pname">Door Frame</h2>
-                <p>Perfectly crafted cement door frames are ideal for both residential and commercial properties. <br>
+                <p class="short-description">
+                Perfectly crafted cement door frames are ideal for both residential and commercial properties. <br></p>
+                <p class="full-description">
                 <strong>Robust build:</strong> Ensures lasting durability and stability. <br>
                 <strong>Seamless integration:</strong> Blends well with all types of walls and designs. <br>
                 <strong>Eco-friendly material: </strong>Made from sustainable resources.
                 </p>
+                <a href="javascript:void(0);" class="read-more">Read More...</a>
             </div>
+            
         </div>
 
         <!-- Product 6 -->
@@ -316,11 +391,14 @@
             <a href="#"> <img src="/images/phulakunda.png" alt="Product 9"></a>
             <div class="product-description">
                 <h2 class="pname">Phulakunda (Flower Pot)</h2>
-                <p>Bring your garden to life with our beautifully designed cement flower pots. <br>
+                <p class="short-description">
+                <p>Bring your garden to life with our beautifully designed cement flower pots. <br> </p>
+                <p class="full-description">
                     <b>Elegant designs: </b>Suitable for indoor and outdoor use. <br>
                     <b>Durable material:</b> Withstands weather exposure without damage. <br>
                     <b>Various sizes:</b> Available for small plants to large shrubs. <br>
                     </p>
+                    <a href="javascript:void(0);" class="read-more">Read More...</a>
             </div>
         </div>
 
@@ -358,11 +436,14 @@
             <a href="#"> <img src="/images/kunda.png" alt="Product 12"></a>
             <div class="product-description">
                 <h2 class="pname">Cement Raling</h2>
-                These cement railings are ideal for balconies and staircases.  <br>
+                <p class="short-description">
+                These cement railings are ideal for balconies and staircases.  <br> </p>
+                <p class="full-description">
                 Elegant patterns: Adds a sophisticated touch to your spaces. <br>
                 Sturdy and safe: Provides reliable support. <br>
                 Weather-resistant: Perfect for outdoor installations. <br>
                 </p>
+                <a href="javascript:void(0);" class="read-more">Read More...</a>
             </div>
         </div>
 
@@ -371,10 +452,12 @@
             <a href="/Products/khunta.html">  <img src="/images/khunta.png" alt="Product 13"></a>
             <div class="product-description">
                 <h2 class="pname">Khunti</h2>
-                <p>Khunti is a robust cement pillar designed for multiple purposes, including construction of shelters for animals, vehicle parking, to secure your area and small shops. <br>
+                <p class="short-description">Khunti is a robust cement pillar designed for multiple purposes, including construction of shelters for animals, vehicle parking, to secure your area and small shops. <br></p>
+                <p class="full-description">
                 <b>Versatile Use:</b> Suitable for creating animal sheds, garages, or small commercial spaces. <br>
                 <b>High Strength:</b> Built to support heavy loads and ensure long-lasting durability. <br>
                 <b>Weather-resistant:</b> Stands strong against rain, heat, and other environmental factors. <br></p>
+                <a href="javascript:void(0);" class="read-more">Read More...</a>
             </div>
         </div>
 
@@ -383,9 +466,11 @@
             <a href="/Products/chaura.html">  <img src="/images/chaura/1.jpg" alt="Product 14"></a>
             <div class="product-description">
                 <h2 class="pname">Chaura</h2>
-                <p>Chaura is a beautifully crafted cement platform designed to hold a Tulsi (Holy Basil) plant.<br>
+                <p class="short-description">Chaura is a beautifully crafted cement platform designed to hold a Tulsi (Holy Basil) plant.<br></p>
+                <p class="full-description">
                 Elegant Design: Adds a traditional and aesthetic touch to your home decor. <br>
                 Customizable Options: Available in various sizes and designs to suit personal preferences.</p>
+                <a href="javascript:void(0);" class="read-more">Read More...</a>
             </div>
         </div>
 
@@ -470,6 +555,42 @@
   <script src="/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const productContainers = document.querySelectorAll(".product-description");
+
+  productContainers.forEach(container => {
+    const shortDescription = container.querySelector(".short-description");
+    const fullDescription = container.querySelector(".full-description");
+    const readMoreLink = container.querySelector(".read-more");
+
+    // Check if all required elements exist in the current container
+    if (shortDescription && fullDescription && readMoreLink) {
+      // Initially hide the full description for small screens
+      if (window.innerWidth <= 768) {
+        fullDescription.style.display = "none";
+      }
+
+      // Add click event listener to the "Read More" link
+      readMoreLink.addEventListener("click", function () {
+        if (window.innerWidth <= 768) { // Only for small screens
+          if (fullDescription.style.display === "none" || fullDescription.style.display === "") {
+            // Show full description and hide short description
+            fullDescription.style.display = "block";
+            shortDescription.style.display = "none";
+            readMoreLink.textContent = "Read Less...";
+          } else {
+            // Hide full description and show short description
+            fullDescription.style.display = "none";
+            shortDescription.style.display = "block";
+            readMoreLink.textContent = "Read More...";
+          }
+        }
+      });
+    }
+  });
+});
+
+
     document.addEventListener("scroll", () => {
         const cards = document.querySelectorAll(".product-card");
         const triggerBottom = window.innerHeight * 0.8;
@@ -483,6 +604,7 @@
             }
         });
     });
+    
 </script>
 
 </body>
