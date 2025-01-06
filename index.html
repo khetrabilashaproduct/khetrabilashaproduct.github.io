@@ -325,6 +325,37 @@ body {
     font-size: 1rem;
 }
 
+/* Basic Styling for Hand Pointer */
+.hand-pointer {
+  position: absolute;
+  display: none;
+  font-size: 50px;
+  pointer-events: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Tap animation with a press down and release effect */
+.hand-tap {
+  animation: handTap 0.6s ease-in-out;
+}
+
+@keyframes handTap {
+  0% {
+    transform: translateY(0); /* Start at normal position */
+  }
+  25% {
+    transform: translateY(5px); /* Press down slightly */
+  }
+  50% {
+    transform: translateY(0); /* Release the press */
+  }
+  75% {
+    transform: translateY(5px); /* Press down slightly again */
+  }
+  100% {
+    transform: translateY(0); /* Final release */
+  }
+}
 
 
 
@@ -378,6 +409,9 @@ body {
     .why-choose-us .feature {
         margin-bottom: 20px;
     }
+    .hand-pointer {
+        display: block;
+    }
 }
 
 @media (max-width: 480px) {
@@ -412,26 +446,65 @@ body {
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
-        <div class="container">
-            <a class="navbar-brand" href="/index.html" id="index-link">
-                <img src="/images/logo.png" alt="Logo" class="logo-img">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/products.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/payment.html">Payment</a></li>
-                </ul>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/index.html" id="index-link">
+            <img src="/images/logo.png" alt="Logo" class="logo-img">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/payment.html">Payment</a></li>
+            </ul>
         </div>
-    </nav>
+        <!-- Hand Pointer -->
+        <div id="hand-pointer" class="hand-pointer" aria-hidden="true">👆</div>
+    </div>
+</nav>
+
     
 
     <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const handPointer = document.getElementById("hand-pointer");
+    const navbarToggler = document.querySelector(".navbar-toggler");
+
+    if (window.innerWidth <= 768) { // Only for small screens
+        // Show the hand pointer
+        handPointer.style.display = "block";
+
+        // Position the hand pointer directly above the navbar-toggler (menu button)
+        const rect = navbarToggler.getBoundingClientRect();
+        handPointer.style.top = `${rect.top + window.scrollY - 10}px`; // Adjust slightly above
+        handPointer.style.left = `${rect.left + window.scrollX + (rect.width / 2) - 25}px`; // Center it on the button
+
+        // Add the tap animation to the hand pointer
+        setTimeout(() => {
+            handPointer.classList.add("hand-tap");
+
+            // Simulate clicking the menu button (open and close)
+            setTimeout(() => {
+                navbarToggler.click(); // Open the dropdown menu
+                setTimeout(() => {
+                    navbarToggler.click(); // Close the dropdown menu
+                    handPointer.style.display = "none"; // Hide the hand pointer after the taps
+                }, 1500); // Wait 1.5 seconds before closing
+            }, 600); // Wait 0.6 seconds for tap effect before triggering the first click
+        }, 1000); // Wait 1 second before showing the hand pointer
+    }
+});
+
+// Hide the hand pointer after 3 seconds if the animation doesn't finish
+setTimeout(function () {
+    document.getElementById("hand-pointer").style.display = "none"; // Hide the hand pointer after 3 seconds
+}, 3000); // 3000ms = 3 seconds
+
+
         // Detect current page
         var currentPage = window.location.pathname.split("/").pop();
     
@@ -673,7 +746,9 @@ body {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> -->
      <script>
-   
+
+
+
         // nvabar show on up scroll
 let lastScrollTop = 0;
 const navbar = document.getElementById("navbar");
@@ -690,6 +765,9 @@ window.addEventListener("scroll", function () {
     }
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
 });
+
+
+
 
      </script>
     
