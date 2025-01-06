@@ -100,12 +100,16 @@ body {
 
 /* Navbar animation */
 #navbar {
+  margin-top: 10px;
+  width: 90%;
+  border: 1px solid #ddd;
   position: sticky;
   top: 0;
   background-color: #343a40;
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   z-index: 1000;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 8px 15px rgba(255, 0, 0, 0.1);
+  border-radius: 15px;
 }
 
 #navbar.scrolled {
@@ -218,9 +222,17 @@ body {
 }
 /* footer */
 .footer {
+
+  width: 99.5%;
   background-color: #343a40;
-  color: white;
+  color: #dbdbf3;
   padding: 20px 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  height: 95px;
+  margin-left: 5px;
+  margin-right: 1px;
 }
 .footer .social-icons {
 text-align: center;
