@@ -470,39 +470,7 @@ body {
 
     <script>
 
-document.addEventListener("DOMContentLoaded", function () {
-    const handPointer = document.getElementById("hand-pointer");
-    const navbarToggler = document.querySelector(".navbar-toggler");
 
-    if (window.innerWidth <= 768) { // Only for small screens
-        // Show the hand pointer
-        handPointer.style.display = "block";
-
-        // Position the hand pointer directly above the navbar-toggler (menu button)
-        const rect = navbarToggler.getBoundingClientRect();
-        handPointer.style.top = `${rect.top + window.scrollY - 10}px`; // Adjust slightly above
-        handPointer.style.left = `${rect.left + window.scrollX + (rect.width / 2) - 25}px`; // Center it on the button
-
-        // Add the tap animation to the hand pointer
-        setTimeout(() => {
-            handPointer.classList.add("hand-tap");
-
-            // Simulate clicking the menu button (open and close)
-            setTimeout(() => {
-                navbarToggler.click(); // Open the dropdown menu
-                setTimeout(() => {
-                    navbarToggler.click(); // Close the dropdown menu
-                    handPointer.style.display = "none"; // Hide the hand pointer after the taps
-                }, 1500); // Wait 1.5 seconds before closing
-            }, 600); // Wait 0.6 seconds for tap effect before triggering the first click
-        }, 1000); // Wait 1 second before showing the hand pointer
-    }
-});
-
-// Hide the hand pointer after 3 seconds if the animation doesn't finish
-setTimeout(function () {
-    document.getElementById("hand-pointer").style.display = "none"; // Hide the hand pointer after 3 seconds
-}, 3000); // 3000ms = 3 seconds
 
 
         // Detect current page
@@ -767,7 +735,39 @@ window.addEventListener("scroll", function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const handPointer = document.getElementById("hand-pointer");
+    const navbarToggler = document.querySelector(".navbar-toggler");
 
+    if (window.innerWidth <= 768) { // Only for small screens
+        // Show the hand pointer
+        handPointer.style.display = "block";
+
+        // Position the hand pointer directly above the navbar-toggler (menu button)
+        const rect = navbarToggler.getBoundingClientRect();
+        handPointer.style.top = `${rect.top + window.scrollY - 10}px`; // Adjust slightly above
+        handPointer.style.left = `${rect.left + window.scrollX + (rect.width / 2) - 25}px`; // Center it on the button
+
+        // Add the tap animation to the hand pointer
+        setTimeout(() => {
+            handPointer.classList.add("hand-tap");
+
+            // Simulate clicking the menu button (open and close)
+            setTimeout(() => {
+                navbarToggler.click(); // Open the dropdown menu
+                setTimeout(() => {
+                    navbarToggler.click(); // Close the dropdown menu
+                    handPointer.style.display = "none"; // Hide the hand pointer after the taps
+                }, 1500); // Wait 1.5 seconds before closing
+            }, 600); // Wait 0.6 seconds for tap effect before triggering the first click
+        }, 1000); // Wait 1 second before showing the hand pointer
+    }
+});
+
+// Hide the hand pointer after 3 seconds if the animation doesn't finish
+setTimeout(function () {
+    document.getElementById("hand-pointer").style.display = "none"; // Hide the hand pointer after 3 seconds
+}, 3000); // 3000ms = 3 seconds
 
      </script>
     
