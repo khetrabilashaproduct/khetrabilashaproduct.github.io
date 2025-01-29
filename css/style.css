@@ -147,7 +147,7 @@ body {
 
 /* Dropdown menu enhancements */
 .navbar-nav .dropdown-menu {
-  background-color: #343a40;
+  background-color: #ecf0f3;
   border: none;
   transition: opacity 0.3s ease;
   opacity: 0;
@@ -213,7 +213,7 @@ body {
 .hero {
     text-align: center;
     padding: 50px;
-    background: #343a40;
+    background: #c4c6c9;
     color: white;
 }
 .products img {
@@ -395,6 +395,18 @@ iframe {
     padding-top: 50px;
 
   }
+
+
+  .navbar .navbar-toggler {
+    border-color: rgb(85, 96, 241); /* Ensure the toggle button has a visible border */
+    background-color: #4285F4;
+    color: rgb(231, 216, 216);
+}
+
+.navbar .navbar-toggler-icon{
+  color:green;
+}
+
 
 
   @media (max-width: 1500px) {
