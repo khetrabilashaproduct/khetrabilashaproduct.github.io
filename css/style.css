@@ -111,7 +111,8 @@ body {
   border: 1px solid #ddd;
   position: sticky;
   top: 0;
-  background-color: #343a40;
+  background: linear-gradient(45deg, #000000, #1c1c3c);
+
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   z-index: 1000;
   box-shadow: 10px 8px 15px rgba(255, 0, 0, 0.1);
