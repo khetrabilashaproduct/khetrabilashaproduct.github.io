@@ -15,7 +15,7 @@ window.addEventListener("scroll", function () {
     // Hide navbar when scrolling down, show when scrolling up
     if (scrollTop > lastScrollTop) {
         // Scrolling down
-        navbar.style.top = "-70px";  // Adjust height to the height of your navbar
+        navbar.style.top = "-100px";  // Adjust height to the height of your navbar
     } else {
         // Scrolling up
         navbar.style.top = "0";  // Show the navbar again
