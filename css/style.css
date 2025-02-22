@@ -33,13 +33,14 @@ body {
     color: white;
 }
 .logo-img {
-  width: 50px; /* Adjust the size as needed */
-  height: 50px; /* Keep width and height equal for a perfect circle */
-  border-radius: 50%; /* Makes the image circular */
+  width: 100px; /* Adjust the size as needed */
+  height: 70px; /* Keep width and height equal for a perfect circle */
+  border-radius: 0%; /* Makes the image circular */
   object-fit: cover; /* Ensures the image doesn't get distorted */
   margin-right: 10px; /* Optional: Adds some spacing between the logo and text, if any */
   animation: logoAnimation 1s ease-in-out;
   animation: rotateLogo 2s ease-in-out 1s; /* Adds a 0.5s delay */
+
 }
 
 
