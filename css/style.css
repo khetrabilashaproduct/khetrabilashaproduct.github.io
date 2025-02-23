@@ -248,49 +248,61 @@ body {
     max-width: 100%;
     height: auto;
 }
-/* footer */
+/* Modern Footer */
 .footer {
-  background: #222;
-  color: white;
-  padding: 30px 20px;
+  background: #1a1a1a;
+  color: #f0f0f0;
+  padding: 40px 20px;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.footer .social-icons a {
+  color: #f0f0f0;
+  font-size: 28px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer .social-icons a:hover {
+  transform: scale(1.3);
+  color: #ff7e5f;
 }
 
 .footer-icons {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .footer-icons a {
-  color: white;
-  font-size: 1.5rem;
+  color: #f0f0f0;
+  font-size: 1.8rem;
+  padding: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease-in-out;
 }
 
 .footer-icons a:hover {
-  color: #ff7e5f;
-  transform: translateY(-3px);
+  background: #ff7e5f;
+  color: #fff;
+  transform: translateY(-5px);
 }
-.footer .social-icons {
-text-align: center;
-margin-bottom: 10px;
-}
-.footer .social-icons a {
-color: white;
-font-size: 24px;
-margin: 0 15px;
-transition: transform 0.3s;
-}
-.footer .social-icons a:hover {
-transform: scale(1.2);
-color: #007bff;
-}
+
 .footer .footer-text {
-text-align: center;
-margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 15px;
 }
+
 .footer .social-icons a.youtube {
 color: #FF0000;
 }
