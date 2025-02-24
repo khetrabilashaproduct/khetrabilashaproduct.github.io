@@ -28,7 +28,7 @@
         a{
     text-decoration: none;
 }
-        #our-products-text {
+        .our-products-text {
             margin-top: 5%;
             text-align: center;
             font-size: 2rem;
@@ -257,14 +257,14 @@
 </nav>
 
     <!-- Animated Text Below Navbar -->
-    <div id="our-products-text">Our Products</div>
+    <div class="our-products-text" id="product" data-key="product">Our Products</div>
     <div  class="containerp">
         <!-- Product 1 -->
         <div class="product">
            <a href="/Products/door.html"> <img src="/images/door.avif" alt="Product 1"></a>
             <div class="product-description">
-                <h2 class="pname">Laminated Doors</h2>
-                <p>Buy Laminated Doors, at Best Price in India <br>
+                <h2 class="pname" id="product1" data-key="product1">Laminated PLY Doors</h2>
+                <p id="product1-dec" data-key="product1-dec">Buy Laminated Doors, at Best Price in India <br>
                     1. Made from 100% kiln seasoned Hardwood. <br>
                     2. Made from Imported material & machinery. <br>
                     3. Hot pressed & resin bonded. <br>
@@ -278,9 +278,9 @@
         <div class="product">
            <a href="/Products/pvc.html"> <img src="/images/pvc_bathroom_door.png" alt="Product 2"></a>
             
-            <div class="product-description">
+            <div  class="product-description">
                 <h2>PVC Bathroom-Doors</h2>
-                <p class="short-description">
+                <p id="product1-dec" data-key="product1-dec" class="short-description">
                    
                   <!-- Short description content here -->
                   1. <b>Moisture-resistant:</b>
