@@ -87,7 +87,9 @@ window.addEventListener("scroll", function () {
             "product2": "PVC Bathroom-Doors",
             "product2-dec":"",
             "product3":"Cement Ring",
-            "product3-dec":"",
+            "product3-4ec":"",
+            "product4":"Window Frame",
+            "product4-dec":"",
 
 
 
@@ -120,7 +122,10 @@ window.addEventListener("scroll", function () {
             "product2": "PVC ବାଥରୁମ କବାଟ",
             "product2-dec": "ଉନ୍ନତ ମାନର ପ୍ଲାଷ୍ଟିକ୍ ଦ୍ୱାରା ତିଆରି କବାଟ  | ଏକାଧିକ ଡିଜାଇନ: ଆପଣଙ୍କର ଘରକୁ ଚାହିଁ ଅନକେ ରଙ୍ଗ ଏବଂ ଡିଜାଇନ ର  କବାଟ ଅଛି    |  ଏହି  କବାଟ ପାଣି ରେ  ନଷ୍ଟ ହେବନାହିଁ  | ",
             "product3": "ସିମେନ୍ଟ  ନନ୍ଦ",
-            "product3-dec": "ଏହା  କୂଅ, ଲ୍ୟାଟିନ୍, ସେପ୍ଟିକ ଟ୍ୟାଙ୍କ୍  ଏବଂ  ଡ୍ରେନେଜ ପାଇଁ ଉପଯୋଗୀ | କଳା ତାର ରେ  ତିଆରି ସଶକ୍ତ ନନ୍ଦ, ଭାରି ଭାର ବହନ କରିପାରେ |  ବର୍ଷା, ଖରା,  ବତାସ  ରେ ଭାଙ୍ଗିବ ନାହିଁ | ୩-ଫୁଟ ରୁ ୫-ଫୁଟ ନନ୍ଦ ଅଛି"
+            "product3-dec": "ଏହା  କୂଅ, ଲ୍ୟାଟିନ୍, ସେପ୍ଟିକ ଟ୍ୟାଙ୍କ୍  ଏବଂ  ଡ୍ରେନେଜ ପାଇଁ ଉପଯୋଗୀ | କଳା ତାର ରେ  ତିଆରି ସଶକ୍ତ ନନ୍ଦ, ଭାରି ଭାର ବହନ କରିପାରେ |  ବର୍ଷା, ଖରା,  ବତାସ  ରେ ଭାଙ୍ଗିବ ନାହିଁ | ୩-ଫୁଟ ରୁ ୫-ଫୁଟ ନନ୍ଦ ଅଛି",
+            "product4":"ଝରକା ବନ୍ଧ",
+            "product4-dec":"ଆମ ସିମେନ୍ଟ ଝରକା ବନ୍ଧ ମଜବୁତ଼ ଏବଂ  ଡିଜାଇନ ର ଉତ୍ତମ ସମ୍ମିଳନ |  ସମସ୍ତ ରୁତୁ ପାଇଁ ଅନୁକୂଳ. |  ବର୍ଷା ଏବଂ ପାଣି ପ୍ରତିରୋଧକ: ମଜବୁତ ଏପରି ଯେ ଚୋର କୁହନ୍ତି 'ହେ ଭଗବାନ୍' | ଶାସ୍ତା, ସୁନ୍ଦର, ମଜବୁତ୍",
+
 
         }
     };
@@ -151,7 +156,8 @@ window.addEventListener("scroll", function () {
         document.getElementById('product2-dec').innerText = translations[lang]["product2-dec"];
         document.getElementById('product3').innerText = translations[lang]["product3"];
         document.getElementById('product3-dec').innerText = translations[lang]["product3-dec"];
-        
+        document.getElementById('product4').innerText = translations[lang]["product4"];
+        document.getElementById('product4-dec').innerText = translations[lang]["product4-dec"];
 
         
     };
