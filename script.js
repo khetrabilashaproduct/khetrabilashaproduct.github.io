@@ -83,7 +83,14 @@ window.addEventListener("scroll", function () {
 
             "product" : "Our Products",
             "product1" : "Laminated Doors",
-            "product1-dec":""
+            "product1-dec":"",
+            "product2": "PVC Bathroom-Doors",
+            "product2-dec":"",
+            "product3":"Cement Ring",
+            "product3-dec":"",
+
+
+
 
         },
         "or": {
@@ -109,7 +116,11 @@ window.addEventListener("scroll", function () {
 
             "product" : "ଆମର ଜିନିଷ ",
             "product1": "ଲାମିନେଟେଡ୍ ପ୍ଲାଇ କବାଟ",
-            "product1-dec": "୧୦୦ ପ୍ରତିଶତ  ହାର୍ଡ ଉଡ୍ ରୁ ପ୍ରସ୍ତୁତ |   ତତ୍କାଳୀନ ଏବଂ ଦୀର୍ଘଦିନ ପାଇଁ  ଉପଯୋଗୀ |   ଉଇ  ଏବଂ ପାଣି ପ୍ରତିରୋଧକ"
+            "product1-dec": "୧୦୦ ପ୍ରତିଶତ  ହାର୍ଡ ଉଡ୍ ରୁ ପ୍ରସ୍ତୁତ |   ତତ୍କାଳୀନ ଏବଂ ଦୀର୍ଘଦିନ ପାଇଁ  ଉପଯୋଗୀ |   ଉଇ  ଏବଂ ପାଣି ପ୍ରତିରୋଧକ",
+            "product2": "PVC ବାଥରୁମ କବାଟ",
+            "product2-dec": "ଉନ୍ନତ ମାନର ପ୍ଲାଷ୍ଟିକ୍ ଦ୍ୱାରା ତିଆରି କବାଟ  | ଏକାଧିକ ଡିଜାଇନ: ଆପଣଙ୍କର ଘରକୁ ଚାହିଁ ଅନକେ ରଙ୍ଗ ଏବଂ ଡିଜାଇନ ର  କବାଟ ଅଛି    |  ଏହି  କବାଟ ପାଣି ରେ  ନଷ୍ଟ ହେବନାହିଁ  | ",
+            "product3": "ସିମେନ୍ଟ  ନନ୍ଦ",
+            "product3-dec": "ଏହା  କୂଅ, ଲ୍ୟାଟିନ୍, ସେପ୍ଟିକ ଟ୍ୟାଙ୍କ୍  ଏବଂ  ଡ୍ରେନେଜ ପାଇଁ ଉପଯୋଗୀ | କଳା ତାର ରେ  ତିଆରି ସଶକ୍ତ ନନ୍ଦ, ଭାରି ଭାର ବହନ କରିପାରେ |  ବର୍ଷା, ଖରା,  ବତାସ  ରେ ଭାଙ୍ଗିବ ନାହିଁ | ୩-ଫୁଟ ରୁ ୫-ଫୁଟ ନନ୍ଦ ଅଛି"
 
         }
     };
@@ -136,6 +147,10 @@ window.addEventListener("scroll", function () {
         document.getElementById('product').innerText = translations[lang]["product"];
         document.getElementById('product1').innerText = translations[lang]["product1"];
         document.getElementById('product1-dec').innerText = translations[lang]["product1-dec"];
+        document.getElementById('product2').innerText = translations[lang]["product2"];
+        document.getElementById('product2-dec').innerText = translations[lang]["product2-dec"];
+        document.getElementById('product3').innerText = translations[lang]["product3"];
+        document.getElementById('product3-dec').innerText = translations[lang]["product3-dec"];
         
 
         
