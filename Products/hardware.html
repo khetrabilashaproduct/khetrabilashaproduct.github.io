@@ -25,7 +25,130 @@
 .h{
   margin-bottom: 50%;
 }
-   
+
+.cat {
+  padding-top: 40px;
+  border-top: 2px solid #d8e3f5;
+}
+/* .cat-title {
+  position: sticky;
+  top: 100px; /* below navbar */
+  /* z-index: 10;
+} */ 
+
+
+/* ---------------------------
+   Animated / centered category title
+   --------------------------- */
+   .cat-title {
+  box-sizing: border-box;          /* ensure padding included in width */
+  display: block;
+  width: 100%;
+  max-width: 980px;                /* matches .page-shell */
+  margin: 40px auto 20px;          /* centers block */
+  padding: 12px 20px;              /* horizontal padding same as page-shell */
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #e8f0fe 0%, #f0fbff 50%, #e8f0fe 100%);
+  border-left: 6px solid #0b5fff;
+  border-right: 6px solid #0b5fff;
+  border-top: 1px solid rgba(11,91,255,0.12);
+  border-bottom: 1px solid rgba(11,91,255,0.12);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(11, 91, 255, 0.08);
+  position: relative;
+  z-index: 8;
+  overflow: visible;
+  transform: translateY(0);
+  transition: transform 400ms cubic-bezier(.2,.9,.2,1), box-shadow 300ms;
+}
+
+/* soft floating/glow loop */
+@keyframes floaty {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* subtle moving gradient shimmer */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.cat-title.animated {
+  animation: floaty 6s ease-in-out infinite, shimmer 10s linear infinite;
+  background-size: 200% 100%;
+  box-shadow: 0 12px 40px rgba(11, 91, 255, 0.10);
+}
+/* slide-in when the section becomes visible (start slightly left and transparent) */
+.cat-title.enter-from-left {
+  transform: translateX(-24px);
+  opacity: 0;
+}
+.cat-title.entered {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 520ms cubic-bezier(.2,.9,.2,1), opacity 420ms ease;
+}
+
+/* hover micro-interaction */
+.cat-title:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 18px 48px rgba(11, 91, 255, 0.12);
+}
+
+/* Small-screen adjustments */
+@media (max-width: 600px) {
+  .cat-title {
+    max-width: calc(100% - 32px);  /* keep 16px gap both sides */
+    margin: 28px auto 14px;
+    padding: 10px 14px;
+    font-size: 1.15rem;            /* smaller for small screens */
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(11,91,255,0.06);
+  }
+  .cat-title.animated {
+    /* reduce vertical motion so it doesn't clash with small screens */
+    animation-duration: 8s, 12s;
+  }
+}
+
+
+@media (max-width: 380px) {
+  .cat-title {
+    font-size: 1.0rem;
+    padding: 8px 10px;
+    margin: 22px auto 12px;
+    border-left-width: 3px;
+    border-right-width: 3px;
+  }
+  .cat-title.animated { animation: none; } /* prevent jitter on tiny screens */
+}
+
+/* keep the slide-in / enter-from-left behavior working */
+.cat-title.enter-from-left { transform: translateX(-18px); opacity: 0; }
+.cat-title.entered { transform: translateX(0); opacity: 1; transition: transform 520ms cubic-bezier(.2,.9,.2,1), opacity 420ms ease; }
+
+/* Accessibility: respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .cat-title.animated,
+  .cat-title.entered,
+  .cat-title.enter-from-left {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Helper: ensure grid aligns with center too (if needed) */
+
+
+
+
     :root{
       --mint:#e9f7f5;
       --card-bg:#ffffff;
@@ -162,11 +285,11 @@
       <a class="tag" href="#screws">Screws</a>
       <a class="tag" href="#others">Others</a>
     </div>
+    <h3 class="cat-title">Door Bolts</h3>
 
     <!-- ====== Category: Door Bolts ====== -->
     <section id="doorbolts" class="cat">
-      <h3 class="cat-title">Door Bolts</h3>
-
+      
       <div class="skylight-grid">
         <!-- Product 1 -->
         <div class="tile">
@@ -423,12 +546,13 @@
       <h3 class="cat-title">Door Stoppers &amp; Magnet</h3>
 
       <div   class="skylight-grid">
+
         <div class="tile">
-          <div style="height: 10%; " class="frame"><img style="height: 10%;" src="/images/hardware/doorstopper1.jpeg" alt="Door Stopper 1"></div>
+          <div style="height: 10%; " class="frame"><img src="/images/hardware/buffer.jpeg" alt="Magnetic Catch"></div>
           <div class="caption">
-            <div class="title">Door Stopper</div>
-            <div class="price">₹ 90</div>
-            <div class="desc">Rubber base stopper.</div>
+            <div class="title">Buffer</div>
+            <div class="price">₹ 30</div>
+            <div class="desc">Soft Rubbery buffer to protect door</div>
           </div>
         </div>
 
@@ -442,14 +566,18 @@
         </div>
       </div>
 
-      <div class="tile">
-        <div style="height: 10%; " class="frame"><img src="/images/hardware/buffer.jpeg" alt="Magnetic Catch"></div>
-        <div class="caption">
-          <div class="title">Buffer</div>
-          <div class="price">₹ 80</div>
-          <div class="desc">Soft Rubbery buffer to protect door</div>
+        <div class="tile">
+          <div style="height: 10%; " class="frame"><img style="height: 10%;" src="/images/hardware/doorstopper1.jpeg" alt="Door Stopper 1"></div>
+          <div class="caption">
+            <div class="title">Door Stopper</div>
+            <div class="price">₹ 90</div>
+            <div class="desc">Rubber base stopper.</div>
+          </div>
         </div>
-      </div>
+
+        
+
+      
     </div>
     </section>
 
@@ -547,6 +675,42 @@
       });
     });
   </script>
+
+<script>
+  // Slide-in when the section gets near center of the viewport
+  (function(){
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: [0.25, 0.5, 0.75] // triggers as the section enters view
+    };
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        const title = entry.target.querySelector('.cat-title');
+        if (!title) return;
+        if (entry.isIntersecting) {
+          // add classes for animation
+          title.classList.remove('enter-from-left');
+          title.classList.add('entered','animated');
+        } else {
+          // when leaving, keep it subtle: reset enter-from-left so next time it slides
+          title.classList.remove('entered','animated');
+          title.classList.add('enter-from-left');
+        }
+      });
+    }, options);
+
+    // observe every section with class .cat
+    document.querySelectorAll('section.cat').forEach(sec => {
+      // init state
+      const t = sec.querySelector('.cat-title');
+      if (t) t.classList.add('enter-from-left');
+      io.observe(sec);
+    });
+  })();
+</script>
+
+
 
 </body>
 </html>
