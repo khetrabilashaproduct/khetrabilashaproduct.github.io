@@ -1,613 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products | Khetra Bilasha Products</title>
-    <link rel="icon" type="image/x-icon" href="/images/logo.png">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-      <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X59Z2X546R"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-X59Z2X546R');
-  </script>
-    <style>
-        body {
-            overflow-x: hidden;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        a{
-    text-decoration: none;
-}
-        .our-products-text {
-            margin-top: 5%;
-            text-align: center;
-            font-size: 2rem;
-            margin-top: 8%;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInDown 1.5s forwards;
-        }
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .containerp {
-
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 0;
-            margin-top: 5%;
-        }
-
-        .product {
-            display: flex;
-            align-items: center;
-            margin: 20px 0;
-            gap: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .product img {
-            width: 100%;
-            max-width: 600px;
-            height: 400px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            animation: imageSlideIn 2s ease-in-out;
-        }
-
-        .product-description {
-            
-            max-width: 400px;
-            animation: textSlideIn 2s ease-in-out;
-        }
-
-        .product-description h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .product-description p {
-            font-size: 16px;
-            color: #555;
-            line-height: 1.6;
-        }
-        .product-card {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: transform 1s, opacity 1s;
-        }
-
-        .product-card.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .product-card:nth-child(even) {
-            transform: translateX(50px);
-        }
-        
-        
-
-        @keyframes imageSlideIn {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes textSlideIn {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        .product-description .full-description {
-  display: block;
-}
-.read-more {
-    visibility: hidden;
-  color: blue;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-        @media screen and (max-width: 768px) {
-            a{
-    text-decoration: none;
-}
-            .read-more {
-                visibility:visible;
-                color: blue;
-                cursor: pointer;
-                text-decoration: underline;
-                }
-            #our-products-text {
-            text-align: center;
-            font-size: 2rem;
-            margin-top: 25%;
-            }
-            .containerp {
-                margin-top: 1%;
-            }
-
-            .product {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .product img {
-                width: 400px;
-                height: 300px;
-            }
-
-            .product-description {
-                max-width: 100%;
-            }
-            .product-description .full-description {
-    display: none;
-  }
-  .product-description .short-description {
-    display: block;
-  }
-  .read-more {
-    display: inline;
-  }
-
-        }
-
-        @media screen and (max-width: 480px) {
-            a{
-    text-decoration: none;
-}
-            .read-more {
-                visibility:visible;
-                color: blue;
-                cursor: pointer;
-                text-decoration: underline;
-                }
-            #our-products-text {
-            text-align: center;
-            font-size: 2rem;
-            margin-top: 25%;
-            }
-            .pname{
-            font-size: 0.5rem;
-        }
-            .product img {
-                width: 250px;
-                height: 200px;
-            }
-
-            .product-description h2 {
-                font-size: 20px;
-            }
-
-            .product-description p {
-                font-size: 14px;
-            }
-
-            .product-description .full-description {
-    display: none;
-  }
-  .product-description .short-description {
-    display: block;
-  }
-  .read-more {
-    display: inline;
-  }
-
-        }
-    </style>
-    
-    
-</head>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Products | Khetra Bilasha Products</title>
+<link rel="icon" href="/images/logo.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+:root{--bg:#f6f4f0;--ink:#171717;--muted:#666;--accent:#c8422e;--accent2:#e85d3a;--dark:#181818;--line:#e5e1db;--max:1180px}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,sans-serif;overflow-x:hidden} a{text-decoration:none;color:inherit}
+.container{width:min(var(--max),calc(100% - 36px));margin:auto}
+/* exact Door / Hardware navbar */
+.header{height:68px;position:sticky;top:0;z-index:1000;background:rgba(24,24,24,.98);box-shadow:0 4px 20px rgba(0,0,0,.16)}
+.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:14px}
+.brand img{width:42px;height:42px;object-fit:contain}
+.menu{width:42px;height:42px;border:1px solid #444;border-radius:10px;background:#292929;color:#fff;cursor:pointer;font-size:17px;transition:.2s}
+.menu:hover{background:#333;border-color:#555}
+.drawer{position:fixed;top:78px;right:14px;width:min(280px,calc(100% - 28px));background:#202020;border:1px solid #3b3b3b;border-radius:14px;padding:8px;z-index:1200;box-shadow:0 20px 50px rgba(0,0,0,.35);display:none;opacity:0;transform:translateY(-8px);transition:opacity .2s ease,transform .2s ease}
+.drawer.open{display:block;opacity:1;transform:translateY(0)}
+.drawer a{display:flex;align-items:center;gap:12px;padding:14px;color:#fff;border-radius:9px;font-size:14px;font-weight:700}
+.drawer a:hover{background:#303030} .drawer i{width:18px;color:var(--accent2);text-align:center}
+.hero{background:linear-gradient(110deg,#171717,#222 55%,#39241f);color:#fff;padding:58px 0 78px}
+.eyebrow{font-size:10px;letter-spacing:2px;color:#ff8a67;font-weight:800;margin-bottom:10px}
+.hero h1{font-size:clamp(38px,5vw,64px);line-height:.98;margin:0 0 14px;font-weight:900;letter-spacing:-2px}
+.hero p{max-width:650px;color:#cfcfcf;line-height:1.6;margin:0 0 22px;font-size:14px}
+.hero-actions{display:flex;gap:8px;flex-wrap:wrap} .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 15px;border-radius:8px;font-size:12px;font-weight:800;border:1px solid #444;color:#fff;background:#252525} .btn.primary{background:var(--accent);border-color:var(--accent)}
+.filterbar{position:relative;margin:-25px auto 0;background:#fff;border:1px solid #e4e0da;border-radius:14px;box-shadow:0 14px 35px rgba(0,0,0,.12);padding:10px;display:flex;gap:7px;flex-wrap:wrap;z-index:4}
+.filterbar span{padding:8px 12px;border-radius:8px;background:#f5f3ef;font-size:11px;font-weight:700;color:#333} .filterbar span.active{background:#1d1d1d;color:#fff}
+.section{padding:52px 0 70px} .section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px} .section-head h2{font-size:27px;margin:0 0 4px} .section-head p{margin:0;color:#777;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:start}
+.product-card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 5px 18px rgba(0,0,0,.07);transition:transform .22s ease,box-shadow .22s ease;display:flex;flex-direction:column}
+.product-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.12)}
+.product-image{position:relative;display:block;background:#eee;height:260px;overflow:hidden} .product-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease} .product-card:hover .product-image img{transform:scale(1.035)}
+.zoom{position:absolute;top:9px;right:9px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.92);font-size:11px;color:#333}
+.card-body{padding:15px;display:flex;flex-direction:column;flex:1} .card-body h2{font-size:16px;margin:0 0 9px} .desc{font-size:12px;line-height:1.55;color:#666;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden} .desc .full-description{display:none}
+.view-link{margin-top:15px;color:var(--accent);font-size:11px;font-weight:800;display:inline-flex;align-items:center;gap:7px}
+.footer{background:#181818;color:#aaa;padding:28px 0;text-align:center} .footer p{font-size:11px;margin:8px 0 0}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){.header{height:62px}.brand img{width:39px;height:39px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-image{height:220px}.section{padding-top:42px}.section-head{display:block}.hero{padding:45px 0 65px}.hero h1{font-size:42px}}
+@media(max-width:480px){.container{width:min(var(--max),calc(100% - 24px))}.grid{grid-template-columns:1fr}.product-image{height:280px}.card-body h2{font-size:17px}}
+</style></head>
 <body>
+<header class="header"><div class="container header-inner"><a class="brand" href="/index.html"><img src="/images/logo2.png" alt="Khetra Bilasha Products"><span>Khetra Bilasha Products</span></a><button class="menu" id="menuBtn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button></div></header>
+<nav class="drawer" id="drawer"><a href="/index.html"><i class="fa-solid fa-house"></i> Home</a><a href="/products.html"><i class="fa-solid fa-box"></i> Products</a><a href="/about.html"><i class="fa-solid fa-circle-info"></i> About</a><a href="/payment.html"><i class="fa-solid fa-credit-card"></i> Payment</a><a href="/schedule.html"><i class="fa-solid fa-calendar"></i> Work Schedule</a><a href="/Products/sampledoor.html"><i class="fa-solid fa-door-open"></i> Sample Product</a></nav>
+<section class="hero"><div class="container"><div class="eyebrow">KHETRA BILASHA · PRODUCT COLLECTION</div><h1>Products for<br><span style="color:#f07a56">real homes.</span></h1><p>Doors, windows, cement products and home-use essentials — made for practical construction and everyday use.</p><div class="hero-actions"><a class="btn primary" href="#products"><i class="fa-solid fa-box-open"></i> Explore Products</a><a class="btn" href="/about.html"><i class="fa-solid fa-circle-info"></i> About Us</a></div></div></section>
+<main id="products"><div class="container"><div class="filterbar"><span class="active">All Products</span><span>Doors</span><span>Windows</span><span>Cement Products</span><span>Home & Decor</span><span>Construction</span></div><section class="section"><div class="section-head"><div><h2>Our Products</h2><p>Choose a product to see its details and available options.</p></div><div style="font-size:11px;color:#888">16 products</div></div><div class="grid"><article class="product-card"><a class="product-image" href="/Products/door.html"><img src="/images/door.avif" alt="Laminated PLY Doors"><span class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a><div class="card-body"><h2>Laminated PLY Doors</h2><div class="desc">
 
- <!-- Navbar -->
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
-    <div class="container">
-        <a class="navbar-brand" href="/index.html">
-            <img src="/images/logo2.png" alt="Logo" class="logo-img">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" id="products-link" href="/products.html">Products</a></li>
-                <li class="nav-item"><a class="nav-link" id="about-link" href="/about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" id="payment-link" href="/payment.html">Payment</a></li>
-                <li class="nav-item"><a class="nav-link" href="/schedule.html">Work Schedule</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<p>Buy Laminated Doors, at Best Price in India <br/>                                                                                                                  
+                    1. Made from 100% kiln seasoned Hardwood. <br/>                                                                                                                                                              
+                    2. Made from Imported material &amp; machinery. <br/>                                                                                                                                                            
+                    3. Hot pressed &amp; resin bonded. <br/>                                                                                                                                                                         
+                    4. Ready to use (Polish &amp; Painting not required) <br/>                                                                                                                                                       
+                    5. Manufacture to suit local indoor &amp; outdoor conditions <br/>                                                                                                                                               
+                    6. Water &amp; Termite Resistant.</p>
+</div><a class="view-link" href="/Products/door.html">View product <i class="fa-solid fa-arrow-right"></i></a></div></article><article class="product-card"><a class="product-image" href="/Products/pvc.html"><img src="/images/pvc\_bathroom\_door.png" alt="PVC Bathroom-Doors"><span class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a><div class="card-body"><h2>PVC Bathroom-Doors</h2><div class="desc">
 
-    <!-- Animated Text Below Navbar -->
-    <div class="our-products-text" id="product" data-key="product">Our Products</div>
-    <div  class="containerp">
-        <!-- Product 1 -->
-        <div class="product">
-           <a href="/Products/door.html"> <img src="/images/door.avif" alt="Product 1"></a>
-            <div class="product-description">
-                <h2 class="pname" id="product1" data-key="product1">Laminated PLY Doors</h2>
-                <p id="product1-dec" data-key="product1-dec">Buy Laminated Doors, at Best Price in India <br>
-                    1. Made from 100% kiln seasoned Hardwood. <br>
-                    2. Made from Imported material & machinery. <br>
-                    3. Hot pressed & resin bonded. <br>
-                    4. Ready to use (Polish & Painting not required) <br>
-                    5. Manufacture to suit local indoor & outdoor conditions <br>
-                    6. Water & Termite Resistant.</p>
-            </div>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product">
-           <a href="/Products/pvc.html"> <img src="/images/pvc_bathroom_door.png" alt="Product 2"></a>
-            
-            <div  class="product-description">
-                <h2 id="product2" data-key="product2" >PVC Bathroom-Doors</h2>
-                <p id="product2-dec" data-key="product2-dec" class="short-description">
-                   
-                  <!-- Short description content here -->
-                  1. <b>Moisture-resistant:</b>
-                  Ability to withstand humid bathroom environments without warping or damage. <br>
-                  2. <b>Low maintenance:</b>
-                  Easy-to-clean surface compared to wood doors. <br>
-                   
+<p class="short-description">
+<!-- Short description content here -->                                                                                                                                                                       
+                  1. <b>Moisture-resistant:</b>                                                                                                                                                                                
+                  Ability to withstand humid bathroom environments without warping or damage. <br/>                                                                                                                              
+                  2. <b>Low maintenance:</b>                                                                                                                                                                                   
+                  Easy-to-clean surface compared to wood doors. <br/>
+</p>
+<p class="full-description">                                                                                                                                          
+                    3. <b>Customizable design</b>:                                                                                                                                                                             
+                    Variety of styles, colors, and finishes available.<br/>                                                                                                                                                      
+                    4. <b>Durability:</b>                                                                                                                                                                                      
+                    long-lasting quality of PVC doors, water-resistant. <br/>                                                                                                                                                    
+                    5. <b>Cost-effective:</b>                                                                                                                                                                                  
+                    We Provide Quality door in Low cost with fittng included.                                                                                                                                                    
                 </p>
-                <p id="product2-dec" data-key="product2-dec" class="full-description">
-                   
-                    3. <b>Customizable design</b>:
-                    Variety of styles, colors, and finishes available.<br>
-                    4. <b>Durability:</b>
-                    long-lasting quality of PVC doors, water-resistant. <br>
-                    5. <b>Cost-effective:</b>
-                    We Provide Quality door in Low cost with fittng included.
+
+</div><a class="view-link" href="/Products/pvc.html">View product <i class="fa-solid fa-arrow-right"></i></a></div></article><article class="product-card"><a class="product-image" href="/Products/nanda.html"><img src="/images/nanda/4.png" alt="Cement Ring"><span class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a><div class="card-body"><h2>Cement Ring</h2><div class="desc">
+
+<p class="short-description">                                                                                                                                         
+                 Cement rings are durable, versatile, and essential for construction projects such as wells, septic tanks, and drainage systems. <br/>
+<b>High-strength:</b> Engineered to handle heavy loads and resist cracking. <br/> </p>
+<p class="full-description">
+<b>Long-lasting:</b> Built for durability in harsh weather conditions. <br/>
+<b>Customizable:</b> Available in various sizes to suit specific project needs.</p>
+
+</div><a class="view-link" href="/Products/nanda.html">View product <i class="fa-solid fa-arrow-right"></i></a></div></article><article class="product-card"><a class="product-image" href="/Products/jharaka.html"><img src="/images/jharaka.png" alt="Window Frame"><span class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a><div class="card-body"><h2>Window Frame</h2><div class="desc">
+
+<p class="short-description">
+<!-- Short description content here -->                                                                                                                                                                       
+                  Our cement window frames combine functionality with design aesthetics. <br/>
+<strong>Weather-resistant:</strong>  Immune to rust, termites, and moisture damage. <br/>
+</p>
+<p class="full-description">
+<strong>Low maintenance:</strong>  Retains its appearance with minimal upkeep. <br/>
+<strong>Custom design options: </strong> Tailored sizes and designs to fit your architectural style.</p>
+
+</div><a class="view-link" href="/Products/jharaka.html">View product <i class="fa-solid fa-arrow-right"></i></a></div></article><article class="product-card"><a class="product-image" href="Products/duarabandha.html"><img src="/images/duarabandha.png" alt="Door Frame"><span class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a><div class="card-body"><h2>Door Frame</h2><div class="desc">
+
+<p class="short-description">                                                                                                                                                                                   
+                Perfectly crafted cement door frames are ideal for both residential and commercial properties. <br/></p>
+<p class="full-description">
+<strong>Robust build:</strong> Ensures lasting durability and stability. <br/>
+<strong>Seamless integration:</strong> Blends well with all types of walls and designs. <br/>
+<strong>Eco-friendly material: </strong>Made from sustainable resources.                                                                                                                                       
                 </p>
-                <a href="javascript:void(0);" class="read-more">Read More...</a>
-              </div>
-        </div>
 
-        <!-- Product 3 -->
-        <div class="product">
-            <a href="/Products/nanda.html"><img src="/images/nanda/4.png" alt="Product 3"></a>
-            <div class="product-description">
-                <h2 class="pname" id="product3" data-key="product3">Cement Ring</h2>
-                <p id="product3-dec" data-key="product3-dec" class="short-description">
-                 Cement rings are durable, versatile, and essential for construction projects such as wells, septic tanks, and drainage systems. <br>
-                <b>High-strength:</b> Engineered to handle heavy loads and resist cracking. <br>   </p>
-                <p id="product3-dec" data-key="product3-dec" class="full-description">
-                <b>Long-lasting:</b> Built for durability in harsh weather conditions. <br>
-                <b>Customizable:</b> Available in various sizes to suit specific project needs.</p>
-                <a href="javascript:void(0);" class="read-more">Read More...</a>
-            </div>
-        </div>
+</div><a class="view-link" href="Products/duarabandha.html">View product <i class="fa-solid fa-arrow-right"></i></a></div></article><article class="product-card"><a class="product-image" href="/Products/skylight.html"><img src="/images/skylight.png" alt="Skylight"><span class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a><div class="card-body"><h2>Skylight</h2><div class="desc">
 
-         <!-- Product 4 -->
-         <div class="product">
-            <a href="/Products/jharaka.html"><img src="/images/jharaka.png" alt="Product 4"></a>
-            
-            <div class="product-description">
-                <h2 id="product4" data-key="product4">Window Frame</h2>
-                <p id="product4-dec" data-key="product4-dec"  class="short-description">
-                  <!-- Short description content here -->
-                  Our cement window frames combine functionality with design aesthetics. <br>
-                  <strong>Weather-resistant:</strong>  Immune to rust, termites, and moisture damage. <br>
+<p>Add elegance and natural light to your spaces with cement skylights. <br/>
+<b>Natural lighting: </b>Enhances energy efficiency and reduces electricity usage.</p>
+</div><a class="view-link" href="/Products/skylight.html">View product <i class="fa-solid fa-arrow-right"></i></a></div></article><article class="product-card"><a class="product-image" href="/Products/chhatabada.html"><img src="/images/chhatabada/1.jpg" alt="Chhatabada"><span class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a><div class="card-body"><h2>Chhatabada</h2><div class="desc">
+
+<p>Chhatabada is a versatile cement product designed for roof edges and decorative parapets. <br/>                                                                                                              
+                Aesthetic appeal: Enhances the architectural beauty of buildings. <br/>                                                                                                                                          
+                High durability: Resistant to weathering. <br/></p>
+</div><a class="view-link" href="/Products/chhatabada.html">View product <i class="fa-solid fa-arrow-right"></i></a></div></article><article class="product-card"><a class="product-image" href="#"><img src="/images/chuli.png" alt="Chuli"><span class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a><div class="card-body"><h2>Chuli</h2><div class="desc">
+
+<p>Chuli is a <b>cement</b> stove, used for cooking. <br/>                                                                                                                                                    
+                    Ideal for outdoor cooking, rural households, or temporary setups. <br/>                                                                                                                                      
+                    Durable Material: Built with high-quality cement for long-lasting performance.                                                                                                                               
                 </p>
-                <p id="product4-dec" data-key="product4-dec"  class="full-description">
-                    <strong>Low maintenance:</strong>  Retains its appearance with minimal upkeep. <br>
-                    <strong>Custom design options: </strong> Tailored sizes and designs to fit your architectural style.</p>
+</div><a class="view-link" href="#">View product <i class="fa-solid fa-arrow-right"></i></a></div></article><article class="product-card"><a class="product-image" href="#"><img src="/images/phulakunda.png" alt="Phulakunda (Flower Pot)"><span class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a><div class="card-body"><h2>Phulakunda (Flower Pot)</h2><div class="desc">
+
+<p class="short-description">
+<p>Bring your garden to life with our beautifully designed cement flower pots. <br/> </p>
+<p class="full-description">
+<b>Elegant designs: </b>Suitable for indoor and outdoor use. <br/>
+<b>Durable material:</b> Withstands weather exposure without damage. <br/>
+<b>Various sizes:</b> Available for small plants to large shrubs. <br/>
+</p>
+
+</p></div><a class="view-link" href="#">View product <i class="fa-solid fa-arrow-right"></i></a></div></article><article class="product-card"><a class="product-image" href="#"><img src="/images/chair.png" alt="Chair"><span class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a><div class="card-body"><h2>Chair</h2><div class="desc">
+
+<p>Our cement chairs offer a perfect blend of style and strength. <br/>                                                                                                                                         
+                Durability: Withstands outdoor elements for years. <br/>                                                                                                                                                         
+                Low maintenance: Resistant to weather damage and wear. <br/>                                                                                                                                                     
+                Ergonomic design: Ensures comfort and functionality. <br/>
+</p>
+</div><a class="view-link" href="#">View product <i class="fa-solid fa-arrow-right"></i></a></div></article><article class="product-card"><a class="product-image" href="#"><img src="/images/geti.png" alt="Geti(Roof Support Block)"><span class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a><div class="card-body"><h2>Geti(Roof Support Block)</h2><div class="desc">
+
+<p>Geti is used during the construction of roofs.                                                                                                                                                               
+                    It's hold iron bars in place, ensuring structural stability. <br/>                                                                                                                                           
+                    Reliable Support,                                                                                                                                                                                            
+                    High Durability,                                                                                                                                                                                             
+                    Accurate Design,                                                                                                                                                                                             
+                    Weather-resistant,                                                                                                                                                                                           
+                    Easy Installation                                                                                                                                                                                            
                 </p>
-                <a href="javascript:void(0);" class="read-more">Read More...</a>
-              </div>
-              
-        </div>
+</div><a class="view-link" href="#">View product <i class="fa-solid fa-arrow-right"></i></a></div></article><article class="product-card"><a class="product-image" href="#"><img src="/images/kunda.png" alt="Cement Raling"><span class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a><div class="card-body"><h2>Cement Raling</h2><div class="desc">
 
-        <!-- Product 5 -->
-        <div class="product">
-            <a href="Products/duarabandha.html"> <img src="/images/duarabandha.png" alt="Product 5"></a>
-            <div class="product-description">
-                <h2 class="pname">Door Frame</h2>
-                <p class="short-description">
-                Perfectly crafted cement door frames are ideal for both residential and commercial properties. <br></p>
-                <p class="full-description">
-                <strong>Robust build:</strong> Ensures lasting durability and stability. <br>
-                <strong>Seamless integration:</strong> Blends well with all types of walls and designs. <br>
-                <strong>Eco-friendly material: </strong>Made from sustainable resources.
-                </p>
-                <a href="javascript:void(0);" class="read-more">Read More...</a>
-            </div>
-            
-        </div>
+<p class="short-description">                                                                                                                                                                                   
+                These cement railings are ideal for balconies and staircases.  <br/> </p>
+<p class="full-description">                                                                                                                                                                                    
+                Elegant patterns: Adds a sophisticated touch to your spaces. <br/>                                                                                                                                               
+                Sturdy and safe: Provides reliable support. <br/>                                                                                                                                                                
+                Weather-resistant: Perfect for outdoor installations. <br/>
+</p>
 
-        <!-- Product 6 -->
-        <div class="product">
-            <a  href="/Products/skylight.html">  <img src="/images/skylight.png" alt="Product 6"></a>
-            <div class="product-description">
-                <h2 class="pname">Skylight</h2>
-                <p>Add elegance and natural light to your spaces with cement skylights. <br>
-                <b>Natural lighting: </b>Enhances energy efficiency and reduces electricity usage.</p>
-            </div>
-        </div>
+</div><a class="view-link" href="#">View product <i class="fa-solid fa-arrow-right"></i></a></div></article><article class="product-card"><a class="product-image" href="/Products/khunta.html"><img src="/images/khunta.png" alt="Khunti"><span class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a><div class="card-body"><h2>Khunti</h2><div class="desc">
 
-         <!-- Product 7 -->
-         <div class="product">
-            <a href="/Products/chhatabada.html"> <img src="/images/chhatabada/1.jpg" alt="Product 7"></a>
-            <div class="product-description">
-                <h2 class="pname">Chhatabada</h2>
-                <p>Chhatabada is a versatile cement product designed for roof edges and decorative parapets. <br>
-                Aesthetic appeal: Enhances the architectural beauty of buildings. <br>
-                High durability: Resistant to weathering. <br></p>
-            </div>
-        </div>
+<p class="short-description">Khunti is a robust cement pillar designed for multiple purposes, including construction of shelters for animals, vehicle parking, to secure your area and small shops. <br/></p>
+<p class="full-description">
+<b>Versatile Use:</b> Suitable for creating animal sheds, garages, or small commercial spaces. <br/>
+<b>High Strength:</b> Built to support heavy loads and ensure long-lasting durability. <br/>
+<b>Weather-resistant:</b> Stands strong against rain, heat, and other environmental factors. <br/></p>
 
-         <!-- Product 8 -->
-         <div class="product">
-            <a href="#"> <img src="/images/chuli.png" alt="Product 8"></a>
-            <div class="product-description">
-                <h2 class="pname">Chuli</h2>
-                <p>Chuli is a <b>cement</b> stove, used for cooking. <br>
-                    Ideal for outdoor cooking, rural households, or temporary setups. <br>
-                    Durable Material: Built with high-quality cement for long-lasting performance.     
-                </p>
-            </div>
-        </div>
+</div><a class="view-link" href="/Products/khunta.html">View product <i class="fa-solid fa-arrow-right"></i></a></div></article><article class="product-card"><a class="product-image" href="/Products/chaura.html"><img src="/images/chaura/1.jpg" alt="Chaura"><span class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a><div class="card-body"><h2>Chaura</h2><div class="desc">
 
-         <!-- Product 9 -->
-         <div class="product">
-            <a href="#"> <img src="/images/phulakunda.png" alt="Product 9"></a>
-            <div class="product-description">
-                <h2 class="pname">Phulakunda (Flower Pot)</h2>
-                <p class="short-description">
-                <p>Bring your garden to life with our beautifully designed cement flower pots. <br> </p>
-                <p class="full-description">
-                    <b>Elegant designs: </b>Suitable for indoor and outdoor use. <br>
-                    <b>Durable material:</b> Withstands weather exposure without damage. <br>
-                    <b>Various sizes:</b> Available for small plants to large shrubs. <br>
-                    </p>
-                    <a href="javascript:void(0);" class="read-more">Read More...</a>
-            </div>
-        </div>
-
-         <!-- Product 10 -->
-         <div class="product">
-            <a href="#">  <img src="/images/chair.png" alt="Product 10"></a>
-            <div class="product-description">
-                <h2 class="pname">Chair</h2>
-                <p>Our cement chairs offer a perfect blend of style and strength. <br>
-                Durability: Withstands outdoor elements for years. <br>
-                Low maintenance: Resistant to weather damage and wear. <br>
-                Ergonomic design: Ensures comfort and functionality. <br>
-                </p>
-            </div>
-        </div>
-
-         <!-- Product 11 -->
-         <div class="product">
-            <a href="#"> <img src="/images/geti.png" alt="Product 11"></a>
-            <div class="product-description">
-                <h2 class="pname">Geti(Roof Support Block)</h2>
-                <p>Geti is used during the construction of roofs.
-                    It's hold iron bars in place, ensuring structural stability. <br>
-                    Reliable Support,
-                    High Durability,
-                    Accurate Design, 
-                    Weather-resistant, 
-                    Easy Installation
-                </p>
-            </div>
-        </div>
-
-         <!-- Product 12 -->
-         <div class="product">
-            <a href="#"> <img src="/images/kunda.png" alt="Product 12"></a>
-            <div class="product-description">
-                <h2 class="pname">Cement Raling</h2>
-                <p class="short-description">
-                These cement railings are ideal for balconies and staircases.  <br> </p>
-                <p class="full-description">
-                Elegant patterns: Adds a sophisticated touch to your spaces. <br>
-                Sturdy and safe: Provides reliable support. <br>
-                Weather-resistant: Perfect for outdoor installations. <br>
-                </p>
-                <a href="javascript:void(0);" class="read-more">Read More...</a>
-            </div>
-        </div>
-
-         <!-- Product 13 -->
-         <div class="product">
-            <a href="/Products/khunta.html">  <img src="/images/khunta.png" alt="Product 13"></a>
-            <div class="product-description">
-                <h2 class="pname">Khunti</h2>
-                <p class="short-description">Khunti is a robust cement pillar designed for multiple purposes, including construction of shelters for animals, vehicle parking, to secure your area and small shops. <br></p>
-                <p class="full-description">
-                <b>Versatile Use:</b> Suitable for creating animal sheds, garages, or small commercial spaces. <br>
-                <b>High Strength:</b> Built to support heavy loads and ensure long-lasting durability. <br>
-                <b>Weather-resistant:</b> Stands strong against rain, heat, and other environmental factors. <br></p>
-                <a href="javascript:void(0);" class="read-more">Read More...</a>
-            </div>
-        </div>
-
-          <!-- Product 14 -->
-          <div class="product">
-            <a href="/Products/chaura.html">  <img src="/images/chaura/1.jpg" alt="Product 14"></a>
-            <div class="product-description">
-                <h2 class="pname">Chaura</h2>
-                <p class="short-description">Chaura is a beautifully crafted cement platform designed to hold a Tulsi (Holy Basil) plant.<br></p>
-                <p class="full-description">
-                Elegant Design: Adds a traditional and aesthetic touch to your home decor. <br>
+<p class="short-description">Chaura is a beautifully crafted cement platform designed to hold a Tulsi (Holy Basil) plant.<br/></p>
+<p class="full-description">                                                                                                                                                                                    
+                Elegant Design: Adds a traditional and aesthetic touch to your home decor. <br/>                                                                                                                                 
                 Customizable Options: Available in various sizes and designs to suit personal preferences.</p>
-                <a href="javascript:void(0);" class="read-more">Read More...</a>
-            </div>
-        </div>
 
-          <!-- Product 15 -->
-          <div class="product">
-            <a href="/Products/cementwall.html">  <img src="/images/cementwall.png" alt="Product 15"></a>
-            <div class="product-description">
-                <h2 class="pname">Cement Wall</h2>
-                <p>Cement walls provide unmatched strength and longevity. <br>
-                Robust construction: Ideal for fencing and boundary purposes. <br>
-                Customizable heights: Designed to meet specific requirements. <br>
+</div><a class="view-link" href="/Products/chaura.html">View product <i class="fa-solid fa-arrow-right"></i></a></div></article><article class="product-card"><a class="product-image" href="/Products/cementwall.html"><img src="/images/cementwall.png" alt="Cement Wall"><span class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a><div class="card-body"><h2>Cement Wall</h2><div class="desc">
+
+<p>Cement walls provide unmatched strength and longevity. <br/>                                                                                                                                                 
+                Robust construction: Ideal for fencing and boundary purposes. <br/>                                                                                                                                              
+                Customizable heights: Designed to meet specific requirements. <br/>                                                                                                                                              
                 Weather-resistant finish: Keeps your property protected.</p>
-            </div>
-        </div>
+</div><a class="view-link" href="/Products/cementwall.html">View product <i class="fa-solid fa-arrow-right"></i></a></div></article><article class="product-card"><a class="product-image" href="/Products/homeDecorator.html"><img src="/images/homeDecoration.png" alt="Home Decor"><span class="zoom"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a><div class="card-body"><h2>Home Decor</h2><div class="desc">
 
-          <!-- Product 16 -->
-          <div class="product">
-            <a href="/Products/homeDecorator.html">  <img src="/images/homeDecoration.png" alt="Product 16"></a>
-            <div class="product-description">
-                <h2 class="pname">Home Decor</h2>
-                <p>Home Decor items are beautifully crafted cement decorations designed to enhance the aesthetic appeal of your home.  <br>
-                1. Versatile Design <br>
-                2. Aesthetic Appeal <br>
-                3. Durable Material <br>
+<p>Home Decor items are beautifully crafted cement decorations designed to enhance the aesthetic appeal of your home.  <br/>                                                                                    
+                1. Versatile Design <br/>                                                                                                                                                                                        
+                2. Aesthetic Appeal <br/>                                                                                                                                                                                        
+                3. Durable Material <br/>                                                                                                                                                                                        
                 4. Easy Installation</p>
-            </div>
-        </div>
-        <!-- Add more products as needed -->
-    </div>
-
-    <script>
-        const products = document.querySelectorAll('.product');
-    
-        const handleScroll = () => {
-            products.forEach(product => {
-                const rect = product.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    product.classList.add('visible');
-                }
-            });
-        };
-    
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('load', handleScroll);
-    </script>
-    
-   
-       <!-- footer section-->
-<div class="footer">
-    <div class="social-icons">
-        <a href="https://facebook.com" target="_blank" class="facebook" aria-label="Facebook">
-            <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://instagram.com/khetrabilashaproducts" target="_blank" class="instagram" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.youtube.com/@khetrabilashaproducts" target="_blank" class="youtube" aria-label="YouTube">
-            <i class="fab fa-youtube"></i>
-        </a>
-       
-        <a href="tel:+919337405868" class="call" aria-label="Call Us">
-            <i class="fas fa-phone-alt"></i>
-        </a>
-        <a href="https://wa.me/9337405868" target="_blank" class="whatsapp" aria-label="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="mailto:khetrabilashaproducts@gmail.com" class="gmail" aria-label="Gmail">
-            <i class="fas fa-envelope"></i>
-        </a>
-        <a href="https://maps.app.goo.gl/bV7rW5q5XtFoVGY99" class="maps" target="_blank" aria-label="Google Maps">
-            <i class="fas fa-map-marker-alt"></i>
-        </a>
-        
-    </div>
-     
-    <div class="footer-text">
-        <p>&copy; <span id="year"></span> Khetra Bilasha Products | All Rights Reserved</p>
-    </div>
-  </div>
-  
-  
-  <script src="/script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const productContainers = document.querySelectorAll(".product-description");
-
-  productContainers.forEach(container => {
-    const shortDescription = container.querySelector(".short-description");
-    const fullDescription = container.querySelector(".full-description");
-    const readMoreLink = container.querySelector(".read-more");
-
-    // Check if all required elements exist in the current container
-    if (shortDescription && fullDescription && readMoreLink) {
-      // Initially hide the full description for small screens
-      if (window.innerWidth <= 768) {
-        fullDescription.style.display = "none";
-      }
-
-      // Add click event listener to the "Read More" link
-      readMoreLink.addEventListener("click", function () {
-        if (window.innerWidth <= 768) { // Only for small screens
-          if (fullDescription.style.display === "none" || fullDescription.style.display === "") {
-            // Show full description and hide short description
-            fullDescription.style.display = "block";
-            shortDescription.style.display = "none";
-            readMoreLink.textContent = "Read Less...";
-          } else {
-            // Hide full description and show short description
-            fullDescription.style.display = "none";
-            shortDescription.style.display = "block";
-            readMoreLink.textContent = "Read More...";
-          }
-        }
-      });
-    }
-  });
-});
-
-
-    document.addEventListener("scroll", () => {
-        const cards = document.querySelectorAll(".product-card");
-        const triggerBottom = window.innerHeight * 0.8;
-
-        cards.forEach(card => {
-            const cardTop = card.getBoundingClientRect().top;
-            if (cardTop < triggerBottom) {
-                card.classList.add("visible");
-            } else {
-                card.classList.remove("visible");
-            }
-        });
-    });
-    
-</script>
-
-</body>
-</html>
+</div><a class="view-link" href="/Products/homeDecorator.html">View product <i class="fa-solid fa-arrow-right"></i></a></div></article></div></section></div></main>
+<footer class="footer"><div class="container"><p>© <span id="year"></span> Khetra Bilasha Products · All Rights Reserved <br> <span>Designed by <a href="https://instagram.com/srimant.404">srimant</a></span></p></div></footer>
+<script>const menuBtn=document.getElementById('menuBtn'),drawer=document.getElementById('drawer');menuBtn.addEventListener('click',()=>{const open=drawer.classList.toggle('open');menuBtn.innerHTML=open?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>';});document.querySelectorAll('.drawer a').forEach(a=>a.addEventListener('click',()=>{drawer.classList.remove('open');menuBtn.innerHTML='<i class="fa-solid fa-bars"></i>';}));document.addEventListener('click',e=>{if(!drawer.contains(e.target)&&!menuBtn.contains(e.target)){drawer.classList.remove('open');menuBtn.innerHTML='<i class="fa-solid fa-bars"></i>';}});document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
