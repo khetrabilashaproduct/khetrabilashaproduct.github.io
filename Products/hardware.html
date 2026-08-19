@@ -28,13 +28,14 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 .hardware-price{display:block;color:var(--accent);font-size:15px;font-weight:900;margin-top:6px}
 .hardware-info p{margin:5px 0 0;color:#777;font-size:10px;line-height:1.45;min-height:29px}
 .hardware-share{
-  margin-top:10px;width:100%;min-height:36px;border:0;border-radius:8px;
+  margin-top:10px;width:100%;min-height:38px;border:0;border-radius:9px;
   background:#14894b;color:#fff;display:flex;align-items:center;justify-content:center;
   gap:7px;font-size:11px;font-weight:900;cursor:pointer;text-decoration:none;
-  transition:.2s;
+  transition:background .2s,transform .2s,opacity .2s;
 }
 .hardware-share:hover{background:#0f713d;transform:translateY(-1px)}
-@media(max-width:650px){.hardware-share{min-height:34px;font-size:10px;margin-top:8px}}
+.hardware-share:disabled{opacity:.7;cursor:wait;transform:none}
+@media(max-width:650px){.hardware-share{min-height:35px;font-size:10px;margin-top:8px}}
 
 .hardware-section{scroll-margin-top:90px}
 .hardware-section + .hardware-section{border-top:1px solid var(--line)}
@@ -78,7 +79,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 1699</span>
 <p>Size-10inch <br> 16X250X5mm <br>Pure Brass</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="doorbolts">
@@ -88,7 +92,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 1699</span>
 <p>Size-10inch <br> 16X250X5mm <br>BPGLD</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="doorbolts">
@@ -98,7 +105,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 1599</span>
 <p>Size-10inch <br> 16X250X5mm <br>BPGLD/Cut</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="doorbolts">
@@ -108,7 +118,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 1599</span>
 <p>Size-10inch <br> 16X250X5mm <br>BPGLD/Cut</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="doorbolts">
@@ -118,7 +131,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 849</span>
 <p>Size-10inch <br> 16X250X5mm <br>24 KARAT Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="doorbolts">
@@ -128,7 +144,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 449</span>
 <p>Size-10inch <br> 16X5mm <br>Laser Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="doorbolts">
@@ -138,7 +157,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 449</span>
 <p>Size - 10inch 16X5mm <br>Glossy Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="doorbolts">
@@ -148,7 +170,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 399</span>
 <p>Size - 10inch 16X5mm Matt Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="doorbolts">
 <div class="door-image"><img alt="Door Bolt A" loading="lazy" src="/images/hardware/doorbolt1.1.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -157,7 +182,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 399</span>
 <p>Heavy duty, polished finish. 12 inch stainless bolt.</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="doorbolts">
 <div class="door-image"><img alt="Door Bolt A" loading="lazy" src="/images/hardware/doorbolt7.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -166,7 +194,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 399</span>
 <p>16mm x 5mm Size-10inch <br> Matte finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="doorbolts">
 <div class="door-image"><img alt="Door Bolt B" loading="lazy" src="/images/hardware/doorbolt3.3.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -176,7 +207,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <p>16mm x 3mm Size-10inch
               Matte finish, corrosion resistant</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="doorbolts">
 <div class="door-image"><img alt="Door Bolt B" loading="lazy" src="/images/hardware/doorbolt4.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -186,7 +220,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <p>16mm x 3mm Size-10inch
               Matte finish, corrosion resistant</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="doorbolts">
 <div class="door-image"><img alt="Door Bolt B" loading="lazy" src="/images/hardware/doorbolt6.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -196,7 +233,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <p>16mm x 3mm Size-10inch
               Matte finish, corrosion resistant</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="doorbolts">
 <div class="door-image"><img alt="Door Bolt B" loading="lazy" src="/images/hardware/doorbolt5.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -206,7 +246,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <p>16mm x 5mm Size-10inch
               Matte finish, corrosion resistant</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article></div>
 </div></section><section class="section hardware-section" data-category="towerbolts" id="towerbolts"><div class="container">
@@ -218,7 +261,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 50-200</span>
 <p>Stainless steel</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="towerbolts">
 <div class="door-image"><img alt="Tower Bolt 1" loading="lazy" src="/images/hardware/towerbolt8inch-1.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -227,7 +273,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 160</span>
 <p>Stainless steel, durable finish.</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="towerbolts">
 <div class="door-image"><img alt="Tower Bolt 2" loading="lazy" src="/images/hardware/towerbolt6inch-1.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -236,7 +285,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 80</span>
 <p>Stainless steel, durable finish.</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="towerbolts">
 <div class="door-image"><img alt="Tower Bolt 3" loading="lazy" src="/images/hardware/towerbolt6inch-2.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -245,7 +297,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 75</span>
 <p>Stainless steel, Mate finish.</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="towerbolts">
 <div class="door-image"><img alt="Tower Bolt 5" loading="lazy" src="/images/hardware/towerbolt4inch-2.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -254,7 +309,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 50</span>
 <p>Stainless steel, durable finish.</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="towerbolts">
 <div class="door-image"><img alt="Tower Bolt 6" loading="lazy" src="/images/hardware/towerbolt3inch-1.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -263,7 +321,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 60</span>
 <p>4-inch Stainless steel Mattfinish.</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article></div>
 </div></section><section class="section hardware-section" data-category="handles" id="handel"><div class="container">
@@ -277,7 +338,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 39</span>
 <p> 6-inch <br> 2mm <br> Glossy Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -287,7 +351,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 49</span>
 <p> 6-inch <br> 2.5mm <br> Glossy Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -297,7 +364,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 119</span>
 <p>DL- 201 Tikki 6.6 inch Glossy Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -307,7 +377,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 149</span>
 <p>7 inch Glossy Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="handles">
 <div class="door-image"><img alt="Handle A" loading="lazy" src="/images/hardware/handel13.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -316,7 +389,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 249</span>
 <p>Model S-121 8 inch Glossy Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="handles">
 <div class="door-image"><img alt="Handle A" loading="lazy" src="/images/hardware/handel14.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -325,7 +401,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 249</span>
 <p>Model S-102 8 inch Glossy Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 <article class="door-card hardware-card" data-category="handles">
 <div class="door-image"><img alt="Handle A" loading="lazy" src="/images/hardware/handel15.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -334,7 +413,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 249</span>
 <p>Model S-123 8 inch Glossy Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -344,7 +426,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 249</span>
 <p>BDH-109 8 inch TWO-TONE Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -354,7 +439,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 349</span>
 <p>BDH-1008 8 inch TWO-TONE Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -364,7 +452,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 349</span>
 <p>BDH-1009 8 inch TWO-TONE Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 
@@ -376,7 +467,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <p> 8 inch <br>SS Concealed Handel <br>
     Finish: C.P</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -387,7 +481,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <p> 8-inch <br>SS Concealed Handel <br>
     Finish: C.P</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -397,7 +494,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 399</span>
 <p> 8-inch <br> TWO-TONE Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -407,7 +507,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 399</span>
 <p> 10-inch <br> TWO-TONE Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -417,7 +520,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 399</span>
 <p> 10-inch <br> TWO-TONE Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -427,7 +533,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 399</span>
 <p> 10-inch <br> TWO-TONE Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 
@@ -438,7 +547,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 499</span>
 <p>9-INCH <br>Finish-TWO TONE </p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -448,7 +560,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 499</span>
 <p>9-INCH <br>Finish-TWO TONE </p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -458,7 +573,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 499</span>
 <p> 10-inch <br>TWO-TONE Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -468,7 +586,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 549</span>
 <p>10-inch <br> TWO-TONE Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 
@@ -479,7 +600,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 549</span>
 <p> 10-inch <br>TWO-TONE Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -489,7 +613,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 549</span>
 <p>10-inch <br>BDH-1001 10-inch GOLD PVD Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -499,7 +626,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 1199</span>
 <p>8-inch <br>Brass Pipe-Handel <br> 25x200mm <br>GOLD PVD Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -509,7 +639,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 1699</span>
 <p>10-inch <br>Brass Pipe-Handel <br> 25x250mm <br>GOLD Matte Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -519,7 +652,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 1699</span>
 <p>10-inch <br>Brass Pipe-Handel <br> 25x250mm <br>GOLD Matte Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 <article class="door-card hardware-card" data-category="handles">
@@ -529,7 +665,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 1299</span>
 <p>20-inch <br>Steel MainDoor-Handel <br> 25x250mm <br>C.P-SATIN Finish</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div></article>
 
 </section><section class="section hardware-section" data-category="stoppers" id="stoppers"><div class="container">
@@ -541,7 +680,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 30</span>
 <p>Soft Rubbery buffer to protect door</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="stoppers">
 <div class="door-image"><img alt="Magnetic Catch" loading="lazy" src="/images/hardware/Magnet1.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -550,7 +692,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 100</span>
 <p>Strong magnet for Big Doors</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="stoppers">
 <div class="door-image"><img alt="Magnetic Catch" loading="lazy" src="/images/hardware/Magnet2.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -559,7 +704,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 70</span>
 <p>Strong magnet for Small doors.</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="stoppers">
 <div class="door-image"><img alt="Door Stopper 1" loading="lazy" src="/images/hardware/doorstopper1.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -569,7 +717,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <p>Heavy leg strength for Heavy Doors
                               Rubber base stopper. with with glue paste</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="stoppers">
 <div class="door-image"><img alt="Door Stopper 1" loading="lazy" src="/images/hardware/doorstopper2.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -578,7 +729,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <span class="hardware-price">₹ 90</span>
 <p>Rubber base stopper.</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article><article class="door-card hardware-card" data-category="stoppers">
 <div class="door-image"><img alt="Door Stopper 1" loading="lazy" src="/images/hardware/doorstopper3.jpeg"/><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
@@ -586,7 +740,10 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <strong>Smokey - Door Stopper &amp; Kanika- Door Stopper</strong>
 <p>Comparision</p>
 
-<button class="hardware-share" type="button" aria-label="Share product on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button>
+<button class="hardware-share" type="button"
+        aria-label="Share this product on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+</button>
 </div>
 </article></div>
 </div></section>
@@ -617,28 +774,106 @@ document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',(
 }));
 
 
-document.addEventListener('click',e=>{
-  const btn=e.target.closest('.hardware-share');
-  if(!btn) return;
-  e.stopPropagation();
+document.addEventListener('click', async (event) => {
+  const button = event.target.closest('.hardware-share');
+  if (!button) return;
 
-  const card=btn.closest('.hardware-card');
-  if(!card) return;
+  event.stopPropagation();
 
-  const name=card.querySelector('.hardware-info strong')?.textContent.trim() || 'Product';
-  const price=card.querySelector('.hardware-price')?.textContent.trim() || '';
-  const desc=card.querySelector('.hardware-info p')?.innerText.trim() || '';
-  const image=card.querySelector('img')?.src || '';
+  const card = button.closest('.hardware-card');
+  if (!card) return;
 
-  const message=[
-    '🛠️ *'+name+'*',
-    price ? '💰 Price: '+price : '',
-    desc ? '📋 '+desc.replace(/\n+/g,' | ') : '',
+  const nameElement = card.querySelector('.hardware-info strong');
+  const priceElement = card.querySelector('.hardware-price');
+  const descriptionElement = card.querySelector('.hardware-info p');
+  const imageElement = card.querySelector('.door-image img');
+
+  const name = nameElement ? nameElement.textContent.trim() : 'Product';
+  const price = priceElement ? priceElement.textContent.trim() : '';
+  const description = descriptionElement
+    ? descriptionElement.innerText.trim().replace(/\n+/g, ' | ')
+    : '';
+  const imageUrl = imageElement ? imageElement.src : '';
+
+  const message = [
+    '🛠️ ' + name,
+    price ? '💰 Price: ' + price : '',
+    description ? '📋 ' + description : '',
     '',
-    '🖼️ Image: '+image
+    'Khetra Bilasha Products'
   ].filter(Boolean).join('\n');
 
-  window.open('https://wa.me/?text='+encodeURIComponent(message),'_blank','noopener');
+  const originalButtonHTML = button.innerHTML;
+  button.disabled = true;
+  button.innerHTML =
+    '<i class="fa-solid fa-spinner fa-spin"></i> Preparing...';
+
+  try {
+    if (!imageUrl) {
+      throw new Error('Product image not found.');
+    }
+
+    const response = await fetch(imageUrl, { mode: 'cors' });
+    if (!response.ok) {
+      throw new Error('Could not load product image.');
+    }
+
+    const blob = await response.blob();
+
+    let extension = 'jpg';
+    if (blob.type === 'image/png') extension = 'png';
+    else if (blob.type === 'image/webp') extension = 'webp';
+    else if (blob.type === 'image/gif') extension = 'gif';
+
+    const safeName = name
+      .replace(/[^a-z0-9]+/gi, '_')
+      .replace(/^_+|_+$/g, '') || 'product';
+
+    const file = new File(
+      [blob],
+      safeName + '.' + extension,
+      { type: blob.type || 'image/jpeg' }
+    );
+
+    const shareData = {
+      title: name,
+      text: message,
+      files: [file]
+    };
+
+    if (
+      navigator.share &&
+      navigator.canShare &&
+      navigator.canShare({ files: [file] })
+    ) {
+      await navigator.share(shareData);
+    } else if (navigator.share) {
+      await navigator.share({
+        title: name,
+        text: message + '\n🖼️ Image: ' + imageUrl
+      });
+    } else {
+      window.open(
+        'https://wa.me/?text=' +
+        encodeURIComponent(message + '\n🖼️ Image: ' + imageUrl),
+        '_blank',
+        'noopener'
+      );
+    }
+  } catch (error) {
+    // User closing the native share sheet is not an error.
+    if (error && error.name !== 'AbortError') {
+      window.open(
+        'https://wa.me/?text=' +
+        encodeURIComponent(message + '\n🖼️ Image: ' + imageUrl),
+        '_blank',
+        'noopener'
+      );
+    }
+  } finally {
+    button.disabled = false;
+    button.innerHTML = originalButtonHTML;
+  }
 });
 
 const lightbox=document.getElementById('lightbox'),lightboxImg=document.getElementById('lightboxImg'),lightboxLabel=document.getElementById('lightboxLabel');
