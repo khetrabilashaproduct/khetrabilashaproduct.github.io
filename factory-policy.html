@@ -1,356 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factory Policy | Khetra Bilasha Products</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Factory Policy | Khetra Bilasha Products">
+<meta name="theme-color" content="#181818">
+<title>Factory Policy | Khetra Bilasha Products</title>
+<link rel="icon" href="/images/logo.png" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
-    <!-- If you already use a main CSS, keep this -->
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- Optional: Bootstrap (only if you’re already using it elsewhere) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<style>
+:root{--ink:#181818;--paper:#f7f5f0;--card:#fff;--accent:#c94131;--accent2:#e8754d;--muted:#777;--line:#e6e1d8;--green:#14894b;--shadow:0 14px 38px rgba(0,0,0,.09)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:#1c1c1c;font-family:Inter,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.container{width:min(1160px,calc(100% - 28px));margin:auto}
 
-    <style>
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background-color: #f5f7fa;
-            margin: 0;
-        }
+.header{height:68px;position:sticky;top:0;z-index:1000;background:rgba(24,24,24,.98);box-shadow:0 4px 20px rgba(0,0,0,.16)}
+.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:14px}
+.brand img{width:42px;height:42px;object-fit:contain}
+.menu{width:42px;height:42px;border:1px solid #444;border-radius:10px;background:#292929;color:#fff;cursor:pointer;font-size:17px}
+.drawer{position:fixed;top:78px;right:14px;width:min(280px,calc(100% - 28px));background:#202020;border:1px solid #3b3b3b;border-radius:14px;padding:8px;z-index:1200;box-shadow:0 20px 50px rgba(0,0,0,.35);display:none}
+.drawer.open{display:block}
+.drawer a{display:flex;align-items:center;gap:12px;padding:14px;color:#fff;border-radius:9px;font-size:14px;font-weight:700}
+.drawer a:hover{background:#303030}
+.drawer i{width:18px;color:var(--accent2);text-align:center}
 
-        .policy-page {
-            max-width: 1100px;
-            margin: 40px auto 50px;
-            padding: 0 16px 40px;
-        }
+.hero{position:relative;overflow:hidden;background:#202020;color:#fff;padding:62px 0 92px}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 15%,rgba(232,117,77,.24),transparent 34%),linear-gradient(125deg,#181818,#282828)}
+.hero:after{content:"";position:absolute;left:-5%;right:-5%;bottom:-58px;height:110px;background:var(--paper);border-radius:50% 50% 0 0/65% 65% 0 0}
+.hero .container{position:relative;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:#ffc6b4;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.eyebrow:before{content:"";width:25px;height:2px;background:var(--accent2)}
+.hero h1{font-size:clamp(36px,6vw,64px);line-height:.98;margin:13px 0;letter-spacing:-.05em}
+.hero p{max-width:690px;color:#d0d0d0;font-size:14px;line-height:1.7;margin:0}
+.hero-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.hero-meta span{padding:8px 11px;border:1px solid #4a4a4a;border-radius:999px;color:#ddd;font-size:10px;font-weight:800}
+.hero-meta i{color:#ff9a80;margin-right:5px}
 
+.policy-intro{padding:34px 0 12px}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:end}
+.kicker{color:var(--accent);font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+h2{letter-spacing:-.035em}
+.intro-grid h2{font-size:clamp(27px,4vw,40px);line-height:1.05;margin:0}
+.intro-grid p{margin:0;color:#777;font-size:13px;line-height:1.7}
 
+.policy-list{padding:34px 0 68px;display:grid;gap:20px}
+.policy-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1fr .72fr;min-height:300px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.policy-card.reverse{grid-template-columns:.72fr 1fr}
+.policy-card.reverse .policy-copy{order:2}
+.policy-card.reverse .policy-media{order:1}
+.policy-card:hover{transform:translateY(-3px);box-shadow:0 20px 48px rgba(0,0,0,.13)}
+.policy-copy{padding:34px;display:flex;gap:20px;align-items:flex-start}
+.policy-number{font-size:11px;font-weight:900;color:var(--accent);letter-spacing:.1em;padding-top:5px;min-width:25px}
+.policy-copy h2{font-size:clamp(22px,3vw,30px);line-height:1.05;margin:0 0 14px}
+.policy-copy p{font-size:13px;line-height:1.7;color:#666;margin:0 0 9px}
+.policy-copy .policy-warning{color:#c82333;font-weight:800}
+.policy-copy .policy-highlight{color:#16844a;font-weight:800}
+.policy-media{min-height:300px;background:#eee;overflow:hidden}
+.policy-media img{width:100%;height:100%;min-height:300px;object-fit:cover;transition:transform .35s}
+.policy-card:hover .policy-media img{transform:scale(1.025)}
 
-        .policy-heading {
-            text-align: center;
-            margin-bottom: 32px;
-        }
+.support{background:#181818;color:#fff;padding:42px 0}
+.support-grid{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center}
+.support h2{font-size:28px;margin:0 0 7px}
+.support p{color:#aaa;font-size:12px;margin:0}
+.support-actions{display:flex;gap:8px;flex-wrap:wrap}
+.support-actions a{padding:11px 15px;border-radius:9px;font-size:11px;font-weight:900}
+.support-actions .wa{background:#14894b;color:#fff}
+.support-actions .mail{background:#fff;color:#181818}
 
-        .policy-heading h1 {
-            font-size: 2.2rem;
-            margin-bottom: 8px;
-        }
+.footer{background:#111;color:#777;text-align:center;padding:35px 15px 25px}
+.footer img{width:48px;height:48px;object-fit:contain;margin:0 auto 10px}
+.footer strong{display:block;color:#fff;font-size:13px}
+.footer p{font-size:10px;margin:7px 0 17px}
+.socials{display:flex;justify-content:center;gap:8px}
+.socials a{width:34px;height:34px;border-radius:9px;background:#242424;color:#ddd;display:grid;place-items:center;font-size:13px}
+.copy{font-size:9px;color:#555;margin-top:18px}
+.mobile-contact{display:none}
 
-        .policy-heading p {
-            color: #555;
-            font-size: 0.98rem;
-        }
-        
-
-        .policy-row {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 20px 18px;
-            margin-bottom: 22px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 18px;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .policy-row:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.10);
-        }
-
-        /* zig-zag layout */
-        .policy-row.reverse {
-            flex-direction: row-reverse;
-        }
-
-        .policy-text {
-            flex: 1 1 270px;
-            min-width: 0;
-        }
-
-        .policy-text h2 {
-            font-size: 1.35rem;
-            margin-bottom: 8px;
-        }
-
-        .policy-text p {
-            margin-bottom: 6px;
-            color: #444;
-            font-size: 0.98rem;
-        }
-
-        .policy-highlight {
-            color: #0b5fff;
-            font-weight: 600;
-        }
-
-        .policy-warning {
-            color: #c82333;
-            font-weight: 600;
-        }
-
-        .policy-image {
-            flex: 0 0 260px;
-            max-width: 320px;
-            margin-inline: auto;
-        }
-
-        .policy-image img {
-            width: 100%;
-            display: block;
-            border-radius: 14px;
-            object-fit: cover;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .policy-row:hover .policy-image img {
-            transform: scale(1.03);
-            box-shadow: 0 8px 22px rgba(0,0,0,0.24);
-        }
-
-        /* special animation only for delivery / GIF section */
-        .policy-row.delivery:hover .policy-image img {
-            animation: truckMove 1.4s ease-in-out infinite;
-        }
-
-        @keyframes truckMove {
-            0%   { transform: translateX(0); }
-            50%  { transform: translateX(8px); }
-            100% { transform: translateX(0); }
-        }
-
-        .back-link {
-            margin-top: 24px;
-            text-align: center;
-        }
-
-        .back-link a {
-            display: inline-block;
-            padding: 8px 18px;
-            border-radius: 999px;
-            border: 1px solid #0b5fff;
-            color: #0b5fff;
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
-
-        .back-link a:hover {
-            background: #0b5fff;
-            color: #fff;
-        }
-
-        @media (max-width: 768px) {
-            .policy-row,
-            .policy-row.reverse {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .policy-image {
-                width: 100%;
-                max-width: 100%;
-            }
-        }
-
-
-
-        .policy-heading {
-    position: relative;
-    width: 93vw;                 /* full screen width */
-    margin-left: 50%;             /* center hack for 100vw inside container */
-    transform: translateX(-50%);
-    background: linear-gradient(135deg, #0b5dff, #4aa3ff);
-    color: #ffffff;
-    padding: 60px 20px 90px;
-    text-align: center;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+@media(max-width:800px){
+ .intro-grid{grid-template-columns:1fr;gap:12px}
+ .policy-card,.policy-card.reverse{grid-template-columns:1fr}
+ .policy-card.reverse .policy-copy,.policy-card.reverse .policy-media{order:initial}
+ .policy-media,.policy-media img{min-height:240px}
+ .policy-copy{padding:26px}
+ .support-grid{grid-template-columns:1fr}
 }
-
-/* inner content stays nicely aligned with your page width */
-.policy-heading-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
+@media(max-width:650px){
+ body{padding-bottom:64px}
+ .header{height:62px}
+ .brand img{width:39px;height:39px}
+ .hero{padding:46px 0 76px}
+ .hero h1{font-size:37px}
+ .hero p{font-size:12px}
+ .policy-intro{padding-top:25px}
+ .policy-list{padding:24px 0 46px}
+ .policy-copy{padding:22px 18px;gap:12px}
+ .policy-copy h2{font-size:22px}
+ .policy-copy p{font-size:12px}
+ .policy-media,.policy-media img{min-height:220px}
+ .mobile-contact{position:fixed;left:0;right:0;bottom:0;height:64px;background:#fff;display:grid;grid-template-columns:1fr 1fr;z-index:1500;box-shadow:0 -5px 20px rgba(0,0,0,.17)}
+ .mobile-contact a{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:900}
+ .mobile-call{border-right:1px solid #ddd}
+ .mobile-wa{background:#14894b;color:#fff}
 }
-
-.policy-heading-inner h1 {
-    font-size: 2.8rem;
-    font-weight: 900;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-}
-
-.policy-heading-inner p {
-    font-size: 1.05rem;
-    max-width: 720px;
-    margin: 0 auto;
-    line-height: 1.6;
-    opacity: 0.95;
-}
-
-/* wave container at bottom */
-.policy-heading-wave {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 200%;       /* wider so we can animate it */
-    height: 90px;
-    z-index: 1;
-    animation: waveMove 12s linear infinite;
-}
-
-/* animate wave from left to right */
-@keyframes waveMove {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-}
-
-    </style>
+</style>
 </head>
 <body>
 
-    <div class="policy-page">
-       <div class="policy-heading">
-    <div class="policy-heading-inner">
-        <h1>Factory Policy</h1>
-        <p>
-            Clear information about Quality, Payment, Delivery and Installation 
-            at <strong>Khetra Bilasha Products</strong>.
-        </p>
-    </div>
+<header class="header">
+<div class="container header-inner">
+<a class="brand" href="/index.html"><img src="/images/logo2.png" alt="Khetra Bilasha Products"><span>Khetra Bilasha Products</span></a>
+<button class="menu" id="menuBtn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+</div>
+</header>
 
-    <!-- animated wave at bottom -->
-    <div class="policy-heading-wave">
-        <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#f5f7fa" fill-opacity="1" 
-                d="M0,256L60,250.7C120,245,240,235,360,224C480,213,600,203,720,176C840,149,960,107,1080,112C1200,117,1320,171,1380,197.3L1440,224L1440,320L1380,320
-                   C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-            </path>
-        </svg>
-    </div>
+<nav class="drawer" id="drawer">
+<a href="/index.html"><i class="fa-solid fa-house"></i> Home</a>
+<a href="/products.html"><i class="fa-solid fa-box"></i> Products</a>
+<a href="/about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+<a href="/payment.html"><i class="fa-solid fa-credit-card"></i> Payment</a>
+<a href="/schedule.html"><i class="fa-solid fa-calendar"></i> Work Schedule</a>
+<a href="/Products/sampledoor.html"><i class="fa-solid fa-door-open"></i> Sample Product</a>
+</nav>
+
+<section class="hero">
+<div class="container">
+<div class="eyebrow">Khetra Bilasha • Factory Policy</div>
+<h1>CLEAR RULES.<br>NO SURPRISES.</h1>
+<p>Clear information about quality, payment, delivery, installation and customer support at Khetra Bilasha Products.</p>
+<div class="hero-meta">
+<span><i class="fa-solid fa-shield-halved"></i> Quality</span>
+<span><i class="fa-solid fa-credit-card"></i> Payment</span>
+<span><i class="fa-solid fa-truck"></i> Delivery</span>
+<span><i class="fa-solid fa-headset"></i> Support</span>
+</div>
+</div>
+</section>
+
+<section class="policy-intro">
+<div class="container intro-grid">
+<div>
+<div class="kicker">Before You Order</div>
+<h2>Everything important, in one place.</h2>
+</div>
+<p>Please read these policies before confirming an order. They explain how we handle production, payment, delivery, installation and customer support.</p>
+</div>
+</section>
+
+<main class="container policy-list">
+
+    <article class="policy-card ">
+      <div class="policy-copy">
+        <div class="policy-number">01</div>
+        <div>
+          <h2>1. Quality Assurance</h2>
+          <p>Every product manufactured at <strong>Khetra Bilasha Products</strong> goes through strict quality checks to ensure durability, strength, and long-lasting performance.</p><p>We carefully inspect raw materials, production process, finishing and packaging before dispatch.</p>
+        </div>
+      </div>
+      <div class="policy-media">
+        <img src="/images/quality-control.gif" alt="Quality inspection at factory" loading="lazy">
+      </div>
+    </article>
+    <article class="policy-card reverse">
+      <div class="policy-copy">
+        <div class="policy-number">02</div>
+        <div>
+          <h2>2. Prepaid Delivery Policy</h2>
+          <p>All orders are <strong>prepaid only</strong>. We start manufacturing and dispatch <strong>after payment is received and confirmed</strong>.</p><p class="policy-warning">🚚 No cash-on-delivery (COD) available.</p><p>This helps us plan production better, reduce wastage and maintain transparent pricing for our customers.</p>
+        </div>
+      </div>
+      <div class="policy-media">
+        <img src="https://cdn.dribbble.com/userupload/22860211/file/original-f81a064afd746f2910762383d32b4f15.gif" alt="Prepaid delivery animation" loading="lazy">
+      </div>
+    </article>
+    <article class="policy-card ">
+      <div class="policy-copy">
+        <div class="policy-number">03</div>
+        <div>
+          <h2>3. Home Delivery & Installation</h2>
+          <p>If you choose <strong>home delivery</strong> or <strong>installation service</strong>, the service charge has to be paid <strong>together with the product amount</strong>.</p><p class="policy-highlight">✔ Product Price + Delivery Charge + Installation Charge → paid together before dispatch.</p><p>Charges may vary based on distance, quantity and type of product. Details will be shared at the time of order.</p>
+        </div>
+      </div>
+      <div class="policy-media">
+        <img src="/images/Delivery to customer.gif" alt="Team doing product delivery and installation" loading="lazy">
+      </div>
+    </article>
+    <article class="policy-card reverse">
+      <div class="policy-copy">
+        <div class="policy-number">04</div>
+        <div>
+          <h2>4. Delivery & Manufacturing Time</h2>
+          <p>Custom or bulk orders usually require <strong>3–7 days</strong> of processing time depending on product type, quantity and current workload.</p><p>We try our best to inform customers about expected delivery date at the time of order confirmation.</p>
+        </div>
+      </div>
+      <div class="policy-media">
+        <img src="/images/global-matrix-solution-manufacturing.gif" alt="Production and delivery schedule" loading="lazy">
+      </div>
+    </article>
+    <article class="policy-card ">
+      <div class="policy-copy">
+        <div class="policy-number">05</div>
+        <div>
+          <h2>5. Manufacturing Transparency</h2>
+          <p>We clearly communicate about material quality, size, colour and usage of our products so that customers know what they are buying.</p><p>Our team follows safe and responsible production practices as much as possible at the factory.</p>
+        </div>
+      </div>
+      <div class="policy-media">
+        <img src="/images/tranparancy.png" alt="Transparent manufacturing process" loading="lazy">
+      </div>
+    </article>
+    <article class="policy-card reverse">
+      <div class="policy-copy">
+        <div class="policy-number">06</div>
+        <div>
+          <h2>6. Customer Support</h2>
+          <p>For any questions related to orders, delivery or installation, feel free to contact us:</p><p class="policy-highlight">khetrabilashaproducts@gmail.com</p>
+        </div>
+      </div>
+      <div class="policy-media">
+        <img src="/images/Customer care service 2_2.gif" alt="Customer support team" loading="lazy">
+      </div>
+    </article>
+</main>
+
+<section class="support">
+<div class="container support-grid">
+<div>
+<div class="kicker" style="color:#ff9a80">Need Help?</div>
+<h2>Have a question about your order?</h2>
+<p>Contact Khetra Bilasha Products before placing your order if anything is unclear.</p>
+</div>
+<div class="support-actions">
+<a class="wa" href="https://wa.me/9337405868" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+<a class="mail" href="mailto:khetrabilashaproducts@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<img src="/images/logo2.png" alt="Khetra Bilasha Products">
+<strong>Khetra Bilasha Products</strong>
+<p>Doors • WPC • PVC • Hardware • Plywood • Cement Products</p>
+<div class="socials">
+<a href="https://instagram.com/khetrabilashaproducts" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.youtube.com/@khetrabilashaproducts" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="tel:+919337405868"><i class="fas fa-phone"></i></a>
+<a href="https://wa.me/9337405868" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:khetrabilashaproducts@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://maps.app.goo.gl/bV7rW5q5XtFoVGY99" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+</div>
+<div class="copy">© <span id="year"></span> Khetra Bilasha Products • All Rights Reserved</div>
+</footer>
+
+<div class="mobile-contact">
+<a class="mobile-call" href="tel:+919337405868"><i class="fa-solid fa-phone"></i> CALL NOW</a>
+<a class="mobile-wa" href="https://wa.me/9337405868" target="_blank"><i class="fa-brands fa-whatsapp"></i> WHATSAPP</a>
 </div>
 
-
-        <!-- 1. Quality Assurance (text left, image right) -->
-        <section class="policy-row">
-            <div class="policy-text">
-                <h2>1. Quality Assurance</h2>
-                <p>
-                    Every product manufactured at <strong>Khetra Bilasha Products</strong> goes through strict 
-                    quality checks to ensure durability, strength, and long-lasting performance.
-                </p>
-                <p>
-                    We carefully inspect raw materials, production process, finishing and packaging before dispatch.
-                </p>
-            </div>
-            <div class="policy-image">
-                <!-- 🖼 Dummy image – replace with real quality/factory photo -->
-                <img src="/images/quality-control.gif" alt="Quality inspection at factory">
-            </div>
-        </section>
-
-        <!-- 2. Prepaid Delivery Policy (image/GIF left, text right) -->
-        <section class="policy-row reverse delivery">
-            <div class="policy-text">
-                <h2>2. Prepaid Delivery Policy</h2>
-                <p>
-                    All orders are <strong>prepaid only</strong>. We start manufacturing and dispatch 
-                    <strong>after payment is received and confirmed</strong>.
-                </p>
-                <p class="policy-warning">
-                    🚚 No cash-on-delivery (COD) available.
-                </p>
-                <p>
-                    This helps us plan production better, reduce wastage and maintain transparent pricing for our customers.
-                </p>
-            </div>
-            <div class="policy-image">
-                <!-- 🟢 Dummy GIF – replace with your own animation like the Dribbble one -->
-                <img src="https://cdn.dribbble.com/userupload/22860211/file/original-f81a064afd746f2910762383d32b4f15.gif" alt="Prepaid delivery animation">
-            </div>
-        </section>
-
-        <!-- 3. Home Delivery & Installation (text left, image right) -->
-        <section class="policy-row">
-            <div class="policy-text">
-                <h2>3. Home Delivery & Installation</h2>
-                <p>
-                    If you choose <strong>home delivery</strong> or <strong>installation service</strong>, 
-                    the service charge has to be paid <strong>together with the product amount</strong>.
-                </p>
-                <p class="policy-highlight">
-                    ✔ Product Price + Delivery Charge + Installation Charge → paid together before dispatch.
-                </p>
-                <p>
-                    Charges may vary based on distance, quantity and type of product. Details will be shared at the time of order.
-                </p>
-            </div>
-            <div class="policy-image">
-                <!-- 🖼 Dummy image – replace with your delivery / installation photo -->
-                <img src="/images/Delivery to customer.gif" alt="Team doing product delivery and installation">
-            </div>
-        </section>
-
-        <!-- 4. Delivery & Manufacturing Time (image left, text right) -->
-        <section class="policy-row reverse">
-            <div class="policy-text">
-                <h2>4. Delivery & Manufacturing Time</h2>
-                <p>
-                    Custom or bulk orders usually require <strong>3–7 days</strong> of processing time depending 
-                    on product type, quantity and current workload.
-                </p>
-                <p>
-                    We try our best to inform customers about expected delivery date at the time of order confirmation.
-                </p>
-            </div>
-            <div class="policy-image">
-                <!-- 🖼 Dummy image – replace with clock / calendar / factory working photo -->
-                <img src="/images/global-matrix-solution-manufacturing.gif" alt="Production and delivery schedule">
-            </div>
-        </section>
-
-        <!-- 5. Manufacturing Transparency (text left, image right) -->
-        <section class="policy-row">
-            <div class="policy-text">
-                <h2>5. Manufacturing Transparency</h2>
-                <p>
-                    We clearly communicate about material quality, size, colour and usage of our products so that 
-                    customers know what they are buying.
-                </p>
-                <p>
-                    Our team follows safe and responsible production practices as much as possible at the factory.
-                </p>
-            </div>
-            <div class="policy-image">
-                <!-- 🖼 Dummy image – replace with transparent process / workers / environment photo -->
-                <img src="/images/tranparancy.png" alt="Transparent manufacturing process">
-            </div>
-        </section>
-
-        <!-- 6. Customer Support (image left, text right) -->
-        <section class="policy-row reverse">
-            <div class="policy-text">
-                <h2>6. Customer Support</h2>
-                <p>
-                    For any questions related to orders, delivery or installation, feel free to contact us:
-                </p>
-                <p class="policy-highlight">
-                    khetrabilashaproducts@gmail.com
-                </p>
-            </div>
-            <div class="policy-image">
-                <!-- 🖼 Dummy image – replace with office / phone / helpdesk image -->
-                <img src="/images/Customer care service 2_2.gif" alt="Customer support team">
-            </div>
-        </section>
-
-        <div class="back-link">
-            <a href="/about.html">← Back to About Page</a>
-        </div>
-    </div>
-
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const drawer=document.getElementById('drawer');
+menuBtn.addEventListener('click',()=>{
+drawer.classList.toggle('open');
+menuBtn.innerHTML=drawer.classList.contains('open')?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>';
+});
+document.querySelectorAll('.drawer a').forEach(a=>a.addEventListener('click',()=>{
+drawer.classList.remove('open');
+menuBtn.innerHTML='<i class="fa-solid fa-bars"></i>';
+}));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>

@@ -796,9 +796,9 @@ document.addEventListener('click', async (event) => {
   const imageUrl = imageElement ? imageElement.src : '';
 
   const message = [
-    '🛠️ ' + name,
-    price ? '💰 Price: ' + price : '',
-    description ? '📋 ' + description : '',
+    ' ' + name,
+    price ? ' Price: ' + price : '',
+    description ? ' ' + description : '',
     '',
     'Khetra Bilasha Products'
   ].filter(Boolean).join('\n');
