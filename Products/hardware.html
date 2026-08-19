@@ -628,14 +628,14 @@ document.addEventListener('click',e=>{
   const name=card.querySelector('.hardware-info strong')?.textContent.trim() || 'Product';
   const price=card.querySelector('.hardware-price')?.textContent.trim() || '';
   const desc=card.querySelector('.hardware-info p')?.innerText.trim() || '';
-  const page=window.location.href.split('#')[0];
+  const image=card.querySelector('img')?.src || '';
 
   const message=[
     '🛠️ *'+name+'*',
     price ? '💰 Price: '+price : '',
     desc ? '📋 '+desc.replace(/\n+/g,' | ') : '',
     '',
-    'View product: '+page
+    '🖼️ Image: '+image
   ].filter(Boolean).join('\n');
 
   window.open('https://wa.me/?text='+encodeURIComponent(message),'_blank','noopener');
