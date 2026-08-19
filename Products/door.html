@@ -19,16 +19,18 @@
 .hero{position:relative;overflow:hidden;background:#202020;color:#fff;padding:56px 0 54px}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 10%,rgba(232,117,77,.25),transparent 35%),linear-gradient(120deg,#181818,#252525)}.hero .container{position:relative}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;color:#ffc6b4;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.eyebrow:before{content:"";width:25px;height:2px;background:var(--accent2)}
 .hero h1{font-size:clamp(30px,6vw,58px);line-height:1;margin:12px 0;letter-spacing:-.04em}.hero p{max-width:650px;color:#cfcfcf;font-size:14px;line-height:1.6;margin:0 0 22px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.share-btn{position:relative}
+.share-status{position:absolute;left:50%;top:calc(100% + 8px);transform:translateX(-50%);background:#181818;color:#fff;padding:7px 10px;border-radius:8px;font-size:10px;font-weight:800;white-space:nowrap;opacity:0;pointer-events:none;transition:.2s;z-index:10}
+.share-status.show{opacity:1}
 .btn{min-height:44px;padding:11px 16px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:800;border:0;cursor:pointer}.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:#aa3025}.btn-light{background:#fff;color:#222}.btn-ghost{border:1px solid #555;color:#fff;background:transparent}
 .toolbar-wrap{position:relative;margin-top:-20px;z-index:5}.toolbar{background:#fff;border:1px solid var(--line);border-radius:15px;padding:10px;box-shadow:var(--shadow);display:flex;gap:8px;align-items:center;justify-content:space-between}.filters{display:flex;gap:7px;overflow:auto;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.filter{border:1px solid var(--line);background:#faf9f6;border-radius:9px;padding:9px 13px;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap}.filter.active{background:var(--ink);border-color:var(--ink);color:#fff}.count{font-size:11px;color:#777;font-weight:800;white-space:nowrap;padding:0 6px}
 .section{padding:48px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}.section-title{margin:0;font-size:27px;letter-spacing:-.03em}.section-title small{display:block;color:#888;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-top:5px}.section-desc{margin:0;color:#777;font-size:12px;max-width:520px;line-height:1.5}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.door-card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.055);transition:.2s}.door-card:hover{transform:translateY(-3px);box-shadow:0 13px 30px rgba(0,0,0,.12)}.door-image{position:relative;background:#eee;aspect-ratio:1/1;overflow:hidden}.door-image img{width:100%;height:100%;object-fit:contain;transition:transform .35s}.door-card:hover img{transform:scale(1.035)}.zoom{position:absolute;right:9px;top:9px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.94);display:grid;place-items:center;color:#222;font-size:12px;box-shadow:0 3px 10px rgba(0,0,0,.15)}.door-info{padding:11px 12px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px}.door-info strong{font-size:13px;letter-spacing:.02em}.status{font-size:9px;font-weight:900;text-transform:uppercase;padding:5px 7px;border-radius:6px;white-space:nowrap}.status.available{background:#e6f6ed;color:#13723f}.status.unavailable{background:#fde8e6;color:#b52821}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.door-card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.055);transition:.2s}.door-card:hover{transform:translateY(-3px);box-shadow:0 13px 30px rgba(0,0,0,.12)}.door-image{position:relative;background:#eee;aspect-ratio:1/1;overflow:hidden}.door-image img{width:100%;height:100%;object-fit:contain;transition:transform .35s}.door-card:hover img{transform:scale(1.035)}.zoom{position:absolute;right:9px;top:9px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.94);display:grid;place-items:center;color:#222;font-size:12px;box-shadow:0 3px 10px rgba(0,0,0,.15)}.door-info{padding:11px 12px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.share-product{width:100%;border:0;border-radius:8px;background:#128c4b;color:#fff;padding:9px 10px;display:flex;align-items:center;justify-content:center;gap:7px;font-size:10px;font-weight:900;cursor:pointer}.share-product:hover{background:#0d753d}.share-product i{font-size:13px}.door-info strong{font-size:13px;letter-spacing:.02em}.status{font-size:9px;font-weight:900;text-transform:uppercase;padding:5px 7px;border-radius:6px;white-space:nowrap}.status.available{background:#e6f6ed;color:#13723f}.status.unavailable{background:#fde8e6;color:#b52821}
 .frp-section{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.price-note{background:var(--ink);color:#fff;border-radius:15px;padding:18px 20px;margin:4px 0 26px;display:flex;align-items:center;justify-content:space-between;gap:20px}.price-note strong{font-size:17px}.price-note span{display:block;color:#bbb;font-size:11px;margin-top:3px}
 .contact{padding:48px 0}.contact-box{background:linear-gradient(135deg,#b32f25,#e7734e);color:#fff;border-radius:18px;padding:30px 20px;text-align:center;box-shadow:0 14px 35px rgba(201,65,49,.22)}.contact-box h2{font-size:25px;margin:0 0 7px}.contact-box p{font-size:12px;color:#ffe7df;margin:0 0 17px}.contact-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
 footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}footer img{width:48px;height:48px;object-fit:contain;margin:0 auto 10px}footer strong{display:block;color:#fff;font-size:13px}footer p{font-size:10px;margin:7px 0 17px}.socials{display:flex;justify-content:center;gap:8px}.socials a{width:34px;height:34px;border-radius:9px;background:#292929;color:#ddd;display:grid;place-items:center;font-size:13px}.copy{font-size:9px;color:#666;margin-top:18px}
 .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.86);z-index:2000;display:none;align-items:center;justify-content:center;padding:18px}.lightbox.open{display:flex}.lightbox-inner{position:relative;width:min(850px,100%);max-height:94vh}.lightbox img{width:100%;max-height:86vh;object-fit:contain;border-radius:10px}.close{position:absolute;right:0;top:-44px;width:38px;height:38px;border:0;border-radius:50%;background:#fff;color:#111;cursor:pointer}.lightbox-label{color:#fff;text-align:center;font-size:13px;font-weight:800;margin-top:9px}
-.mobile-contact{display:none}
-@media(max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:650px){body{padding-bottom:64px}.header{height:62px}.brand img{width:39px;height:39px}.hero{padding:42px 0 40px}.hero h1{font-size:34px}.hero p{font-size:12px}.section{padding:38px 0}.section-head{display:block}.section-desc{margin-top:7px}.grid{grid-template-columns:repeat(2,1fr);gap:11px}.door-info{padding:10px}.door-info strong{font-size:12px}.status{font-size:8px;padding:4px 5px}.toolbar{padding:8px}.count{display:none}.price-note{display:block}.price-note .btn{margin-top:12px;width:100%}.mobile-contact{position:fixed;left:0;right:0;bottom:0;height:64px;background:#fff;display:grid;grid-template-columns:1fr 1fr;z-index:1500;box-shadow:0 -5px 20px rgba(0,0,0,.17)}.mobile-contact a{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:900}.mobile-call{border-right:1px solid #ddd;color:#222}.mobile-wa{background:#14894b;color:#fff}}@media(max-width:390px){.grid{gap:8px}.door-info{display:block}.status{display:inline-block;margin-top:5px}.hero h1{font-size:30px}}
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:650px){body{padding-bottom:0}.header{height:62px}.brand img{width:39px;height:39px}.hero{padding:42px 0 40px}.hero h1{font-size:34px}.hero p{font-size:12px}.section{padding:38px 0}.section-head{display:block}.section-desc{margin-top:7px}.grid{grid-template-columns:repeat(2,1fr);gap:11px}.door-info{padding:10px}.door-info strong{font-size:12px}.status{font-size:8px;padding:4px 5px}.toolbar{padding:8px}.count{display:none}.price-note{display:block}.price-note .btn{margin-top:12px;width:100%}}@media(max-width:390px){.grid{gap:8px}.door-info{display:block}.status{display:inline-block;margin-top:5px}.hero h1{font-size:30px}}
 
 .material-section{padding:58px 0;background:#fff;border-top:1px solid var(--line)}
 .material-section.alt{background:#f0ede7}
@@ -65,379 +67,477 @@ footer{background:#181818;color:#999;text-align:center;padding:34px 15px 25px}fo
 <a href="/index.html"><i class="fa-solid fa-house"></i> Home</a><a href="/products.html"><i class="fa-solid fa-box"></i> Products</a><a href="/about.html"><i class="fa-solid fa-circle-info"></i> About</a><a href="/payment.html"><i class="fa-solid fa-credit-card"></i> Payment</a><a href="/schedule.html"><i class="fa-solid fa-calendar"></i> Work Schedule</a><a href="/Products/sampledoor.html"><i class="fa-solid fa-door-open"></i> Sample Product</a>
 </nav>
 
-<section class="hero"><div class="container"><div class="eyebrow">Khetra Bilasha • Door Collection</div><h1>CHOOSE YOUR DOOR</h1><p>Browse the designs by photo. PLY, FRP, WPC and HDHMR — each section explains where the door is best used.</p><div class="hero-actions"><a class="btn btn-primary" href="#kbd"><i class="fa-solid fa-images"></i> All Designs</a><a class="btn btn-light" href="https://drive.google.com/file/d/1oEucDw2P3LCIyWin471zxSJsjfR0wUjg/view?usp=sharing" target="_blank"><i class="fa-solid fa-file-arrow-down"></i> Catalog</a><a class="btn btn-ghost" href="/Products/sampledoor.html">Sample Product</a></div></div></section>
+<section class="hero"><div class="container"><div class="eyebrow">Khetra Bilasha • Door Collection</div><h1>CHOOSE YOUR DOOR</h1><p>Browse the designs by photo. PLY, FRP, WPC and HDHMR — each section explains where the door is best used.</p><div class="hero-actions"><a class="btn btn-primary" href="#kbd"><i class="fa-solid fa-images"></i> All Designs</a><a class="btn btn-light" href="https://drive.google.com/file/d/1oEucDw2P3LCIyWin471zxSJsjfR0wUjg/view?usp=sharing" target="_blank"><i class="fa-solid fa-file-arrow-down"></i> Catalog</a><a class="btn btn-ghost" href="/Products/sampledoor.html">Sample Product</a><button class="btn btn-ghost" id="shareBtn" type="button"><i class="fa-solid fa-share-nodes"></i> Share</button></div></div></section>
 
 <div class="toolbar-wrap"><div class="container"><div class="toolbar"><div class="filters"><button class="filter active" data-filter="all">All Designs</button><a class="filter" href="#frp">FRP Door</a><a class="filter" href="#wpc">WPC Door</a><a class="filter" href="#hdhmr">HDHMR Door</a><button class="filter" data-filter="available">Available</button><button class="filter" data-filter="unavailable">Unavailable</button></div><div class="count"><span id="visibleCount">0</span> designs</div></div></div></div>
 
 <main>
 <section class="section" id="kbd"><div class="container"><div class="section-head"><div><h2 class="section-title">KBD Doors <small>Plywood Door Designs</small></h2></div><p class="section-desc">Choose by photo. The design number is all you need when asking about a door.</p></div><div class="grid" id="kbdGrid"><article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd01.jpg" alt="KBD-01" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-01</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-01</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd02.jpg" alt="KBD-02" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-02</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-02</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd03.jpg" alt="KBD-03" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-03</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-03</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd04.jpg" alt="KBD-04" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-04</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-04</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd05.jpg" alt="KBD-05" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-05</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-05</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd06.jpg" alt="KBD-06" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-06</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-06</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd07.jpg" alt="KBD-07" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-07</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-07</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd08.jpg" alt="KBD-08" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-08</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-08</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd09.jpg" alt="KBD-09" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-09</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-09</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd10.jpg" alt="KBD-10" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-10</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-10</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd11.jpg" alt="ND-11" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>ND-11</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>ND-11</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd12.jpg" alt="KBD-12" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-12</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-12</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd13.jpg" alt="KBD-13" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-13</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-13</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd14.jpg" alt="KBD-14" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-14</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-14</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd15.jpg" alt="KBD-15" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-15</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-15</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="unavailable">
   <div class="door-image"><img src="/images/door/nd16.jpg" alt="KBD-16" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-16</strong><span class="status unavailable">Unavailable</span></div>
+  <div class="door-info"><strong>KBD-16</strong><span class="status unavailable">Unavailable</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd17.jpg" alt="ND-17" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>ND-17</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>ND-17</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd18.jpg" alt="KBD-18" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-18</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-18</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="unavailable">
   <div class="door-image"><img src="/images/door/nd19.jpg" alt="KBD-19" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-19</strong><span class="status unavailable">Unavailable</span></div>
+  <div class="door-info"><strong>KBD-19</strong><span class="status unavailable">Unavailable</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd20.jpg" alt="KBD-20" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-20</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-20</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd21.jpg" alt="KBD-21" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-21</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-21</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd22.jpg" alt="KBD-22" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-22</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-22</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd23.jpg" alt="KBD-23" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-23</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-23</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd24.jpg" alt="KBD-24" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-24</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-24</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd25.jpg" alt="KBD-25" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-25</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-25</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd26.jpg" alt="KBD-26" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-26</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-26</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="unavailable">
   <div class="door-image"><img src="/images/door/nd27.jpg" alt="KBD-27" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-27</strong><span class="status unavailable">Unavailable</span></div>
+  <div class="door-info"><strong>KBD-27</strong><span class="status unavailable">Unavailable</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd28.jpg" alt="KBD-28" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-28</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-28</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="unavailable">
   <div class="door-image"><img src="/images/door/nd29.jpg" alt="KBD-29" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-29</strong><span class="status unavailable">Unavailable</span></div>
+  <div class="door-info"><strong>KBD-29</strong><span class="status unavailable">Unavailable</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd30.jpg" alt="KBD-30" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-30</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-30</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd31.jpg" alt="KBD-31" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-31</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-31</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd32.jpg" alt="KBD-32" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-32</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-32</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd33.jpg" alt="KBD-33" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-33</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-33</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd34.jpg" alt="KBD-34" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-34</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-34</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd35.jpg" alt="KBD-35" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-35</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-35</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd36.jpg" alt="KBD-36" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-36</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-36</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd37.jpg" alt="KBD-37" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-37</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-37</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd38.jpg" alt="KBD-38" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-38</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-38</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd39.jpg" alt="KBD-39" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-39</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-39</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd40.jpg" alt="KBD-40" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-40</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-40</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd41.jpg" alt="KBD-41" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-41</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-41</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd42.jpg" alt="KBD-42" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-42</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-42</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd43.jpg" alt="KBD-43" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-43</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-43</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd44.jpg" alt="KBD-44" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-44</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-44</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd45.jpg" alt="KBD-45" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-45</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-45</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd46.jpg" alt="KBD-46" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-46</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-46</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd47.jpg" alt="KBD-47" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-47</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-47</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd48.jpg" alt="KBD-48" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-48</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-48</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd49.jpg" alt="KBD-49" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-49</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-49</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd50.jpg" alt="ND-50" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>ND-50</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>ND-50</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd51.jpg" alt="KBD-51" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-51</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-51</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd52.jpg" alt="KBD-52" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-52</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-52</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd53.jpg" alt="KBD-53" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-53</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-53</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="unavailable">
   <div class="door-image"><img src="/images/door/nd54.jpg" alt="KBD-54" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-54</strong><span class="status unavailable">Unavailable</span></div>
+  <div class="door-info"><strong>KBD-54</strong><span class="status unavailable">Unavailable</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd55.jpg" alt="KBD-55" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-55</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-55</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd56.jpg" alt="KBD-56" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-56</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-56</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd57.jpg" alt="KBD-57" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-57</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-57</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd58.jpg" alt="KBD-58" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-58</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-58</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd59.jpg" alt="KBD-59" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-59</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-59</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd60.jpg" alt="KBD-60" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-60</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-60</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd61.jpg" alt="KBD-61" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-61</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-61</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd62.jpg" alt="KBD-62" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-62</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-62</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd63.jpg" alt="KBD-63" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-63</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-63</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd64.jpg" alt="KBD-64" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-64</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-64</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="unavailable">
   <div class="door-image"><img src="/images/door/nd65.jpg" alt="KBD-65" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-65</strong><span class="status unavailable">Unavailable</span></div>
+  <div class="door-info"><strong>KBD-65</strong><span class="status unavailable">Unavailable</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="unavailable">
   <div class="door-image"><img src="/images/door/nd66.jpg" alt="KBD-66" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-66</strong><span class="status unavailable">Unavailable</span></div>
+  <div class="door-info"><strong>KBD-66</strong><span class="status unavailable">Unavailable</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd67.jpg" alt="KBD-67" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-67</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-67</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd68.jpg" alt="KBD-68" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-68</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-68</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="unavailable">
   <div class="door-image"><img src="/images/door/nd69.jpg" alt="KBD-69" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-69</strong><span class="status unavailable">Unavailable</span></div>
+  <div class="door-info"><strong>KBD-69</strong><span class="status unavailable">Unavailable</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd70.jpg" alt="KBD-70" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-70</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-70</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd71.jpg" alt="KBD-71" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-71</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-71</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd72.jpg" alt="KBD-72" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-72</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-72</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd73.jpg" alt="KBD-73" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-73</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-73</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd74.jpg" alt="KBD-74" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-74</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-74</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd75.jpg" alt="KBD-75" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-75</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-75</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd76.jpg" alt="KBD-76" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-76</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-76</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd77.jpg" alt="KBD-77" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-77</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-77</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="unavailable">
   <div class="door-image"><img src="/images/door/nd78.jpg" alt="KBD-78" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-78</strong><span class="status unavailable">Unavailable</span></div>
+  <div class="door-info"><strong>KBD-78</strong><span class="status unavailable">Unavailable</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="unavailable">
   <div class="door-image"><img src="/images/door/nd79.jpg" alt="KBD-79" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-79</strong><span class="status unavailable">Unavailable</span></div>
+  <div class="door-info"><strong>KBD-79</strong><span class="status unavailable">Unavailable</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd80.jpg" alt="KBD-80" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-80</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-80</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="unavailable">
   <div class="door-image"><img src="/images/door/nd81.jpg" alt="KBD-81" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-81</strong><span class="status unavailable">Unavailable</span></div>
+  <div class="door-info"><strong>KBD-81</strong><span class="status unavailable">Unavailable</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd82.jpg" alt="KBD-82" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-82</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-82</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd83.jpg" alt="KBD-83" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-83</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-83</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/nd84.jpg" alt="KBD-84" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>KBD-84</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>KBD-84</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article></div></div></section><section class="material-section ply-about" id="ply-info"><div class="container"><div class="material-layout"><div><div class="material-kicker">01 • PLY DOOR</div><h2 class="material-title">Plywood Doors</h2><p class="material-copy">Plywood doors are made from bonded wood-veneer layers. The right plywood grade gives a strong, stable door with good screw-holding and a wide choice of laminate, veneer or paint finishes. For moisture-heavy locations, BWR/BWP grades are preferable to ordinary MR plywood.</p><div class="feature-list"><span><i class="fa-solid fa-layer-group"></i> Layered plywood construction</span><span><i class="fa-solid fa-hammer"></i> Strong & good screw holding</span><span><i class="fa-solid fa-palette"></i> Laminate, veneer & paint finishes</span><span><i class="fa-solid fa-droplet"></i> BWR/BWP grades for wetter areas</span></div><p class="material-note"><strong>Best suited for:</strong> bedrooms, living rooms, offices and main/interior doors. Choose the plywood grade according to the location — standard interior plywood is not the same as BWP/marine-grade plywood.</p></div><div class="material-visual ply-visual"><div class="door-illustration"><div class="door-panel"><span>PLY</span></div></div><div class="visual-caption">PLYWOOD • LAMINATED / VENEER / PAINT FINISH</div></div></div></div></section>
 
 <section class="material-section frp-about" id="frp"><div class="container"><div class="section-head"><div><div class="material-kicker">02 • FRP DOOR</div><h2 class="section-title">FRP Doors <small>Fiber Reinforced Plastic</small></h2></div><p class="section-desc">A practical option for moisture-prone locations where low maintenance matters.</p></div><div class="frp-about-grid"><div><p class="material-copy">FRP doors are made using fiberglass-reinforced plastic. Indian FRP door manufacturers commonly highlight resistance to water, termites, insects, corrosion, swelling and warping, with smooth, matte or woodgrain/veneer-style finishes available.</p><div class="feature-list"><span><i class="fa-solid fa-droplet"></i> Waterproof / water resistant</span><span><i class="fa-solid fa-bug-slash"></i> Termite & insect resistant</span><span><i class="fa-solid fa-shield-halved"></i> Corrosion & weather resistant</span><span><i class="fa-solid fa-screwdriver-wrench"></i> Low maintenance</span></div><p class="material-note"><strong>Best suited for:</strong> bathrooms, utility areas, humid rooms, commercial and industrial spaces. Your current FRP collection is listed at <strong>₹6,000</strong>.</p></div><div class="frp-quick"><strong>FRP COLLECTION</strong><span>FRP-02 • FRP-08 • FRP-09 • FRP-10 • FRP-12</span><a class="btn btn-primary" href="#frpGrid">View FRP Designs</a></div></div></div></section><section class="section frp-section" id="frp-designs"><div class="container"><div class="section-head"><div><h2 class="section-title">FRP Door Designs <small>Available FRP designs</small></h2></div><p class="section-desc">FRP door designs for customers looking for a different finish and style.</p></div><div class="price-note"><div><strong>FRP Door Price — ₹6,000</strong><span>Price shown in the original product page.</span></div><a class="btn btn-light" href="tel:+919337405868"><i class="fa-solid fa-phone"></i> Ask Now</a></div><div class="grid" id="frpGrid"><article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/frp02.jpg" alt="FRP-02" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>FRP-02</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>FRP-02</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/frp08.jpg" alt="FRP-08" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>FRP-08</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>FRP-08</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/frp09.jpg" alt="FRP-09" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>FRP-09</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>FRP-09</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/frp10.jpg" alt="FRP-10" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>FRP-10</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>FRP-10</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article>
 <article class="door-card" data-status="available">
   <div class="door-image"><img src="/images/door/frp12.jpg" alt="FRP-12" loading="lazy"><div class="zoom"><i class="fa-solid fa-expand"></i></div></div>
-  <div class="door-info"><strong>FRP-12</strong><span class="status available">Available</span></div>
+  <div class="door-info"><strong>FRP-12</strong><span class="status available">Available</span><button class="share-product" type="button"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</button></div>
 </article></div></div></section><section class="material-section" id="wpc"><div class="container"><div class="material-layout"><div><div class="material-kicker">03 • WPC DOOR</div><h2 class="material-title">WPC Doors</h2><p class="material-copy">WPC (Wood Plastic Composite) doors use a wood-fibre/polymer composite instead of a conventional timber core. Manufacturers position WPC for moisture-heavy areas because the material is designed to resist water absorption, termites, fungal decay and warping.</p><div class="feature-list"><span><i class="fa-solid fa-droplet"></i> Waterproof / moisture resistant</span><span><i class="fa-solid fa-bug-slash"></i> Termite & borer resistant</span><span><i class="fa-solid fa-cloud-sun"></i> Suitable for humid climates</span><span><i class="fa-solid fa-broom"></i> Low maintenance</span></div><p class="material-note"><strong>Best suited for:</strong> bathrooms, wash areas, kitchens, humid rooms, commercial interiors and locations where water and termites are a concern.</p></div><div class="material-visual wpc-visual"><div class="door-illustration"><div class="door-panel"><span>WPC</span></div></div><div class="visual-caption">WPC • WOOD + POLYMER COMPOSITE</div></div></div></div></section><section class="material-section alt" id="hdhmr"><div class="container"><div class="material-layout reverse"><div><div class="material-kicker">04 • HDHMR DOOR</div><h2 class="material-title">HDHMR Doors</h2><p class="material-copy">HDHMR means High Density High Moisture Resistance. It is a dense engineered wood-fibre board with a uniform core and moisture-resistant resins. Its smooth, dense surface is well suited to laminate, paint, veneer and CNC routing.</p><div class="feature-list"><span><i class="fa-solid fa-water"></i> High moisture resistance</span><span><i class="fa-solid fa-bug-slash"></i> Borer & termite resistance</span><span><i class="fa-solid fa-pen-ruler"></i> CNC-friendly smooth surface</span><span><i class="fa-solid fa-palette"></i> Paint, laminate & veneer finishes</span></div><p class="material-note"><strong>Best suited for:</strong> bedrooms, kitchens, wardrobes, interior doors and humid interiors where a smooth premium finish is wanted. <strong>Important:</strong> HDHMR is moisture-resistant, not a claim of unlimited waterproofing; edges should be properly sealed.</p></div><div class="material-visual hdhmr-visual"><div class="door-illustration"><div class="door-panel"><span>HDHMR</span></div></div><div class="visual-caption">HDHMR • HIGH DENSITY HIGH MOISTURE RESISTANCE</div></div></div></div></section><section class="contact"><div class="container"><div class="contact-box"><h2>Found a design you like?</h2><p>Send us the design number — for example, KBD-32 — and ask about price and availability.</p><div class="contact-actions"><a class="btn btn-light" href="tel:+919337405868"><i class="fa-solid fa-phone"></i> Call Now</a><a class="btn" style="background:#128c4b;color:#fff" href="https://wa.me/9337405868" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></div></div></div></section>
 </main>
 
 <footer><img src="/images/logo2.png" alt="Khetra Bilasha Products"><strong>Khetra Bilasha Products</strong><p>Doors • WPC • PVC • Hardware • Plywood • Cement Products</p><div class="socials"><a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/khetrabilasha" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://www.youtube.com/@khetrabilasha" target="_blank"><i class="fab fa-youtube"></i></a><a href="tel:+919337405868"><i class="fas fa-phone"></i></a><a href="https://wa.me/9337405868" target="_blank"><i class="fab fa-whatsapp"></i></a><a href="mailto:khetrabilashaproducts@gmail.com"><i class="fas fa-envelope"></i></a><a href="https://maps.app.goo.gl/bV7rW5q5XtFoVGY99" target="_blank"><i class="fas fa-map-marker-alt"></i></a></div><div class="copy">© <span id="year"></span> Khetra Bilasha Products • All Rights Reserved</div></footer>
 
-<div class="mobile-contact"><a class="mobile-call" href="tel:+919337405868"><i class="fa-solid fa-phone"></i> CALL NOW</a><a class="mobile-wa" href="https://wa.me/9337405868" target="_blank"><i class="fa-brands fa-whatsapp"></i> WHATSAPP</a></div>
 <div class="lightbox" id="lightbox"><div class="lightbox-inner"><button class="close" id="closeLightbox"><i class="fa-solid fa-xmark"></i></button><img id="lightboxImg" src="" alt=""><div class="lightbox-label" id="lightboxLabel"></div></div></div>
 
 <script>
+const shareBtn=document.getElementById('shareBtn');
+if(shareBtn){
+  shareBtn.addEventListener('click',async()=>{
+    const shareData={
+      title:document.title,
+      text:'Check out the Khetra Bilasha Products door collection.',
+      url:window.location.href
+    };
+    try{
+      if(navigator.share){
+        await navigator.share(shareData);
+      }else if(navigator.clipboard){
+        await navigator.clipboard.writeText(window.location.href);
+        shareBtn.innerHTML='<i class="fa-solid fa-check"></i> Link Copied';
+        setTimeout(()=>shareBtn.innerHTML='<i class="fa-solid fa-share-nodes"></i> Share',1800);
+      }else{
+        prompt('Copy this link:',window.location.href);
+      }
+    }catch(e){}
+  });
+}
 const menuBtn=document.getElementById('menuBtn'),drawer=document.getElementById('drawer');
 menuBtn.addEventListener('click',()=>{drawer.classList.toggle('open');menuBtn.innerHTML=drawer.classList.contains('open')?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>'});
 document.querySelectorAll('.drawer a').forEach(a=>a.addEventListener('click',()=>{drawer.classList.remove('open');menuBtn.innerHTML='<i class="fa-solid fa-bars"></i>'}));
+
+document.querySelectorAll('.share-product').forEach(btn=>{
+  btn.addEventListener('click',async()=>{
+    const card=btn.closest('.door-card');
+    const img=card.querySelector('.door-image img');
+    const name=card.querySelector('.door-info strong')?.textContent.trim() || 'Door Design';
+    const status=card.querySelector('.status')?.textContent.trim() || '';
+    const imageUrl=new URL(img.getAttribute('src'),window.location.origin).href;
+    const message=[
+      '🚪 *'+name+'*',
+      status ? '📦 '+status : '',
+      '',
+      'Khetra Bilasha Products',
+      'View collection: '+window.location.href
+    ].filter(Boolean).join('\n');
+
+    const original=btn.innerHTML;
+    btn.disabled=true;
+    btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Preparing...';
+
+    try{
+      // On supported phones, share the actual image file through the native
+      // share sheet. WhatsApp then receives the image as an attachment.
+      const response=await fetch(imageUrl,{mode:'cors'});
+      if(!response.ok) throw new Error('Could not load image.');
+      const blob=await response.blob();
+
+      let extension='jpg';
+      if(blob.type==='image/png') extension='png';
+      else if(blob.type==='image/webp') extension='webp';
+      else if(blob.type==='image/gif') extension='gif';
+
+      const safeName=name
+        .replace(/[^a-z0-9]+/gi,'_')
+        .replace(/^_+|_+$/g,'') || 'door-design';
+
+      const file=new File([blob],safeName+'.'+extension,{
+        type:blob.type||'image/jpeg'
+      });
+
+      const shareData={
+        title:name,
+        text:message,
+        files:[file]
+      };
+
+      if(navigator.share && navigator.canShare &&
+         navigator.canShare({files:[file]})){
+        await navigator.share(shareData);
+      }else if(navigator.share){
+        // Some browsers support sharing text but not files.
+        await navigator.share({title:name,text:message});
+      }else{
+        // Desktop browsers without the native file-share API cannot attach
+        // an image to WhatsApp directly, so keep a useful fallback.
+        window.open(
+          'https://wa.me/?text='+encodeURIComponent(
+            message+'\n🖼️ Image: '+imageUrl
+          ),
+          '_blank','noopener'
+        );
+      }
+    }catch(error){
+      if(error?.name!=='AbortError'){
+        window.open(
+          'https://wa.me/?text='+encodeURIComponent(
+            message+'\n🖼️ Image: '+imageUrl
+          ),
+          '_blank','noopener'
+        );
+      }
+    }finally{
+      btn.disabled=false;
+      btn.innerHTML=original;
+    }
+  });
+});
+
 const cards=[...document.querySelectorAll('.door-card')],count=document.getElementById('visibleCount');
 function updateCount(){count.textContent=cards.filter(c=>c.style.display!=='none').length}
 document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;cards.forEach(c=>c.style.display=(f==='all'||c.dataset.status===f)?'':'none');updateCount()}));
